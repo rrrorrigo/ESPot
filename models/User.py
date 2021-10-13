@@ -16,9 +16,9 @@ class User(BaseModel, Base):
     email = Column(String(320), nullable=False)
     Pots = relationship('Pot', cascade="all, delete", backref="Owner")
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """initializes user"""
-        super().__init__()
+        super().__init__(*args, **kwargs)
 
     def __setattr__(self, name, value):
         """sets a password with md5 encryption"""

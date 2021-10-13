@@ -15,6 +15,6 @@ class Pot(BaseModel, Base):
     Is_empty = Column(Boolean, nullable=False, default=1)
     username = Column(String(30), ForeignKey('user.username'))
 
-    def __init__(self):
-        """initializes user"""
-        super().__init__()
+    def __init__(self, *args, **kwargs):
+        """initializes Pot"""
+        super().__init__(*args, **kwargs)
