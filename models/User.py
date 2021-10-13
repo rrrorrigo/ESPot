@@ -22,4 +22,5 @@ class User(Base):
         self.id_user = str(uuid4())
 
     def __repr__(self):
-        return "<id = {}(username = {}, password = {}, email = {}, Pots {})>"
+        return "<id = {}(username = {}, password = {}, email = {}, Pots {})>"\
+                .format(self.id_user, self.username, self.password, self.email, self.Pots)

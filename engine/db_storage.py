@@ -6,11 +6,10 @@ from os import getenv
 from sqlalchemy.engine import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, scoped_session
-from models.Pot import Pot
-from models.User import User
-
 
 Base = declarative_base()
+from models.Pot import Pot
+from models.User import User
 classes = {"User": User, "Pot": Pot}
 
 class DBStorage():
