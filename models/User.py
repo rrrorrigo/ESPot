@@ -12,7 +12,7 @@ class User(BaseModel, Base):
     """Creation of our object User"""
     __tablename__ = 'user'
     username = Column(String(30), nullable=False, unique=True)
-    password = Column(String(30), nullable=False)
+    password = Column(String(33), nullable=False)
     email = Column(String(320), nullable=False)
     Pots = relationship('Pot', cascade="all, delete", backref="Owner")
 
