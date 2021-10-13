@@ -12,9 +12,16 @@ class BaseModel:
     """The BaseModel class from which future classes will be derived"""
     id = Column(String(60), primary_key=True)
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """Method that initialize the object"""
-        self.id = str(uuid.uuid4())
+        if kwargs:
+            for key, value in kwargs.items():
+                if key != "__class__":
+                    setattr(self, key, value)
+            if kwargs.get("id", None) is None:
+                self.id = str(uuid.uuid4())
+        else:
+            self.id = str(uuid.uuid4())
 
     def __str__(self):
         """String representation of its object"""
