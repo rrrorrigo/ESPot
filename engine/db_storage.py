@@ -4,13 +4,12 @@ Contains the class DBStorage
 """
 from os import getenv
 from sqlalchemy.engine import create_engine
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, scoped_session
-
-Base = declarative_base()
+from models.BaseModel import Base
 from models.Pot import Pot
 from models.User import User
 classes = {"User": User, "Pot": Pot}
+
 
 class DBStorage():
     """Class DBStorage inherit from Base"""

@@ -2,25 +2,26 @@
 """
 Contains class User
 """
+from hashlib import md5
 from sqlalchemy import Column, String
-from uuid import uuid4
 from sqlalchemy.orm import relationship
-from engine.db_storage import Base
+from models.BaseModel import Base, BaseModel
 
 
-class User(Base):
+class User(BaseModel, Base):
     """Creation of our object User"""
     __tablename__ = 'user'
-    id_user = Column(String(60), nullable=False, primary_key=True)
     username = Column(String(30), nullable=False, unique=True)
     password = Column(String(30), nullable=False)
     email = Column(String(320), nullable=False)
-    Pots = relationship('Pot', cascade="all, delete", backref="User")
+    Pots = relationship('Pot', cascade="all, delete", backref="Owner")
 
-    def ___init__(self, *arg):
-        """Initalize method that asign unique id to User object"""
-        self.id_user = str(uuid4())
+    def __init__(self):
+        """initializes user"""
+        super().__init__()
 
-    def __repr__(self):
-        return "<id = {}(username = {}, password = {}, email = {}, Pots {})>"\
-                .format(self.id_user, self.username, self.password, self.email, self.Pots)
+    def __setattr__(self, name, value):
+        """sets a password with md5 encryption"""
+        if name == "password":
+            value = md5(value.encode()).hexdigest()
+        super().__setattr__(name, value)
