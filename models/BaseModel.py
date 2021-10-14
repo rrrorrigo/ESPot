@@ -30,6 +30,9 @@ class BaseModel:
     def save(self):
         """Updates updated_at with current time when instance is changed"""
         models.storage.new(self)
+        print(self.__dict__)
+        if "_sa_instance_state" in self.__dict__:
+            del self.__dict__["_sa_instance_state"]
         models.storage.save()
 
     def delete(self):

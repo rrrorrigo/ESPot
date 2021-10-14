@@ -23,7 +23,7 @@ class DBStorage():
         ESPot_HOST = getenv('ESPot_HOST')
         ESPot_DB = getenv('ESPot_DB')
         self.__engine = create_engine('mysql+mysqldb://root:root@localhost/ESPot')
-
+        
     def all(self, cls=None):
         """query on the current database session"""
         new_dict = {}
