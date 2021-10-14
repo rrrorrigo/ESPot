@@ -61,8 +61,8 @@ class HBNBCommand(cmd.Cmd):
         else:
             print("** class doesn't exist **")
             return False
-        print(instance.id)
         instance.save()
+        print(instance.id)
 
     def do_show(self, arg):
         """Prints an instance as a string based on the class and id"""
