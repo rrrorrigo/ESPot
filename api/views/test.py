@@ -6,6 +6,7 @@ from api import views
 from api.views import app_views
 from models import storage
 from datetime import datetime
+from pytz import timezone
 
 @app_views.route('/users', methods=['GET'], strict_slashes=False)
 def get_users():
@@ -24,7 +25,7 @@ def humidity():
     actual_humidity = request.get_json()
     if not actual_humidity:
         abort(400, 'Not a JSON')
-    now = datetime.now().strftime("%d/%m %H:%M")
+    now = datetime.now(timezone("Uruguay/Montevideo")).strftime("%d/%m %H:%M")
     now = str(now)
     response = {}
     response["Humidity"] = actual_humidity.get("humidity")
