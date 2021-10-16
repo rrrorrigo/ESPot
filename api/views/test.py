@@ -2,8 +2,10 @@
 """ handles restful api actions """
 
 from flask import Flask, jsonify, abort, request
+from api import views
 from api.views import app_views
 from models import storage
+from datetime import datetime
 
 @app_views.route('/users', methods=['GET'], strict_slashes=False)
 def get_users():
@@ -16,3 +18,15 @@ def get_users():
     #print(type(users_list))
     #return jsonify({})
     #return (users_list)
+
+@app_views.route('/send_humidity', methods=['POST'], strict_slashes=False)
+def humidity():
+    actual_humidity = request.get_json()
+    if not actual_humidity:
+        abort(400, 'Not a JSON')
+    now = datetime.now().strftime("%H:%M:%S")
+    now = str(now)
+    response = {}
+    response["Humidity"] = actual_humidity.get("humidity")
+    response["time"] = now
+    return jsonify(response)
