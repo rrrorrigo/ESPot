@@ -13,7 +13,7 @@ class Pot(BaseModel, Base):
     Plant_name = Column(String(30), nullable=False, unique=True)
     Humidity_irrigation = Column(SmallInteger, nullable=False)
     Is_empty = Column(Boolean, nullable=False, default=1)
-    #last_irrigation = Column(String(30), default=None) # podriamo agregar estooo ************
+    last_irrigation = Column(String(6), default="N/A", nullable=False)
     username = Column(String(30), ForeignKey('user.username'))
 
     def __init__(self, *args, **kwargs):
