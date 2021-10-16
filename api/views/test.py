@@ -25,7 +25,7 @@ def humidity():
     actual_humidity = request.get_json()
     if not actual_humidity:
         abort(400, 'Not a JSON')
-    now = datetime.now(timezone("Uruguay/Montevideo")).strftime("%d/%m %H:%M")
+    now = datetime.now(timezone("America/Argentina/Buenos_Aires")).strftime("%d/%m %H:%M")
     now = str(now)
     response = {}
     response["Humidity"] = actual_humidity.get("humidity")
