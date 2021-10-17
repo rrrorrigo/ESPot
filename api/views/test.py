@@ -8,6 +8,7 @@ from datetime import datetime
 from pytz import timezone
 from models.Pot import Pot
 from models.User import User
+from models.Plant import Plant
 
 @app_views.route('/users', methods=['GET', 'POST'], strict_slashes=False)
 def get_users():
@@ -56,7 +57,8 @@ def set_humidity(id_pot):
     """The arduino will make a request to know the wanted level of humidity"""
     to_esp = {}
     pot = storage.get(Pot, id_pot)
-    to_esp["Humidity_irrigation"] = pot.Humidity_irrigation
+    plant = storage.get(Plant, pot.Plant_id)
+    to_esp["Humidity_irrigation"] = str(plant.Humidity_irrigation)
     to_esp["Turned_ON"] = str(pot.Turned_ON)
     return(jsonify(to_esp))
 
