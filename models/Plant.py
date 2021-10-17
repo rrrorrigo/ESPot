@@ -13,7 +13,7 @@ class Plant(BaseModel, Base):
     __tablename__ = 'plant'
     Plant_name = Column(String(30), nullable=False, unique=True)
     Humidity_irrigation = Column(SmallInteger, nullable=False, default=70)
-    Pots = relationship('Pot', cascade="all, delete", backref="Plant")
+    Pots = relationship('Pot', cascade="all", backref="Plant")
     
     def __init__(self, *args, **kwargs):
         """initializes Pot"""
