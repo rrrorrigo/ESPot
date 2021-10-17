@@ -11,12 +11,11 @@ int tank; //tank level
 float humidity; // humidity level
 float percentage;
 int relay = 5; //D1
-String payload;
 String Is_empty;
 String get_response;
 JSONVar my_request;
-String GET_url = "http://35.243.197.246:5001/api/get_humidity";
-String PUT_url = "http://35.243.197.246:5001/api/send_data";
+const char* GET_url = "http://35.243.197.246:5001/api/get_humidity/0b9e88b6-7663-47c0-8ac4-b91954bd818e";
+const char* PUT_url = "http://35.243.197.246:5001/api/send_data/0b9e88b6-7663-47c0-8ac4-b91954bd818e";
 
 
 // possible wifi network and respective passwords
@@ -57,6 +56,7 @@ void loop() {
 
   JSONVar t = "True";
   if (my_request["Turned_ON"] == t) { // if it is turned on
+    Serial.println("Entered ON loop");
     tank = digitalRead(FloatSensor); // read tank state
     humidity = analogRead(SensorPin); // analog read of humidity
     percentage = (float)((humidity - MIN) * 100) / (MAX - MIN); // converts analog read to percentage
@@ -65,6 +65,7 @@ void loop() {
     if  (percentage < min_limit && tank == HIGH) {
         // make calculations of how much seconds to turn on relay, regarding volume, mass etc. (in line below)
         // this one
+        Serial.println("prendiedno bomba");
         digitalWrite(relay, LOW);
         // delay(x seconds calculated);
         digitalWrite(relay, HIGH);
@@ -85,15 +86,17 @@ void loop() {
     percentage = (float)((humidity - MIN) * 100) / (MAX - MIN);
     PUT_method(PUT_url, percentage, tank, "False");
   }
+  delay(10000);
 }
 
 // function for the get method of the api
-String GET_method(String url) {
+String GET_method(const char* url) {
   WiFiClient client;
   HTTPClient http;
-  
+
   http.begin(client, url);
-  payload = "{}"; 
+  int httpResponseCode = http.GET();
+  String payload = "{}"; 
   payload = http.getString();
   http.end();
 
@@ -101,20 +104,22 @@ String GET_method(String url) {
 }
 
 // function for the PUT method of the api
-String PUT_method(String url, float percentage, int tank, String irrigated) {
+void PUT_method(const char* url, float percentage, int tank, String irrigated) {
   WiFiClient client;
   HTTPClient http;
   
   http.begin(client, url);
-  http.addHeader("Content-Type", "application/json");
   if (tank == 1) {
     Is_empty = "False";
   } else {
     Is_empty = "True";
   }
-  String request = "{\"irrigated\":" + irrigated + ",\"Is_empty\":" + Is_empty + ",\"Actual_humidity\":" + percentage +"}";
-  http.PUT(request);
+  http.addHeader("Content-Type", "application/json");
+  String request = "{\"irrigated\":\"" + String(irrigated) + "\",\"Is_empty\":\"" + String(Is_empty) + "\",\"Actual_humidity\":\"" + String(percentage) +"\"}";
+  Serial.println(request);
+  int resp = http.PUT(request);
+  Serial.println(resp);
   http.end();
 
-  return payload;
+  return;
 }

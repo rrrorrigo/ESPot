@@ -89,7 +89,7 @@ def set_humidity(id_pot):
     pot = storage.get(Pot, id_pot)
     plant = storage.get(Plant, pot.Plant_id)
     to_esp["Humidity_irrigation"] = str(plant.Humidity_irrigation)
-    to_esp["Turned_ON"] =  "True" #str(pot.Turned_ON)
+    to_esp["Turned_ON"] =  "True" #str(pot.Turned_ON) ************************* NO OLVIDARSE DESCOMENTAR ESTO DESPue *********
     return(jsonify(to_esp))
 
 
