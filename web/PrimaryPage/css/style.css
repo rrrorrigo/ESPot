@@ -1,0 +1,192 @@
+:root {
+    --dark: #b7d2c3;
+    --dark-x: #adc7b9; 
+    --light: #48665a;
+}
+
+body {
+    font-family: 'Spartan', sans-serif;
+    font-weight: 300;
+    color: var(--light);
+    overflow: hidden;
+}
+
+.text-light { color: var(--light) !important; }
+.bg-dark { background-color: var(--dark) !important; }
+.bg-dark-x { background-color: var(--dark-x); }
+
+.back {
+/* Rectangle 149 */
+position: fixed;
+width: 100%;
+height: 100%;
+left: 0px;
+top: 0px;
+
+background: #B6CFB6;
+background-size: cover;
+}
+
+.ESPot {
+/* ESPot */
+
+position: absolute;
+width: 287px;
+height: 45px;
+left: 1px;
+top: 19px;
+
+font-family: Maven Pro;
+font-style: normal;
+font-weight: normal;
+font-size: 10px;
+line-height: 47px;
+text-align: center;
+
+color: #576B60;
+}
+
+.back2 {
+/* Rectangle 152 */
+
+position: fixed;
+width: 100%;
+height: 100%;
+left: 0px;
+top: 95px;
+
+background: #99A59D;
+background-size: cover;
+
+}
+
+.info2 {
+/* Rectangle 150 */
+
+position: fixed;
+width: 17%;
+height: 69%;
+left: 52px;
+top: 170px;
+
+background: #808D80;
+border-radius: 38px;
+}
+
+.logout {
+/* Log out */
+
+position: fixed;
+height: 100%;
+left: 1350px;
+top: 22px;
+
+font-family: Maven Pro;
+font-style: normal;
+font-weight: normal;
+font-size: 25px;
+line-height: 47px;
+
+
+color: #576B60;
+}
+
+.info {
+/* Rectangle 153 */
+
+position: fixed;
+width: 15%;
+height: 65%;
+left: 67px;
+top: 185px;
+
+background: #C4C4C4;
+border-radius: 29px;
+}
+
+.infotext {
+/* Last watering: Month: Hour: Humidity:  */
+
+position: absolute;
+width: 268px;
+height: 493px;
+left: 83px;
+top: 262px;
+
+font-family: Maven Pro;
+font-style: normal;
+font-weight: normal;
+font-size: 29px;
+line-height: 34px;
+text-align: center;
+
+color: #576B60;
+}
+
+.onoff {
+/* on off boton  */
+
+position: absolute;
+width: 9%;
+height: 17%;
+left: 80%;
+top: 50%;
+
+background: url(/PrimaryPage/img/onoff.png);
+background-repeat: no-repeat;
+}
+
+.icono {
+position: absolute;
+width: 0px;
+height: 100%;
+left: 20px;
+top: 15px;
+
+border-radius: 42px;
+}
+
+.plant {
+position: relative;
+width: 1%;
+height: 1%;
+left: 479px;
+top: 0px;
+left: 400px;
+}
+
+.container {
+position: absolute;
+width: 55%;
+height: 70%;
+left: 330px;
+top: 155px;
+    
+background: #808D80;
+border-radius: 63px;
+}
+
+.container .cocontainer {
+position: absolute;
+width: 75%;
+height: 70%;
+left: 12.5%;
+top: 15%;
+
+background: #B6CFB6;
+border-radius: 29px;
+}
+
+.add {
+/* Rectangle 154 */
+position: absolute;
+width: 429px;
+height: 49px;
+left: 505px;
+top: 463px;
+
+background: #7CA68E;
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 15px;
+
+}
