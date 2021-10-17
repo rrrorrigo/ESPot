@@ -57,6 +57,7 @@ def set_humidity(id_pot):
     to_esp = {}
     pot = storage.get(Pot, id_pot)
     to_esp["Humidity_irrigation"] = pot.Humidity_irrigation
+    to_esp["Turned_ON"] = pot.Turned_ON
     return(jsonify(to_esp))
 
 
