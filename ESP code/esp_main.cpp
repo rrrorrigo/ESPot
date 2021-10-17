@@ -11,6 +11,8 @@ int tank; //tank level
 float humidity; // humidity level
 float percentage;
 int relay = 5; //D1
+String payload;
+String Is_empty;
 String get_response;
 JSONVar my_request;
 String GET_url = "http://35.243.197.246:5001/api/get_humidity";
@@ -53,17 +55,18 @@ void loop() {
   get_response = GET_method(GET_url);
   my_request = JSON.parse(get_response);
 
-  if (my_request["Turned_ON"] == "True") { // if it is turned on
+  JSONVar t = "True";
+  if (my_request["Turned_ON"] == t) { // if it is turned on
     tank = digitalRead(FloatSensor); // read tank state
     humidity = analogRead(SensorPin); // analog read of humidity
     percentage = (float)((humidity - MIN) * 100) / (MAX - MIN); // converts analog read to percentage
     int min_limit = 20;
-    int water = my_request["Humidity_irrigation"];
+    int water = int(my_request["Humidity_irrigation"]);
     if  (percentage < min_limit && tank == HIGH) {
         // make calculations of how much seconds to turn on relay, regarding volume, mass etc. (in line below)
         // this one
         digitalWrite(relay, LOW);
-        delay(/* x seconds calculated */);
+        // delay(x seconds calculated);
         digitalWrite(relay, HIGH);
         tank = digitalRead(FloatSensor); // calculate tank state after irrigation
         for (int minutes = 0; minutes < 30; minutes += 2) {
@@ -90,7 +93,7 @@ String GET_method(String url) {
   HTTPClient http;
   
   http.begin(client, url);
-  String payload = "{}"; 
+  payload = "{}"; 
   payload = http.getString();
   http.end();
 
@@ -105,9 +108,9 @@ String PUT_method(String url, float percentage, int tank, String irrigated) {
   http.begin(client, url);
   http.addHeader("Content-Type", "application/json");
   if (tank == 1) {
-    String Is_empty = "False";
+    Is_empty = "False";
   } else {
-    String Is_empty = "True";
+    Is_empty = "True";
   }
   String request = "{\"irrigated\":" + irrigated + ",\"Is_empty\":" + Is_empty + ",\"Actual_humidity\":" + percentage +"}";
   http.PUT(request);
