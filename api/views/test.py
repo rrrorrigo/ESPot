@@ -14,24 +14,37 @@ from models.Plant import Plant
 def get_users():
     """Api to check login on Front-End"""
     if request.method == 'GET':
-        users_list = {}
-        for user in storage.all("User").values():
-            users_list[user.username] = user.id
-        return jsonify(users_list)
+        all_users = storage.all(User).values()
+        list_users = []
+        for user in all_users:
+            list_users.append(user.to_dict())
+        return jsonify(list_users)
     else:
         data = request.get_json()
         dictionary = {}
         for k, v in data:
             dictionary[k] = v
-        user = User
+        user = User(**dictionary)
+        user.save()
+        return jsonify(user.to_dict())
+
+@app_views.route('/plants', methods=['GET', 'POST'], strict_slashes=False)
+def get_plants():
+    if request.method == 'GET':
+        all_plants = storage.all(Plant).values()
+        list_plants = []
+        for plant in all_plants:
+            list_plants.append(plant.to_dict())
+        return jsonify(list_plants)
 
 
 @app_views.route('/pots', methods=['GET', 'POST'], strict_slashes=False)
 def get_pots():
-    users_list = {}
-    for user in storage.all("User").values():
-        users_list[user.username] = user.id
-    return jsonify(users_list)
+    all_pots = storage.all(Pot).values()
+    list_pots = []
+    for pot in all_pots:
+        list_pots.append(pot.to_dict())
+    return jsonify(list_pots)
 
 
 @app_views.route('/selected/<string:id_pot>', methods=['GET', 'POST'], strict_slashes=False)
@@ -63,7 +76,7 @@ def set_humidity(id_pot):
     return(jsonify(to_esp))
 
 
-@app_views.route('/send_data/<string:id_pot>', methods=['PUT'], strict_slashes=False)
+@app_views.route('/send_data/<string:id_pot>', methods=['POST'], strict_slashes=False)
 def send_data(id_pot):
     """Update pot data - water level, humidity, time of last irrigation"""
     data = request.get_json()
