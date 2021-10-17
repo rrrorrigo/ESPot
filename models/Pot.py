@@ -12,7 +12,6 @@ from models.Plant import Plant
 class Pot(BaseModel, Base):
     """Creation of our object User"""
     __tablename__ = 'pot'
-    Plant = relationship(Plant, back_populates="Pot", uselist=False)
     Actual_humidity = Column(SmallInteger, default=0)
     Is_empty = Column(Boolean, nullable=False, default=1)
     Last_irrigation = Column(String(10), default="N/A", nullable=False)

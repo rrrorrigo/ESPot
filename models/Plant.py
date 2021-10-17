@@ -12,7 +12,7 @@ class Plant(BaseModel, Base):
     __tablename__ = 'plant'
     Plant_name = Column(String(30), nullable=False, unique=True)
     Humidity_irrigation = Column(SmallInteger, nullable=False, default=70)
-
+    
     def __init__(self, *args, **kwargs):
         """initializes Pot"""
         super().__init__(*args, **kwargs)

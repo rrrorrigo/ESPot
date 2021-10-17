@@ -8,7 +8,8 @@ from sqlalchemy.orm import sessionmaker, scoped_session
 from models.BaseModel import Base
 from models.Pot import Pot
 from models.User import User
-classes = {"User": User, "Pot": Pot}
+from models.Plant import Plant
+classes = {"User": User, "Pot": Pot, "Plant": Plant}
 
 
 class DBStorage():
