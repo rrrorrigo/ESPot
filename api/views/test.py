@@ -68,7 +68,7 @@ def get_pots():
 def selected_web(id_plant):
     """Api that be updated by WebPage"""
     if request.method == 'GET':
-        return jsonify(storage.get(Plant, id_plant))
+        return jsonify(storage.get(Pot, id_plant))
     else:
         data = request.get_json()
         if not data:
@@ -107,4 +107,4 @@ def send_data(id_pot):
     setattr(pot, "Is_empty", bool(eval(data["Is_empty"])))
     setattr(pot, "Actual_humidity", int(float(data["Actual_humidity"])))
     storage.save()
-    return (jsonify(pot.to_dict()), 200)
+    return (jsonify({"culo": "Peñarol"}), 200)
