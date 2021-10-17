@@ -17,6 +17,7 @@ class Pot(BaseModel, Base):
     Is_empty = Column(Boolean, nullable=False, default=1)
     Last_irrigation = Column(String(10), default="N/A", nullable=False)
     Username = Column(String(30), ForeignKey('user.username'))
+    Turned_ON = Column(Boolean, nullable=False, default=False) # fichate si hice todo bien ******************
 
     def __init__(self, *args, **kwargs):
         """initializes Pot"""
