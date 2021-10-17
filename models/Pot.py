@@ -12,12 +12,12 @@ from models.Plant import Plant
 class Pot(BaseModel, Base):
     """Creation of our object User"""
     __tablename__ = 'pot'
-    Plant = relationship(Plant, back_populates="Pot", uselist=False)
     Actual_humidity = Column(SmallInteger, default=0)
+    Plant_id = Column(String(60), ForeignKey('plant.id'))
     Is_empty = Column(Boolean, nullable=False, default=1)
     Last_irrigation = Column(String(10), default="N/A", nullable=False)
     Username = Column(String(30), ForeignKey('user.username'))
-    Turned_ON = Column(Boolean, nullable=False, default=False) # fichate si hice todo bien ******************
+    Turned_ON = Column(Boolean, nullable=False, default=False)
 
     def __init__(self, *args, **kwargs):
         """initializes Pot"""
