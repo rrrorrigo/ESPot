@@ -15,7 +15,7 @@ class Pot(BaseModel, Base):
     Actual_humidity = Column(SmallInteger, default=0)
     Plant_id = Column(String(60), ForeignKey('plant.id'))
     Is_empty = Column(Boolean, nullable=False, default=1)
-    Last_irrigation = Column(String(10), default="N/A", nullable=False)
+    Last_irrigation = Column(String(12), default="N/A", nullable=False)
     Username = Column(String(30), ForeignKey('user.username'))
     Turned_ON = Column(Boolean, nullable=False, default=False)
 
