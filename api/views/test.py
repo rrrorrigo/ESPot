@@ -57,7 +57,7 @@ def set_humidity(id_pot):
     to_esp = {}
     pot = storage.get(Pot, id_pot)
     to_esp["Humidity_irrigation"] = pot.Humidity_irrigation
-    to_esp["Turned_ON"] = pot.Turned_ON
+    to_esp["Turned_ON"] = str(pot.Turned_ON)
     return(jsonify(to_esp))
 
 
@@ -70,8 +70,9 @@ def send_data(id_pot):
     now = datetime.now(timezone("America/Montevideo")).strftime("%d/%m %H:%M")
     now = str(now)
     pot = storage.get(Pot, id_pot)
-    setattr(pot, "Last_irrigation", now)
-    setattr(pot, "Is_empty", data["Is_empty"])
-    setattr(pot, "Actual_humidity", data["Actual_humidity"])
+    if data["irrigated"] == "True":
+        setattr(pot, "Last_irrigation", now)
+    setattr(pot, "Is_empty", bool(eval(data["Is_empty"])))
+    setattr(pot, "Actual_humidity", int(float(data["Actual_humidity"])))
     storage.save()
     return (jsonify(pot.to_dict()), 200)
