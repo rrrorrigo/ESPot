@@ -36,22 +36,39 @@ def get_plants():
         for plant in all_plants:
             list_plants.append(plant.to_dict())
         return jsonify(list_plants)
+    else:
+        data = request.get_json()
+        dictionary = {}
+        for k, v in data:
+            dictionary[k] = v
+        plant = Plant(**dictionary)
+        plant.save()
+        return jsonify(plant.to_dict())
 
 
 @app_views.route('/pots', methods=['GET', 'POST'], strict_slashes=False)
 def get_pots():
-    all_pots = storage.all(Pot).values()
-    list_pots = []
-    for pot in all_pots:
-        list_pots.append(pot.to_dict())
-    return jsonify(list_pots)
+    if request.method == 'GET':
+        all_pots = storage.all(Pot).values()
+        list_pots = []
+        for pot in all_pots:
+            list_pots.append(pot.to_dict())
+        return jsonify(list_pots)
+    else:
+        data = request.get_json()
+        dictionary = {}
+        for k, v in data:
+            dictionary[k] = v
+        pot = Pot(**dictionary)
+        pot.save()
+        return jsonify(pot.to_dict())
 
 
-@app_views.route('/selected/<string:id_pot>', methods=['GET', 'POST'], strict_slashes=False)
-def selected_web(id_pot):
+@app_views.route('/selected/<string:id_plant>', methods=['GET', 'POST'], strict_slashes=False)
+def selected_web(id_plant):
     """Api that be updated by WebPage"""
     if request.method == 'GET':
-        return jsonify(storage.get(Pot, id_pot))
+        return jsonify(storage.get(Plant, id_plant))
     else:
         data = request.get_json()
         if not data:
@@ -62,7 +79,7 @@ def selected_web(id_pot):
         setattr(storage.all()[key], 'Humidity_irrigation', data['Humidity_irrigation'])
         setattr(storage.all()[key], 'Last_irrigation', data['Last_irrigation'])
         storage.all()[key].save()
-        return jsonify(storage.get(Pot, id_pot))
+        return jsonify(storage.get(Plant, id_plant))
 
 
 @app_views.route('/get_humidity/<string:id_pot>', methods=['GET'], strict_slashes=False)
@@ -76,7 +93,7 @@ def set_humidity(id_pot):
     return(jsonify(to_esp))
 
 
-@app_views.route('/send_data/<string:id_pot>', methods=['POST'], strict_slashes=False)
+@app_views.route('/send_data/<string:id_pot>', methods=['PUT'], strict_slashes=False)
 def send_data(id_pot):
     """Update pot data - water level, humidity, time of last irrigation"""
     data = request.get_json()
