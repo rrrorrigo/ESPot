@@ -19,8 +19,8 @@ const char* PUT_url = "http://35.243.197.246:5001/api/send_data/0b9e88b6-7663-47
 
 
 // possible wifi network and respective passwords
-String ssids [3] = {"hbtn_ssid", "Savona", "celebra_ssid"};
-String pwds [3] = {"hbtn_pwd", "tiasusana", "celebra_pwd"};
+String ssids [3] = {"Holberton Guest", "Savona", "celebra_ssid"};
+String pwds [3] = {"holbertonschoolwifiaccess", "tiasusana", "celebra_pwd"};
 
 // ************* CUIDADO KIKO DEL FUTURO -> EL 3 ESTA HARDCODEADO *********************
 
