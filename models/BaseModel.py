@@ -46,4 +46,6 @@ class BaseModel:
         dictionary.update(self.__dict__)
         dictionary.update({'__class__':
                           (str(type(self)).split('.')[-1]).split('\'')[0]})
+        if "_sa_instance_state" in dictionary:
+            del dictionary["_sa_instance_state"]
         return dictionary
