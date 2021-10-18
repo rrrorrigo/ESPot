@@ -46,18 +46,15 @@ def get_plants():
         return jsonify(plant.to_dict())
 
 
-@app_views.route('/pots/<string:pot_id>', methods=['GET', 'POST'], strict_slashes=False)
-def get_pots(pot_id=None):
+@app_views.route('/pots', methods=['GET', 'POST'], strict_slashes=False)
+def get_pots():
     if request.method == 'GET':
-        if pot_id:
-            pot = storage.get(Pot, pot_id)
-            return jsonify({"hum":pot.Actual_humidity,"irri":pot.Last_irrigation,"tank":pot.Is_empty})
-        else:
             all_pots = storage.all(Pot).values()
             list_pots = []
             for pot in all_pots:
-                list_pots.append(pot.to_dict())
-            return jsonify(list_pots)
+                return jsonify({"hum":pot.Actual_humidity,"irri":pot.Last_irrigation,"tank":pot.Is_empty})
+                #list_pots.append(pot.to_dict())
+            #return jsonify(list_pots)
     else:
         data = request.get_json()
         dictionary = {}
