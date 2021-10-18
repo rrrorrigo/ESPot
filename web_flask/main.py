@@ -6,9 +6,10 @@ runs flask application
 from flask import Flask, render_template
 from models import *
 from models import storage
-app = Flask(__name__)
 from models.Pot import Pot
-
+from flask_cors import CORS
+app = Flask(__name__)
+CORS(app, resources={"/*": {"origins": "0.0.0.0"}})
 
 @app.route('/home/<string:pot_id>', strict_slashes=False)
 def home(pot_id=""):
