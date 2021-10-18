@@ -4,11 +4,11 @@ window.addEventListener('DOMContentLoaded', (e) => {
             .then(response => response.json())
             .then(data => {
                 const hum = document.querySelector(".hum")
-                hum.innerHTML = "Humidity: " + data[0].hum
+                hum.innerHTML = "Humidity: " + data[0].Actual_humidity
                 const irri = document.querySelector(".hum")
-                irri.innerHTML = "Time of last irrigation: " + data[0].irri
+                irri.innerHTML = "Time of last irrigation: " + data[0].irrigated
                 const tank = document.querySelector(".hum")
-                tank.innerHTML = "Is the tank empty: " + data[0].tank
+                tank.innerHTML = "Is the tank empty: " + data[0].Is_empty
             })   
     }
     let display = setInterval(updateAllEvents, 2000);
