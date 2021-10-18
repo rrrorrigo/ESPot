@@ -9,7 +9,7 @@ from models import storage
 app = Flask(__name__)
 app.register_blueprint(app_views, url_prefix="/api")
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
-CORS(app, resources={"/*": {"origins": "0.0.0.0"}})
+CORS(app)
 
 
 @app.teardown_appcontext

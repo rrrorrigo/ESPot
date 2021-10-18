@@ -9,7 +9,7 @@ from models import storage
 from models.Pot import Pot
 from flask_cors import CORS
 app = Flask(__name__)
-CORS(app, resources={"/*": {"origins": "0.0.0.0"}})
+CORS(app)
 
 @app.route('/home/<string:pot_id>', strict_slashes=False)
 def home(pot_id=""):
