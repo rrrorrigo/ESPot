@@ -5,9 +5,11 @@ window.addEventListener('DOMContentLoaded', (e) => {
             .then(data => {
                 const hum = document.querySelector(".hum")
                 hum.innerHTML = "Humidity: " + data[0].Actual_humidity
-                const irri = document.querySelector(".hum")
+
+                const irri = document.querySelector(".irri")
                 irri.innerHTML = "Time of last irrigation: " + data[0].Last_irrigation
-                const tank = document.querySelector(".hum")
+                
+                const tank = document.querySelector(".tank")
                 tank.innerHTML = "Is the tank empty: " + data[0].Is_empty
             })   
     }
