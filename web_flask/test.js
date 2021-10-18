@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 const hum = document.querySelector(".hum")
                 hum.innerHTML = "Humidity: " + data[0].Actual_humidity
                 const irri = document.querySelector(".hum")
-                irri.innerHTML = "Time of last irrigation: " + data[0].irrigated
+                irri.innerHTML = "Time of last irrigation: " + data[0].Last_irrigation
                 const tank = document.querySelector(".hum")
                 tank.innerHTML = "Is the tank empty: " + data[0].Is_empty
             })   
