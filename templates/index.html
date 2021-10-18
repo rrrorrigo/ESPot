@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<HTML lang="en">
+    <HEAD>
+        <meta charset="UTF-8">
+        <TITLE>TEST</TITLE>
+        <script type="text/javascript" src="{{ '../test.js?'~cache_id }}"></script>
+    </HEAD>
+    <BODY>
+        <H1 class="hum">Humidity: {{ pot.Is_empty }}</H1>
+        <H1 class="tank">Is the tank empty: {{ pot.Is_empty }}</H1>
+        <H1 class="irri">Time of last irrigation: {{ pot.Last_irrigation }}</H1>
+    </BODY>
+</HTML>
