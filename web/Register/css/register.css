@@ -62,7 +62,7 @@ body {
 }
 
 .register-bg {
-    background-image: url('/Register/img/hero.jpg');
+    background-image: url('/ESPot/web/Register/img/hero.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;

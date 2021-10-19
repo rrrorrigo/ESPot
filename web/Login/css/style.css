@@ -39,13 +39,13 @@ body {
 }
 
 .img-1 {
-    background-image: url('/Login/img/img-1.jpg');
+    background-image: url('/ESPot/web/Login/img/img-1.jpg');
     background-size: cover;
     background-position: center;
 }
 
 .img-2 {
-    background-image: url('/Login/img/img-2.jpg');
+    background-image: url('/ESPot/web/Login/img/img-2.jpg');
     background-size: cover;
     background-position: center;
 }

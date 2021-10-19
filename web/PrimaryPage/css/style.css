@@ -127,12 +127,12 @@ color: #576B60;
 /* on off boton  */
 
 position: absolute;
-width: 9%;
-height: 17%;
-left: 80%;
-top: 50%;
+width: 10%;
+height: 18%;
+left: 75%;
+top: 48%;
 
-background: url(/PrimaryPage/img/onoff.png);
+background: url(/ESPot/web/PrimaryPage/img/off.png);
 background-repeat: no-repeat;
 }
 
@@ -189,4 +189,37 @@ background: #7CA68E;
 box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 15px;
 
+}
+
+.right {
+/* Rectangle 151 */
+position: absolute;
+width: 36px;
+height: 89px;
+left: 95%;
+top: 50%;
+
+background: #C4C4C4;
+border-radius: 15px;
+}
+
+.arrow {
+/* arrow-png-5543 1 */
+position: absolute;
+width: 15px;
+height: 15px;
+left: 11px;
+top: 39px;
+background: url(/ESPot/web/PrimaryPage/img/arrow.png);
+background-repeat: no-repeat;
+}
+.right:hover {
+    cursor: pointer;
+}
+
+.onoff {
+    font-size: 160px;
+    left: 666px;
+    top: 170px;
+    color: #807878;
 }
