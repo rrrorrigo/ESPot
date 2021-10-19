@@ -57,3 +57,12 @@ body {
     right: 90px;
     position: fixed; left: 71%;
 }
+
+#container {
+    width: 80%;
+    height: 100%;
+}
+
+#Title {
+    margin-top: 10px;
+}
