@@ -132,7 +132,7 @@ height: 18%;
 left: 75%;
 top: 48%;
 
-background: url(/ESPot/web/PrimaryPage/img/off.png);
+background: url('../img/off.png');
 background-repeat: no-repeat;
 }
 
@@ -210,7 +210,7 @@ width: 15px;
 height: 15px;
 left: 11px;
 top: 39px;
-background: url(/ESPot/web/PrimaryPage/img/arrow.png);
+background: url('../img/arrow.png');
 background-repeat: no-repeat;
 }
 .right:hover {
