@@ -227,3 +227,21 @@ background-repeat: no-repeat;
 .RESPONSIVE {
     height: 100%;
 }
+
+.form-control {
+    border: 2px solid var(--color-dark-xx);
+    border-radius: .3rem;
+    padding: 1rem 0.5rem;
+    min-height: 3.125rem;
+    line-height: initial;
+    position: absolute;
+    width: 429px;
+    height: 49px;
+    left: 505px;
+    top: 463px;
+}
+
+.form-control:focus {
+    background-color: var(--dark-x);
+    outline: none;
+}
