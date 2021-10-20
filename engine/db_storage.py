@@ -75,9 +75,9 @@ class DBStorage():
 
         return None
 
-    def getByUsername(self, cls, username):
+    def getByAttribute(self, cls, attr):
         """
-        Returns the object based on the class name and its username, or
+        Returns the object based on the class name and its attribute, or
         None if not found
         """
         if cls not in classes.values():
@@ -85,6 +85,8 @@ class DBStorage():
 
         all_cls = self.all(cls)
         for value in all_cls.values():
-            if (value.username == username):
+            if (value.username == attr or value.email == attr):
                 return value
         return None
+
+
