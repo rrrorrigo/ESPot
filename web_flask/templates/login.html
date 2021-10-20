@@ -65,14 +65,14 @@
                     <h5>{% with messages = get_flashed_messages(with_categories=true) %}
                       {% if messages %}
                           {% for category, message in messages %}
-                               <div class="alert font-weight-bold text-center alert-{{ category }} alert-dismissible fade show" role="alert">
+                               <div class="alert text-muted text-center alert-{{ category }} alert-dismissible fade show" role="alert">
                                   <span style="color:rgb(155, 20, 20)">{{ message }}</span>
                               </div>
                           {% endfor %}
                       {% endif %}
                   {% endwith %}</h5>
                   </form>
-                  <p class="font-weight-bold text-center text-muted ">Or log in with your Google account </p>
+                  <p class="font-weight-bold text-center text-muted">Or log in with your Google account </p>
                   <div class="d-flex justify-content-around">
                     <a href="https://www.google.com" type="button" class="btn btn-outline-dark flex-grow-1 mr-2"><i class="fab fa-google lead mr-2 align"></i>Google</a>
                   </div>
