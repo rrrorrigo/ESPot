@@ -22,12 +22,12 @@ def home(user_id=""):
 @app.route('/login', methods=['GET', 'POST'], strict_slashes=False)
 def index():
     if request.method == 'GET':
-        user = storage.get(User, "1649e55c-4c4b-478b-a2f0-2f33dbba613a")
-        return render_template('login.html', user=user)
+        return render_template('login.html')
     else:
-        username = request.form['name']
-        email = request.form['email']
+        username = request.form['username']
         pwd = request.form['password']
+        print(username)
+        print(pwd)
         if md5(pwd.encode()).hexdigest() == storage.getByUsername(User, username).password:
             return redirect(url_for('success'))
         else:
