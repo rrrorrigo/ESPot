@@ -65,7 +65,7 @@
                     <h5>{% with messages = get_flashed_messages(with_categories=true) %}
                       {% if messages %}
                           {% for category, message in messages %}
-                               <div class="alert p-4 mb-3 text-muted text-center alert-{{ category }} alert-dismissible fade show" role="alert">
+                               <div class="alert p-4 mb-2 pb-lg-4 text-muted text-center alert-{{ category }} alert-dismissible fade show" role="alert">
                                   <span style="color:rgb(155, 20, 20)">{{ message }}</span>
                               </div>
                           {% endfor %}
