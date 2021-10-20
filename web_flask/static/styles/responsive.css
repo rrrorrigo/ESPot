@@ -10,7 +10,7 @@
             height: inherit;
             left: 0px;
             top: 95px;
-            background: #C8E6C9;
+            background: #99A59D;
             background-size: cover;
             display: flex;
             justify-content: space-between;
@@ -31,7 +31,7 @@
         height: 75%;
         background: #C8E6C9;
         border-radius: 40px;
-        border-color: #B6CFB6;
+        border-color: #808D80;
         border-style: solid;
         border-width: 20px;
         }
@@ -78,7 +78,7 @@
         height: 75%;
         background: #C8E6C9;
         border-radius: 40px;
-        border-color: #B6CFB6;
+        border-color: #808D80;
         border-style: solid;
         border-width: 20px;
     }
@@ -102,7 +102,7 @@
         height: inherit;
         left: 0px;
         top: 100px;
-        background: #C8E6C9;
+        background: #99A59D;
         background-size: cover;
         display: flex;
         flex-direction: row;
