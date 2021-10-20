@@ -31,7 +31,7 @@ def index():
             user_id = storage.getByAttribute(User, username).id
             return redirect(url_for("my_plants", user_id=user_id))
         else:
-            pass
+            return redirect(url_for('login'))
 
 
 """ 
