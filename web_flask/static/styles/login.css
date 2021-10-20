@@ -51,11 +51,11 @@ body {
 }
 
 .icon {
-    width: 70%;
-    height: 0%;
-    top: 42px;
+    width: 15%;
+    height: 10%;
+    top: 1%;
     right: 90px;
-    position: fixed; left: 71%;
+    position: relative; left: 50%;
 }
 
 #container {
