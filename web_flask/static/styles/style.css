@@ -15,36 +15,6 @@ body {
 .bg-dark { background-color: var(--dark) !important; }
 .bg-dark-x { background-color: var(--dark-x); }
 
-.back {
-/* Rectangle 149 */
-position: fixed;
-width: 100%;
-height: 100%;
-left: 0px;
-top: 0px;
-
-background: #B6CFB6;
-background-size: cover;
-}
-
-.ESPot {
-/* ESPot */
-
-position: absolute;
-width: 287px;
-height: 45px;
-left: 1px;
-top: 19px;
-
-font-family: Maven Pro;
-font-style: normal;
-font-weight: normal;
-font-size: 10px;
-line-height: 47px;
-text-align: center;
-
-color: #576B60;
-}
 
 .back2 {
 /* Rectangle 152 */
@@ -60,49 +30,7 @@ background-size: cover;
 
 }
 
-.info2 {
-/* Rectangle 150 */
 
-position: fixed;
-width: 17%;
-height: 69%;
-left: 52px;
-top: 170px;
-
-background: #808D80;
-border-radius: 38px;
-}
-
-.logout {
-/* Log out */
-
-position: fixed;
-height: 100%;
-left: 1350px;
-top: 22px;
-
-font-family: Maven Pro;
-font-style: normal;
-font-weight: normal;
-font-size: 25px;
-line-height: 47px;
-
-
-color: #576B60;
-}
-
-.info {
-/* Rectangle 153 */
-
-position: fixed;
-width: 15%;
-height: 65%;
-left: 67px;
-top: 185px;
-
-background: #C4C4C4;
-border-radius: 29px;
-}
 
 .infotext {
 /* Last watering: Month: Hour: Humidity:  */
@@ -123,18 +51,7 @@ text-align: center;
 color: #576B60;
 }
 
-.onoff {
-/* on off boton  */
 
-position: absolute;
-width: 10%;
-height: 18%;
-left: 75%;
-top: 48%;
-
-background: url('../img/off.png');
-background-repeat: no-repeat;
-}
 
 .icono {
 position: absolute;
@@ -146,14 +63,7 @@ top: 15px;
 border-radius: 42px;
 }
 
-.plant {
-position: relative;
-width: 1%;
-height: 1%;
-left: 479px;
-top: 0px;
-left: 400px;
-}
+
 
 .container {
 position: absolute;
@@ -191,33 +101,6 @@ border-radius: 15px;
 
 }
 
-.right {
-/* Rectangle 151 */
-position: absolute;
-width: 36px;
-height: 89px;
-left: 95%;
-top: 50%;
-
-background: #C4C4C4;
-border-radius: 15px;
-}
-
-.arrow {
-/* arrow-png-5543 1 */
-position: absolute;
-width: 15px;
-height: 15px;
-left: 11px;
-top: 39px;
-background: url('../img/arrow.png');
-background-repeat: no-repeat;
-}
-
-.right:hover {
-    cursor: pointer;
-}
-
 .onoff {
     font-size: 160px;
     left: 666px;
@@ -225,9 +108,6 @@ background-repeat: no-repeat;
     color: #808D80;
 }
 
-.RESPONSIVE {
-    height: 100%;
-}
 
 .form-control {
     border: 2px solid var(--color-dark-xx);

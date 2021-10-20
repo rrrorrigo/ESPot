@@ -1,21 +1,12 @@
 .RESPONSIVE {
         height: 100%;
-        width: 100%;;
-    }
-    
-    .plant {
-        order: 1;
-        flex-grow: 1;
-        height: auto;
-        width: 0.1%;
-        margin-bottom: 7%;
-        margin-left: 7%;
+        width: 100%;
     }
     
     .main {
-        position: fixed;
-        width: 100%;
-        height: 100%;
+        position: absolute;
+        width: inherit;
+        height: inherit;
         left: 0px;
         top: 95px;
         background: #C8E6C9;
@@ -28,14 +19,27 @@
         flex-wrap: wrap;
     }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 800px) {
         .main {
+          display: flex;
           flex-flow: column wrap;
+          width: 100%;
+          height: 100%;
         }
         .info2 {
-                position: fixed;
-                width: 1000px;
-                height: 1000px;
+        order: 0;
+        flex-grow: 1;
+        margin-top: 2%;
+        margin-left: 1%;
+        margin-right: 1%;
+        margin-bottom: auto;
+        width: 98%;
+        height: 75%;
+        background: #C8E6C9;
+        border-radius: 40px;
+        border-color: #B6CFB6;
+        border-style: solid;
+        border-width: 20px;
         }
         #onoff {
                 margin-left: auto;
@@ -43,10 +47,18 @@
         }
         .RESPONSIVE {
                 height: 100%;
-                width: 100%;;
+                width: 100%;
             }
+
+        .plant {
+            order: 2;
+                height: auto;
+                margin-left: 7%;
+        }
 }
-.info2 {
+
+@media all and (min-width: 800px) {
+    .info2 {
         order: 0;
         flex-grow: 1;
         margin-top: 2%;
@@ -59,8 +71,16 @@
         border-color: #B6CFB6;
         border-style: solid;
         border-width: 20px;
+    }
+    .plant {
+        order: 1;
+        flex-grow: 1;
+        height: auto;
+        width: 0.1%;
+        margin-bottom: 7%;
+        margin-left: 7%;
+    }
 }
-
 
 #onoff {
         order: 2;
@@ -68,9 +88,12 @@
         margin-left: 7%;
 }
 
-h1 {
-        margin-top: -30px;
-        width: inherit;
+header {
+    width: 100%;
+    height: 100%;
+}
+h1.Title {
+        
 }
 
 
@@ -82,4 +105,39 @@ h1 {
         float: right;
         margin-top: 58px;
         margin-right: 20px;
+}
+
+.Title {
+        margin-top: -30px;
+        width: inherit;
+        height: inherit;
+    left: 0px;
+    top: 0px;
+
+    background: #B6CFB6;
+    background-size: cover;
+}
+
+.arrow {
+/* arrow-png-5543 1 */
+width: 15px;
+height: 15px;
+left: 11px;
+top: 39px;
+background: url('../img/arrow.png');
+background-repeat: no-repeat;
+}
+
+.right {
+/* Rectangle 151 */
+flex-grow: 1;
+order: 3;
+height: auto;
+
+background: #C4C4C4;
+border-radius: 15px;
+}
+
+.right:hover {
+    cursor: pointer;
 }
