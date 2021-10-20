@@ -62,15 +62,15 @@
                       <a href="" id="emailHelp" class="form-text text-muted text-decoration-none">Did you forget your password?</a>
                     </div>
                     <button type="submit" class="btn btn-secondary w-100">Log in</button>
-                    <h6>{% with messages = get_flashed_messages(with_categories=true) %}
+                    <h5>{% with messages = get_flashed_messages(with_categories=true) %}
                       {% if messages %}
                           {% for category, message in messages %}
                                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
-                                  <span style="color:rgb(105, 8, 8)">{{ message }}</span>
+                                  <span style="color:rgb(155, 20, 20)">{{ message }}</span>
                               </div>
                           {% endfor %}
                       {% endif %}
-                  {% endwith %}</h6>
+                  {% endwith %}</h5>
                   </form>
                   <p class="font-weight-bold text-center text-muted ">Or log in with your Google account </p>
                   <div class="d-flex justify-content-around">
