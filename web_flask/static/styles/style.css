@@ -242,3 +242,7 @@ background-repeat: no-repeat;
     background-color: var(--dark-x);
     outline: none;
 }
+
+h6 {
+    color: red;
+  }
