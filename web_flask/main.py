@@ -21,7 +21,7 @@ def my_plants(user_id=""):
 
 
 @app.route('/login', methods=['GET', 'POST'], strict_slashes=False)
-def index():
+def login():
     if request.method == 'GET':
         return render_template('login.html')
     else:
