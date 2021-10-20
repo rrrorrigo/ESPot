@@ -28,7 +28,7 @@ def index():
         pwd = request.form['password']
         if md5(pwd.encode()).hexdigest() == storage.getByUsername(User, username).password:
             user_id = storage.getByUsername(User, username).id
-            return redirect(url_for("my_plants", user_id=user_id))
+            return redirect(url_for("my_plants", user_id="12345"))
         else:
             pass
 
