@@ -39,7 +39,7 @@ def login():
             flash("Invalid email")
         else:
             flash("Invalid username")
-        #return redirect(url_for('login'))
+        return redirect(url_for('login'))
 
 
 """ 

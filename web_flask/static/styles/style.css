@@ -163,18 +163,18 @@ left: 330px;
 top: 155px;
     
 background: #808D80;
-border-radius: 63px;
+border-radius: 33px;
 }
 
 .container .cocontainer {
 position: absolute;
-width: 75%;
-height: 70%;
-left: 12.5%;
-top: 15%;
+width: 79%;
+height: 79%;
+left: 10%;
+top: 10%;
 
 background: #B6CFB6;
-border-radius: 29px;
+border-radius: 99px;
 }
 
 .add {
@@ -213,6 +213,7 @@ top: 39px;
 background: url('../img/arrow.png');
 background-repeat: no-repeat;
 }
+
 .right:hover {
     cursor: pointer;
 }
@@ -234,11 +235,7 @@ background-repeat: no-repeat;
     padding: 1rem 0.5rem;
     min-height: 3.125rem;
     line-height: initial;
-    position: absolute;
-    width: 429px;
-    height: 49px;
-    left: 505px;
-    top: 463px;
+    position: relative;
 }
 
 .form-control:focus {
