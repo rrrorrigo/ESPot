@@ -242,7 +242,3 @@ background-repeat: no-repeat;
     background-color: var(--dark-x);
     outline: none;
 }
-
-.alert {
-    color: red;
-  }
