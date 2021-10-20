@@ -18,8 +18,8 @@ CORS(app)
 def my_plants(user_id=""):
     """plant of user"""
     usr = storage.get(User, user_id)
-
-    return render_template('/test_real_time_data.html')
+    pot = storage.get(Pot, "10fe8791-7ab2-4302-8848-b0a6d280ae48")
+    return render_template('/test_real_time_data.html', pot=pot)
 
 
 @app.route('/login', methods=['GET', 'POST'], strict_slashes=False)
