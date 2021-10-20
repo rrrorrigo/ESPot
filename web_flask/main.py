@@ -19,7 +19,7 @@ def my_plants(user_id=""):
     """plant of user"""
     usr = storage.get(User, user_id)
 
-    return render_template('/my_plants_test.html')
+    return render_template('/my_plants.html')
 
 
 @app.route('/login', methods=['GET', 'POST'], strict_slashes=False)
