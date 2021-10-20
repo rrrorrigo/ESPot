@@ -63,7 +63,7 @@ body {
     background-image: url('../img/hero.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 100vh;
+    min-height: 95vh;
 }
 
 .testiomonial {
