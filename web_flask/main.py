@@ -18,6 +18,7 @@ CORS(app)
 def my_plants(user_id=""):
     """plant of user"""
     usr = storage.get(User, user_id)
+
     return render_template('/my_plants.html')
 
 
@@ -33,12 +34,7 @@ def login():
             if md5(pwd.encode()).hexdigest() == check.password:
                 user_id = storage.getByAttribute(User, username).id
                 return redirect(url_for("my_plants", user_id=user_id))
-            flash(u"Incorrect password", "error")
-            return redirect(url_for('login'))
-        if '@' in username:
-            flash(u"Invalid email", "error")
-        else:
-            flash(u"Invalid username", "error")
+        flash(u"Invalid login credentials", "error")
         return redirect(url_for('login'))
 
 
