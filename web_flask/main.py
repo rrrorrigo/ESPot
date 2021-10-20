@@ -33,12 +33,12 @@ def login():
             if md5(pwd.encode()).hexdigest() == check.password:
                 user_id = storage.getByAttribute(User, username).id
                 return redirect(url_for("my_plants", user_id=user_id))
-            flash("Incorrect password")
+            flash(u"Incorrect password", "error")
             return redirect(url_for('login'))
         if '@' in username:
-            flash("Invalid email")
+            flash(u"Invalid email", "error")
         else:
-            flash("Invalid username")
+            flash(u"Invalid username", "error")
         return redirect(url_for('login'))
 
 
