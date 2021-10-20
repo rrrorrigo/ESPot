@@ -3,7 +3,7 @@
 runs flask application
 """
 
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 from models import *
 from models import storage
 from models.Pot import Pot
@@ -27,11 +27,18 @@ def login():
     else:
         username = request.form['username']
         pwd = request.form['password']
-        if md5(pwd.encode()).hexdigest() == storage.getByAttribute(User, username).password:
-            user_id = storage.getByAttribute(User, username).id
-            return redirect(url_for("my_plants", user_id=user_id))
-        else:
+        check = storage.getByAttribute(User, username)
+        if check:
+            if md5(pwd.encode()).hexdigest() == check.password:
+                user_id = storage.getByAttribute(User, username).id
+                return redirect(url_for("my_plants", user_id=user_id))
+            flash("Incorrect password")
             return redirect(url_for('login'))
+        if '@' in username:
+            flash("Invalid email")
+        else:
+            flash("Invalid username")
+        return redirect(url_for('login'))
 
 
 """ 
