@@ -84,6 +84,7 @@ void loop() {
     tank = digitalRead(FloatSensor);
     humidity = analogRead(SensorPin);
     percentage = (float)((humidity - MIN) * 100) / (MAX - MIN);
+    Serial.println(humidity);
     PUT_method(PUT_url, percentage, tank, "False");
   }
   delay(2000);
