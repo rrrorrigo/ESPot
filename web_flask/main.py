@@ -15,7 +15,7 @@ CORS(app)
 def home(user_id=""):
     """testing"""
     
-    return render_template('ESPot/web/PrimaryPage/page.html')
+    return render_template('../web/PrimaryPage/page.html')
 
 
 """ 
