@@ -243,6 +243,6 @@ background-repeat: no-repeat;
     outline: none;
 }
 
-h6 {
+.alert {
     color: red;
   }
