@@ -26,16 +26,13 @@ def index():
     else:
         username = request.form['username']
         pwd = request.form['password']
-        print(username)
-        print(pwd)
         if md5(pwd.encode()).hexdigest() == storage.getByUsername(User, username).password:
-            return redirect(url_for('success'))
+            user_id = storage.getByUsername(User, username).id
+            successful_redirect = "my_plants/" + user_id
+            return redirect(url_for(successful_redirect))
         else:
             pass
 
-@app.route('/success')
-def success():
-   return 'logged in successfully'
 
 """ 
 @app.route('/login', strict_slashes=False)
