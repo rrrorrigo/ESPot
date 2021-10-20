@@ -11,11 +11,11 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/home/<string:pot_id>', strict_slashes=False)
-def home(pot_id=""):
+@app.route('/my_plants/<string:user_id>', strict_slashes=False)
+def home(user_id=""):
     """testing"""
-    pot = storage.get(Pot, pot_id)
-    return render_template('index.html', pot=pot)
+    
+    return render_template('../web/PrimaryPage/page.html')
 
 
 """ 
