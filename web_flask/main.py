@@ -11,6 +11,7 @@ from models.User import User
 from hashlib import md5
 from flask_cors import CORS
 app = Flask(__name__)
+app.config['SECRET_KEY'] = md5("peñarol".encode()).hexdigest()
 CORS(app)
 
 @app.route('/my_plants/<string:user_id>', strict_slashes=False)
