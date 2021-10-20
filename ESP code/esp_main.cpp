@@ -70,15 +70,15 @@ void loop() {
         // delay(x seconds calculated);
         digitalWrite(relay, HIGH);
         tank = digitalRead(FloatSensor); // calculate tank state after irrigation
-        for (int minutes = 0; minutes < 30; minutes += 2) {
+        for (int milliseconds = 0; milliseconds < 1200000; milliseconds+= 2000) { //120000 millisecods are 20 min
           humidity = analogRead(SensorPin);
           percentage = (float)((humidity - MIN) * 100) / (MAX - MIN);
-          if (minutes == 0) {
+          if (milliseconds == 0) {
             PUT_method(PUT_url, percentage, tank, "True");
           } else {
             PUT_method(PUT_url, percentage, tank, "False");
           }
-          delay(120000);
+          delay(2000); // update info every 2 seconds until 20 minutes are reached
         }
       }
     tank = digitalRead(FloatSensor);
@@ -86,7 +86,7 @@ void loop() {
     percentage = (float)((humidity - MIN) * 100) / (MAX - MIN);
     PUT_method(PUT_url, percentage, tank, "False");
   }
-  delay(10000);
+  delay(2000);
 }
 
 // function for the get method of the api
@@ -118,7 +118,6 @@ void PUT_method(const char* url, float percentage, int tank, String irrigated) {
   String request = "{\"irrigated\":\"" + String(irrigated) + "\",\"Is_empty\":\"" + String(Is_empty) + "\",\"Actual_humidity\":\"" + String(percentage) +"\"}";
   Serial.println(request);
   int resp = http.PUT(request);
-  Serial.println(resp);
   http.end();
 
   return;
