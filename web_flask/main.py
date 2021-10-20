@@ -19,7 +19,7 @@ def my_plants(user_id=""):
     """plant of user"""
     usr = storage.get(User, user_id)
 
-    return render_template('/my_plants.html')
+    return render_template('/my_plants_test.html')
 
 
 @app.route('/login', methods=['GET', 'POST'], strict_slashes=False)
@@ -33,7 +33,7 @@ def login():
         if check:
             if md5(pwd.encode()).hexdigest() == check.password:
                 user_id = storage.getByAttribute(User, username).id
-                return redirect(url_for("my_plants_test", user_id=user_id))
+                return redirect(url_for("my_plants", user_id=user_id))
         flash(u"Invalid login credentials", "error")
         return redirect(url_for('login'))
 
