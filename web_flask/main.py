@@ -33,7 +33,7 @@ def login():
         if check:
             if md5(pwd.encode()).hexdigest() == check.password:
                 user_id = storage.getByAttribute(User, username).id
-                return redirect(url_for("my_plants", user_id=user_id))
+                return redirect(url_for("my_plants_test", user_id=user_id))
         flash(u"Invalid login credentials", "error")
         return redirect(url_for('login'))
 
