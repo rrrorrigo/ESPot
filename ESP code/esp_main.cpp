@@ -14,8 +14,8 @@ int relay = 5; //D1
 String Is_empty;
 String get_response;
 JSONVar my_request;
-const char* GET_url = "http://35.243.197.246:5001/api/get_humidity/0b9e88b6-7663-47c0-8ac4-b91954bd818e";
-const char* PUT_url = "http://35.243.197.246:5001/api/send_data/0b9e88b6-7663-47c0-8ac4-b91954bd818e";
+const char* GET_url = "http://35.243.197.246:5001/api/get_humidity/10fe8791-7ab2-4302-8848-b0a6d280ae48";
+const char* PUT_url = "http://35.243.197.246:5001/api/send_data/10fe8791-7ab2-4302-8848-b0a6d280ae48";
 
 
 // possible wifi network and respective passwords
