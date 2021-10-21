@@ -63,13 +63,11 @@ top: 15px;
 border-radius: 42px;
 }
 
-
-
 .container {
 position: absolute;
 width: 55%;
 height: 70%;
-left: 330px;
+left: 150;
 top: 155px;
     
 background: #808D80;

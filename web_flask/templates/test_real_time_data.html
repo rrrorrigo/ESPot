@@ -8,23 +8,27 @@
             function updateAllEvents() { 
                 const hum = document.querySelector(".hum")
                 const irri = document.querySelector(".irri")
-                const tank = document.querySelector(".tank")
                 
                 fetch('http://35.243.197.246:5001/api/pots')
                 .then(response => response.json())
                 .then(data => {
                     hum.innerText = "Humidity: " + data[0].Actual_humidity
                     irri.innerText = "Time of last irrigation: " + data[0].Last_irrigation
-                    tank.innerText = "Is the tank empty: " + data[0].Is_empty
+                    if (data[0].Is_empty) {
+                        $(".tank").attr( "src", "/../static/img/alertt.png" );
+                    } else {
+                        $(".tank").attr( "src", "/../static/img/tankfull.png" );
+                    }
                 })   
             }
             let display = setInterval(updateAllEvents, 2000);
         });
         </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </HEAD>
     <BODY>
-        <H1 class="hum">Humidity: {{ pot.Actual_humidity }}</H1>
-        <H1 class="tank">Is the tank empty: {{ pot.Is_empty }}</H1>
-        <H1 class="irri">Time of last irrigation: {{ pot.Last_irrigation }}</H1>
+        <span class="hum">Humidity: {{ pot.Actual_humidity }}<br></span>
+        <span class="irri">Time of last irrigation: {{ pot.Last_irrigation }}<br></span>
+        <img src="" class="tank">
     </BODY>
 </HTML>
