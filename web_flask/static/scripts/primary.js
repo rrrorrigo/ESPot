@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             url: 'http://35.243.197.246:5001/api/send_data/10fe8791-7ab2-4302-8848-b0a6d280ae48',
             type: 'PUT',
             contentType: "application/json",
-            data: stat,
+            data: JSON.stringify(stat),
             success: function(response) {
                 //...
             }
