@@ -111,13 +111,13 @@ def send_data(id_pot):
     now = datetime.now(timezone("America/Montevideo")).strftime("%d/%m %H:%M")
     now = str(now)
     pot = storage.get(Pot, id_pot)
-    if data["irrigated"] == "True":
+    if "irrigated" in data and data["irrigated"] == "True":
         setattr(pot, "Last_irrigation", now)
-    if data["Is_empty"]:
+    if "Is_empty" in data and data["Is_empty"]:
         setattr(pot, "Is_empty", bool(eval(data["Is_empty"])))
-    if data["Actual_humidity"]:
+    if "Actual_humidity" in data and data["Actual_humidity"]:
         setattr(pot, "Actual_humidity", int(float(data["Actual_humidity"])))
-    if data["Turned_ON"]:
+    if "Turned_ON" in data and data["Turned_ON"]:
         setattr(pot, "Turned_ON", bool(eval(data["Turned_ON"])))
     storage.save()
     return (jsonify({"culo": "Peñarol"}), 200)
