@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             .then(response => response.json())
             .then(data => {
                 Turned_ON = data[0].Turned_ON;
-                if (Turned_ON) {
+                if (Turned_ON === true) {
                     onoff.style.color = "rgb(70, 117, 70)";
                 } else {
                     stat = {
