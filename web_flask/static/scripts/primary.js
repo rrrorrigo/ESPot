@@ -1,7 +1,7 @@
 function onoff() {
 let onoff = document.getElementById("onoff");
 if (compareColour("#808D80", onoff.style.color)) {
-    onoff.style.color = "rgb(50, 102, 50)";
+    onoff.style.color = "rgb(70, 117, 70)";
 } else {
     onoff.style.color = "rgb(128, 141, 128)";
 }
