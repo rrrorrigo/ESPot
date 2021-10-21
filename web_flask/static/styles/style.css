@@ -195,3 +195,7 @@ background-repeat: no-repeat;
     height: 40%;
     align-self: center;
 }
+
+.number {
+    font-family: italic;
+}
