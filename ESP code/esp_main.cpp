@@ -61,13 +61,13 @@ void loop() {
     humidity = analogRead(SensorPin); // analog read of humidity
     percentage = (float)((humidity - MIN) * 100) / (MAX - MIN); // converts analog read to percentage
     int min_limit = 20;
-    int water = int(my_request["Humidity_irrigation"]);
+    int top = int(my_request["Humidity_irrigation"]);
     if  (percentage < min_limit && tank == HIGH) {
-        // make calculations of how much seconds to turn on relay, regarding volume, mass etc. (in line below)
-        // this one
-        Serial.println("prendiedno bomba");
+        // make calculations of how much seconds to turn on relay, regarding volume, mass etc.
+        int bomb_time = (((((top - percentage) * 200) / 75) * 9) / 100) * 1000;
+        Serial.println("prendiendo bomba");
         digitalWrite(relay, LOW);
-        // delay(x seconds calculated);
+        delay(bomb_time);
         digitalWrite(relay, HIGH);
         tank = digitalRead(FloatSensor); // calculate tank state after irrigation
         for (int milliseconds = 0; milliseconds < 1200000; milliseconds+= 2000) { //120000 millisecods are 20 min
