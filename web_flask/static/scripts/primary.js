@@ -19,7 +19,15 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     onoff.style.color = "rgb(128, 141, 128)";
                 }
             })
-        $.post("http://35.243.197.246:5001/api/send_data/10fe8791-7ab2-4302-8848-b0a6d280ae48", stat, function(data, status){})
+        $.ajax({
+            url: 'http://35.243.197.246:5001/api/send_data/10fe8791-7ab2-4302-8848-b0a6d280ae48',
+            type: 'PUT',
+            contentType: "application/json",
+            data: stat,
+            success: function(response) {
+                //...
+            }
+        });
     })
     function updateAllEvents() { 
     const tank_text = document.querySelector(".alertext");
