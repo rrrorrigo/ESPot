@@ -10,17 +10,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/styles/myplantest.css" />
+    <link rel="stylesheet" href="../static/styles/style.css" />
     <link rel="icon" type="image/png" href="../static/img/logo.png"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+
   <title>ESPot</title>
 </head>
 <body class="RESPONSIVE">
   <div class="back">
     <div class="ESPot">
       <a href="/Login/index.html" class="logout text-light font-weight-bold text-decoration-none">Log out</a>
-      <h1>ESPot</h1>
+      <span>ESPot</span>
     </div>
     <div class="icono">
       <img src="../static/img/image.png">
@@ -43,6 +44,9 @@
   </div>
   <div class="info">
     <div class=infotext>
+      <span class="hum">Humidity: {{ pot.Actual_humidity }}<br></span>
+      <span class="tank">Is the tank empty: {{ pot.Is_empty }}<br></span>
+      <span class="irri">Time of last irrigation: {{ pot.Last_irrigation }}<br></span>
       <div class="alertt">
         <div class="alertext">
           <h5>Warning</h5>
@@ -54,9 +58,9 @@
       <img src="../static/img/plant.png">
       <i class="onoff far fa-power-off" id="onoff" onclick="onoff()"></i>
     </div>
-  </div>
-  <div class="right">
-    <div class="arrow"></div>
+  </div></div>      
+      </div>
+    </div>
   </div>
 </body>
 <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
