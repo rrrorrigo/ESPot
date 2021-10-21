@@ -182,7 +182,7 @@ background-repeat: no-repeat;
     font-family: Maven Pro;
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
+    font-size: 25px;
     line-height: 64px;
     
     color: #576B60;
@@ -196,6 +196,7 @@ background-repeat: no-repeat;
     align-self: center;
 }
 
-.number {
+.numberHum, .numberIrri{
     font-family: italic;
+    font-size: 20px;
 }

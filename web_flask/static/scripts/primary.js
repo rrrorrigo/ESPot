@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', (e) => {
     const onoff = document.getElementById("onoff");
-    const hum = document.querySelector(".hum");
-    const irri = document.querySelector(".irri");
+    const hum = document.querySelector(".numberHum");
+    const irri = document.querySelector(".numberIrri");
     
     $('#onoff').ready(function (){
         $.get('http://35.243.197.246:5001/api/pots', function(data) {
@@ -51,8 +51,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
     fetch('http://35.243.197.246:5001/api/pots')
     .then(response => response.json())
     .then(data => {
-        hum.innerText = "Humidity: " + data[0].Actual_humidity
-        irri.innerText = "Last irrigation: " + data[0].Last_irrigation
+        hum.innerText = data[0].Actual_humidity
+        irri.innerText = data[0].Last_irrigation
         if (data[0].Is_empty) {
             $(".alertt").attr("background", "url('/../static/img/alertt.png') center center");
             tank_text.innerHTML = "<h5>Warning</h5><br><h6>The water level is low, please add water to the tank!</h6>"
