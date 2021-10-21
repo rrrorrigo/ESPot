@@ -275,3 +275,11 @@ background-repeat: no-repeat;
     left: 77%;
     top: 5%;
 }
+
+.infote {
+    position: fixed;
+    width: 15%;
+    height: 65%;
+    left: 67px;
+    top: 185px;
+}
