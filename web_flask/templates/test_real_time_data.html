@@ -15,16 +15,16 @@
                     hum.innerText = "Humidity: " + data[0].Actual_humidity
                     irri.innerText = "Time of last irrigation: " + data[0].Last_irrigation
                     if (data[0].Is_empty) {
-                        document.getElementsById("tank").src="../static/img/alertt.png";
+                        $( ".tank" ).css( "src", "../static/img/alertt.png" );
                     } else {
-                        document.getElementsById("tank").src="../static/img/tankfull.png";
+                        $( ".tank" ).css( "src", "../static/img/tankfull.png" );
                     }
-                    document.getElementsById("tank").src="../static/img/tankfull.png";
                 })   
             }
             let display = setInterval(updateAllEvents, 2000);
         });
         </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </HEAD>
     <BODY>
         <span class="hum">Humidity: {{ pot.Actual_humidity }}<br></span>
