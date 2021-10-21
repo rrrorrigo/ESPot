@@ -35,9 +35,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
     fetch('http://35.243.197.246:5001/api/pots')
     .then(response => response.json())
     .then(data => {
-        hum.innerText = "Humidity: " + data[0].Actual_humidity
-        irri.innerText = "Last irrigation: " + data[0].Last_irrigation
-        if (data[0].Is_empty) {
+        hum.innerText = "Humidity: " + data[0].hum
+        irri.innerText = "Last irrigation: " + data[0].irri
+        if (data[0].tank) {
             $(".alertt").attr("background", "url('/../static/img/alertt.png') center center");
             tank_text.innerHTML = "<h5>Warning</h5><br><h6>The water level is low, please add water to the tank!</h6>"
         } else {
