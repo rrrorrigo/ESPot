@@ -3,7 +3,16 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const hum = document.querySelector(".hum");
     const irri = document.querySelector(".irri");
     
-    $('#onoff').click(function(){
+    $('#onoff').ready(function (){
+        $.get('http://35.243.197.246:5001/api/pots', function(data) {
+                if (data[0].Turned_ON) {
+                    onoff.style.color = "rgb(70, 117, 70)";
+                } else {
+                    onoff.style.color = "rgb(128, 141, 128)";
+                }});
+    });
+
+    $('#onoff').click(function (){
             $.get('http://35.243.197.246:5001/api/pots', function(data) {
                 if (data[0].Turned_ON) {
                     onoff.style.color = "rgb(70, 117, 70)";
