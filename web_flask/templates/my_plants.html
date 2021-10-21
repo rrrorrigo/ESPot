@@ -20,7 +20,16 @@
   <header>
     <h1><img src="../static/img/logo.png" class="logo" alt="logo">ESPot <a href="/login" class="logout text-decoration-none">Log out</a></h1>
 </header>
-  <div class="main">
+  <div class="back">
+    <div class="ESPot">
+      <a href="/Login/index.html" class="logout text-light font-weight-bold text-decoration-none">Log out</a>
+      <span>ESPot</span>
+    </div>
+    <div class="icono">
+      <img src="../static/img/image.png">
+    </div>
+  </div>
+  <div class="back2">
     <div class="dropdown btn-group">
       <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Boton xd
@@ -35,6 +44,7 @@
     </div>
   </div>
   </div>
+  <div class="info2">
     <div class=infotext>
       <div class="infote">
         <span class="hum">Humidity: {{ pot.Actual_humidity }}<br></span>
@@ -42,14 +52,16 @@
       </div>
       <div class="alertt">
         <div class="alertext">
-        er level is low, please add water to the tank!</h6>
+          <h5>Warning</h5>
+          <h6>The water level is low, please add water to the tank!</h6>
         </div>
       </div>
     </div>
-    <div class="plantdiv">
-      <img src="../static/img/plant.png" class="plant">
+    <div class="plant">
+      <img src="../static/img/plant.png">
       <i class="onoff far fa-power-off" id="onoff" onclick="onoff()"></i>
     </div>
+  </div>
   <div class="right">
     <div class="arrow"></div>
   </div>
@@ -57,5 +69,6 @@
 <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
 <script type="text/javascript" src="Scripts/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="../static/scripts/primary.js"></script>
-<script srsrc="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </html>
