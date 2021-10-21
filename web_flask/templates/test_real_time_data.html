@@ -8,7 +8,6 @@
             function updateAllEvents() { 
                 const hum = document.querySelector(".hum")
                 const irri = document.querySelector(".irri")
-                const tank = document.querySelector(".tank")
                 
                 fetch('http://35.243.197.246:5001/api/pots')
                 .then(response => response.json())
@@ -16,9 +15,9 @@
                     hum.innerText = "Humidity: " + data[0].Actual_humidity
                     irri.innerText = "Time of last irrigation: " + data[0].Last_irrigation
                     if (data[0].Is_empty) {
-                        document.getElementById("kkck").src="../static/img/alertt.png";
+                        document.getElementByClass("kkck").src="../static/img/alertt.png";
                     } else {
-                        document.getElementById("kkck").src="../static/img/tankfull.png";
+                        document.getElementByClass("kkck").src="../static/img/tankfull.png";
                     }
                 })   
             }
@@ -27,10 +26,8 @@
         </script>
     </HEAD>
     <BODY>
-        <H1 class="hum">Humidity: {{ pot.Actual_humidity }}</H1>
-        <H1 class="irri">Time of last irrigation: {{ pot.Last_irrigation }}</H1>
-        <div class="icono">
-            <img id=kkck src="">
-          </div>
+        <span class="hum">Humidity: {{ pot.Actual_humidity }}<br></span>
+        <span class="irri">Time of last irrigation: {{ pot.Last_irrigation }}<br></span>
+        <span></span><img class="tank" src=""><span>
     </BODY>
 </HTML>
