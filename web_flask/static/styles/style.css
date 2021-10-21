@@ -195,8 +195,12 @@ background-repeat: no-repeat;
     height: 40%;
     align-self: center;
 }
+.numberHum {
+    font-family: italic;
+    font-size: 23px;
+}
 
-.numberHum, .numberIrri{
+.numberIrri{
     font-family: italic;
     font-size: 20px;
 }
