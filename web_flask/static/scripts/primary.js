@@ -2,9 +2,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const hum = document.querySelector(".hum");
     const irri = document.querySelector(".irri");
     $('#onoff').click(function(){
-        let stat = {
-            "Turned_ON": false
-        };
         let onoff = document.getElementById("onoff");
         fetch('http://35.243.197.246:5001/api/pots')
             .then(response => response.json())
@@ -12,22 +9,35 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 Turned_ON = data[0].Turned_ON;
                 if (Turned_ON === true) {
                     onoff.style.color = "rgb(70, 117, 70)";
+                    const stat = {
+                        "Turned_ON": false
+                    };
+                    $.ajax({
+                        url: 'http://35.243.197.246:5001/api/send_data/10fe8791-7ab2-4302-8848-b0a6d280ae48',
+                        type: 'PUT',
+                        contentType: "application/json",
+                        data: JSON.stringify(stat),
+                        success: function(response) {
+                            //...
+                        }
+                    });
                 } else {
-                    stat = {
+                    const stat = {
                         "Turned_ON": true
                     }
                     onoff.style.color = "rgb(128, 141, 128)";
+                    $.ajax({
+                        url: 'http://35.243.197.246:5001/api/send_data/10fe8791-7ab2-4302-8848-b0a6d280ae48',
+                        type: 'PUT',
+                        contentType: "application/json",
+                        data: JSON.stringify(stat),
+                        success: function(response) {
+                            //...
+                        }
+                    });
                 }
             })
-        $.ajax({
-            url: 'http://35.243.197.246:5001/api/send_data/10fe8791-7ab2-4302-8848-b0a6d280ae48',
-            type: 'PUT',
-            contentType: "application/json",
-            data: JSON.stringify(stat),
-            success: function(response) {
-                //...
-            }
-        });
+        
     })
     function updateAllEvents() { 
     const tank_text = document.querySelector(".alertext");
