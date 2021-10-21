@@ -129,6 +129,12 @@ class HBNBCommand(cmd.Cmd):
                 if k in models.storage.all():
                     if len(args) > 2:
                         if len(args) > 3:
+                            f = ['false', 'False']
+                            t = ['true', 'True']
+                            if args[3] in f:
+                                args[3] = False
+                            if args[3] in t:
+                                args[3] = True
                             setattr(models.storage.all()[k], args[2], args[3])
                             models.storage.all()[k].save()
                         else:
