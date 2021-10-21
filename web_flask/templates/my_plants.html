@@ -11,7 +11,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../static/styles/myplantest.css" />
-    <link rel="stylesheet" href="../static/styles/responsive.css" />
     <link rel="icon" type="image/png" href="../static/img/logo.png"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
@@ -21,7 +20,25 @@
   <header>
     <h1><img src="../static/img/logo.png" class="logo" alt="logo">ESPot <a href="/login" class="logout text-decoration-none">Log out</a></h1>
 </header>
-  <div class="back">
+  <div class="main">
+    <div class="plantdiv">
+      <img src="../static/img/plant.png" class="plant">
+    </div>
+    <div class="onoffdiv">
+      <i class="onoff far fa-power-off" id="onoff" onclick="onoff()"></i>
+    </div>
+    <div class="dropdown btn-group">
+      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Boton xd
+      </button>
+      <div class="dropdown-menu text">
+        <a class="dropdown-item" href="#">Amor mio</a>
+        <a class="dropdown-item" href="#">Kiko</a>
+        <a class="dropdown-item" href="#">Mii gue</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Amor separado xd</a>
+      </div>
+    </div>
     <div class="info2">
       <div class=infotext>
         <div class="infote">
@@ -35,33 +52,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="ESPot">
-      <a href="/Login/index.html" class="logout text-light font-weight-bold text-decoration-none">Log out</a>
-      <span>ESPot</span>
-    </div>
-    <div class="icono">
-      <img src="../static/img/image.png">
-    </div>
-  </div>
-  <div class="back2">
-    <div class="dropdown btn-group">
-      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Boton xd
-        <span class="irri">Last irrigation: {{ pot.Last_irrigation }}<br></span>
-      </div>
-        <d
-    <div class="onoffdiv">
-      <i class="onoff far fa-power-off" id="onoff" onclick="onoff()"></i>
-    </div>
-  </div>  <h5>Warning</h5>
-          <h6>The water level is low, please add water to the tank!</h6>
-        </div>
-      </div>
-    </div>
-    <div class="plant">
-      <img src="../static/img/plant.png">
-      <i class="onoff far fa-power-off" id="onoff" onclick="onoff()"></i>
     </div>
   </div>
   <div class="right">
