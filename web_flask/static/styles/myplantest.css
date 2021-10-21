@@ -34,12 +34,12 @@ position: absolute;
 width: 287px;
 height: 45px;
 left: 1px;
-top: 8px;
+top: 15px;
 
 font-family: Maven Pro;
 font-style: normal;
 font-weight: normal;
-font-size: 10px;
+font-size: 35px;
 line-height: 47px;
 text-align: center;
 
@@ -108,7 +108,6 @@ border-radius: 29px;
 /* Last watering: Month: Hour: Humidity:  */
 
 position: absolute;
-width: 268px;
 height: 493px;
 left: 83px;
 top: 262px;
