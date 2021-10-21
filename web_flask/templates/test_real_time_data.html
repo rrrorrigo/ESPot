@@ -15,9 +15,9 @@
                     hum.innerText = "Humidity: " + data[0].Actual_humidity
                     irri.innerText = "Time of last irrigation: " + data[0].Last_irrigation
                     if (data[0].Is_empty) {
-                        $( ".tank" ).css( "src", "../static/img/alertt.png" );
+                        $( ".tank" ).css( "src", "http://35.243.197.246:5000/web_flask/static/img/alertt.png" );
                     } else {
-                        $( ".tank" ).css( "src", "../static/img/tankfull.png" );
+                        $( ".tank" ).css( "src", "http://35.243.197.246:5000/web_flask/static/img/tankfull.png" );
                     }
                 })   
             }
