@@ -111,7 +111,7 @@ def send_data(id_pot):
     now = datetime.now(timezone("America/Montevideo")).strftime("%d/%m %H:%M")
     now = str(now)
     pot = storage.get(Pot, id_pot)
-    if data['irrigated'] and data["irrigated"] == "True":
+    if data["irrigated"] == "True":
         setattr(pot, "Last_irrigation", now)
     if data["Is_empty"]:
         setattr(pot, "Is_empty", bool(eval(data["Is_empty"])))
