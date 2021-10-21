@@ -1,13 +1,16 @@
 window.addEventListener('DOMContentLoaded', (e) => {
+    const onoff = document.getElementById("onoff");
     const hum = document.querySelector(".hum");
     const irri = document.querySelector(".irri");
+
     $('#onoff').click(function(){
-        let onoff = document.getElementById("onoff");
+        
         fetch('http://35.243.197.246:5001/api/pots')
             .then(response => response.json())
             .then(data => {
+                console.log(typeof(data[0].Turned_ON));
                 if (data[0].Turned_ON) {
-                    onoff.style.color = "rgb(70, 117, 70)";
+                    onoff.style.color = "rgb(128, 141, 128)";
                     const statFalse = {
                         "Turned_ON": false
                     };
@@ -21,10 +24,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         }
                     });
                 } else {
+                    onoff.style.color = "rgb(70, 117, 70)";
                     const statTrue = {
                         "Turned_ON": true
                     }
-                    onoff.style.color = "rgb(128, 141, 128)";
                     $.ajax({
                         url: 'http://35.243.197.246:5001/api/send_data/10fe8791-7ab2-4302-8848-b0a6d280ae48',
                         type: 'PUT',
@@ -41,7 +44,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     function updateAllEvents() { 
     const tank_text = document.querySelector(".alertext");
 
-    const empty = fetch('http://35.243.197.246:5001/api/pots')
+    fetch('http://35.243.197.246:5001/api/pots')
     .then(response => response.json())
     .then(data => {
         hum.innerText = "Humidity: " + data[0].Actual_humidity
@@ -53,8 +56,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             $(".alertt").attr("background", "url('/../static/img/tankfull.png') center center");
             tank_text.innerHTML = "<h5>The tank has enough water</h5>"
         }
-        return data[0].Is_empty;
     })   
     }
-    let display = setInterval(updateAllEvents, 2000);
+    let display = setInterval(updateAllEvents, 4000);
 });
