@@ -15,6 +15,17 @@ body {
 .bg-dark { background-color: var(--dark) !important; }
 .bg-dark-x { background-color: var(--dark-x); }
 
+.back {
+/* Rectangle 149 */
+position: fixed;
+width: 100%;
+height: 100%;
+left: 0px;
+top: 0px;
+
+background: #B6CFB6;
+background-size: cover;
+}
 
 .back2 {
 /* Rectangle 152 */
@@ -31,25 +42,19 @@ background-size: cover;
 }
 
 
+.info {
+/* Rectangle 153 */
 
-.infotext {
-/* Last watering: Month: Hour: Humidity:  */
+position: fixed;
+width: 15%;
+height: 65%;
+left: 67px;
+top: 185px;
 
-position: absolute;
-width: 268px;
-height: 493px;
-left: 83px;
-top: 262px;
-
-font-family: Maven Pro;
-font-style: normal;
-font-weight: normal;
-font-size: 29px;
-line-height: 34px;
-text-align: center;
-
-color: #576B60;
+background: #C4C4C4;
+border-radius: 29px;
 }
+
 
 
 
@@ -63,26 +68,28 @@ top: 15px;
 border-radius: 42px;
 }
 
+
 .container {
-position: absolute;
-width: 55%;
+position: fixed;
+width: 150%;
 height: 70%;
-left: 150;
+left: 110%;
 top: 155px;
     
-background: #808D80;
 border-radius: 33px;
 }
 
 .container .cocontainer {
+
 position: absolute;
-width: 79%;
-height: 79%;
-left: 10%;
-top: 10%;
+width: 50%;
+height: 65%;
+left: 15%;
+top: 16%;
 
 background: #B6CFB6;
-border-radius: 99px;
+border-radius: 25px;
+border: #576B60 25px outset;
 }
 
 .add {
@@ -99,13 +106,32 @@ border-radius: 15px;
 
 }
 
-.onoff {
-    font-size: 160px;
-    left: 666px;
-    top: 170px;
-    color: #808D80;
+.right {
+/* Rectangle 151 */
+position: absolute;
+width: 36px;
+height: 89px;
+left: 95%;
+top: 50%;
+
+background: #C4C4C4;
+border-radius: 15px;
 }
 
+.arrow {
+/* arrow-png-5543 1 */
+position: absolute;
+width: 15px;
+height: 15px;
+left: 11px;
+top: 39px;
+background: url('../img/arrow.png');
+background-repeat: no-repeat;
+}
+
+.right:hover {
+    cursor: pointer;
+}
 
 .form-control {
     border: 2px solid var(--color-dark-xx);
@@ -119,4 +145,54 @@ border-radius: 15px;
 .form-control:focus {
     background-color: var(--dark-x);
     outline: none;
+}
+
+.alertt {
+    flex-grow: 1;
+    width: 100%;
+    align-content: center;
+    background: url('../img/alertt.png') center center;
+    background-position-y: 65%;
+    background-repeat: no-repeat;
+}
+
+.alertext {
+    flex-grow: 1;
+    align-content: center;
+    width: 100%;
+    padding-top: 52%;
+    height: 100%;
+    
+    font-family: Maven Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 22px;
+    text-align: center;
+    
+    color: #808D80;    
+}
+
+.infotext {
+    /* Last watering: Month: Hour: Humidity:  */
+    display: flex;
+    flex-flow: column;
+    max-width: 350px;
+    height: 100%;
+    font-family: Maven Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 29px;
+    line-height: 34px;
+    text-align: center;
+    
+    color: #576B60;
+}
+
+.infote{
+    flex-grow: 3;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    align-self: center;
 }
