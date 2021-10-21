@@ -159,6 +159,7 @@ background-size: cover;
         height: 150px;
         width: 300px;
         filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+        background-color: #808D80;
     }
 
     #plantList {
