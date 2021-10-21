@@ -52,9 +52,8 @@ def get_pots():
             all_pots = storage.all(Pot).values()
             list_pots = []
             for pot in all_pots:
-                return jsonify({"hum":pot.Actual_humidity,"irri":pot.Last_irrigation,"tank":pot.Is_empty})
-                #list_pots.append(pot.to_dict())
-            #return jsonify(list_pots)
+                list_pots.append(pot.to_dict())
+            return jsonify(list_pots)
     else:
         data = request.get_json()
         dictionary = {}
