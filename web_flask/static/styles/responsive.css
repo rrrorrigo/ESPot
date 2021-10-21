@@ -34,6 +34,7 @@
     border-color: #808D80;
     border-style: solid;
     border-width: 20px;
+    box-shadow: inset 0 0 10px #000000;
     }
     .RESPONSIVE {
             height: 100%;
@@ -58,6 +59,11 @@
     margin-top: 10%;
     margin-bottom: 10%;
 }
+
+.onoff {
+    filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+}
+
 header {
 margin-top: -28px;
 width: 100%;
@@ -65,6 +71,15 @@ height: 100%;
 background: #B6CFB6;
 background-size: cover;
 }
+    #listPlants {
+        position: absolute;
+        flex-grow: 1;
+        margin-top: 0px;
+        border-top-right-radius: 0ch;
+        border-top-left-radius: 0ch;
+        width: 15px;
+        background-color: #808D80;
+    }
 }
 
 @media all and (min-width: 800px) {
@@ -159,19 +174,8 @@ background-size: cover;
         height: 50px;
     }
 
-    .dropdown-item {
-        color: #99A59D;
-    }
 
-    .dropdown-item:hover, #selected {
-        background-color: #727a72;
-        color: #a9a264;
-    }
-
-    #list {
-        color: #C8E6C9;
-        background-color: #808D80;
-    }
+    
 
     #listPlants {
         position: absolute;
@@ -184,6 +188,19 @@ background-size: cover;
     }
 }
 
+.dropdown-item {
+    color: #99A59D;
+}
+
+#list {
+    color: #C8E6C9;
+    background-color: #808D80;
+}
+
+.dropdown-item:hover, #selected {
+    background-color: #727a72;
+    color: #a9a264;
+}
 
 .logo {
     height: 130px;

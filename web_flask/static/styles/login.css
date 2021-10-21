@@ -61,8 +61,15 @@ body {
 #container {
     width: 80%;
     height: 100%;
+    display:flex;
+    flex-flow: column;
 }
 
 #Title {
     margin-top: 10px;
+}
+
+#logo {
+    height: 60px;
+    width:auto;
 }

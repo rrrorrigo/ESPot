@@ -152,7 +152,6 @@ background-repeat: no-repeat;
     width: 100%;
     align-content: center;
     background: url('../img/alertt.png') center center;
-    background-position-y: 65%;
     background-repeat: no-repeat;
 }
 
@@ -160,7 +159,6 @@ background-repeat: no-repeat;
     flex-grow: 1;
     align-content: center;
     width: 100%;
-    padding-top: 52%;
     height: 100%;
     
     font-family: Maven Pro;
