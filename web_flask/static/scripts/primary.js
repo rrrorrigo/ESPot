@@ -4,42 +4,39 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const irri = document.querySelector(".irri");
     
     $('#onoff').click(function(){
-        !async function(){
-            let data = await fetch('http://35.243.197.246:5001/api/pots')
-            .then(response => response.json())
-            .then(data => {
-                return data;
-            });
-            console.log(typeof(data[0].Turned_ON));
-            if (data[0].Turned_ON) {
-                onoff.style.color = "rgb(128, 141, 128)";
-                const statFalse = {
-                    "Turned_ON": false
-                };
-                $.ajax({
-                    url: 'http://35.243.197.246:5001/api/send_data/10fe8791-7ab2-4302-8848-b0a6d280ae48',
-                    type: 'PUT',
-                    contentType: "application/json",
-                    data: JSON.stringify(statFalse),
-                    success: function(response) {
-                    //...
-                    }
-                });
-            } else {
-                onoff.style.color = "rgb(70, 117, 70)";
-                const statTrue = {
-                    "Turned_ON": true
-                }
-                $.ajax({
-                    url: 'http://35.243.197.246:5001/api/send_data/10fe8791-7ab2-4302-8848-b0a6d280ae48',
-                    type: 'PUT',
-                    contentType: "application/json",
-                    data: JSON.stringify(statTrue),
-                    success: function(response) {
+            $.get('http://35.243.197.246:5001/api/pots', function(data) {
+                console.log(typeof(data[0].Turned_ON));
+                if (data[0].Turned_ON) {
+                    onoff.style.color = "rgb(128, 141, 128)";
+                    const statFalse = {
+                        "Turned_ON": false
+                    };
+                    $.ajax({
+                        url: 'http://35.243.197.246:5001/api/send_data/10fe8791-7ab2-4302-8848-b0a6d280ae48',
+                        type: 'PUT',
+                        contentType: "application/json",
+                        data: JSON.stringify(statFalse),
+                        success: function(response) {
                         //...
+                        }
+                    });
+                } else {
+                    onoff.style.color = "rgb(70, 117, 70)";
+                    const statTrue = {
+                        "Turned_ON": true
                     }
-                }) 
-            }}});
+                    $.ajax({
+                        url: 'http://35.243.197.246:5001/api/send_data/10fe8791-7ab2-4302-8848-b0a6d280ae48',
+                        type: 'PUT',
+                        contentType: "application/json",
+                        data: JSON.stringify(statTrue),
+                        success: function(response) {
+                            //...
+                        }
+                    }) 
+                }});
+        });
+            
     function updateAllEvents() { 
     const tank_text = document.querySelector(".alertext");
 
