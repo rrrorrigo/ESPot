@@ -20,7 +20,7 @@
   <div class="back">
     <div class="ESPot">
       <a href="/Login/index.html" class="logout text-light font-weight-bold text-decoration-none">Log out</a>
-      <h1>ESPot</h1>
+      <span>ESPot</span>
     </div>
     <div class="icono">
       <img src="../static/img/image.png">
@@ -42,9 +42,9 @@
   </div>
   </div>
   <div class="info">
-    <H1 class="hum">Humidity: {{ pot.Actual_humidity }}</H1>
-    <H1 class="tank">Is the tank empty: {{ pot.Is_empty }}</H1>
-    <H1 class="irri">Time of last irrigation: {{ pot.Last_irrigation }}</H1>
+    <span class="hum">Humidity: {{ pot.Actual_humidity }}<br></span>
+    <span class="tank">Is the tank empty: {{ pot.Is_empty }}<br></span>
+    <span class="irri">Time of last irrigation: {{ pot.Last_irrigation }}<br></span>
     <div class=infotext>
       <div class="alertt">
         <div class="alertext">
