@@ -132,13 +132,17 @@ background-size: cover;
         height: inherit;
         bottom: 20px;
     }
+
+
+    
     .RESPONSIVE {
                 height: 100%;
                 width: 100%;
     }
     .plant {
-        max-width: 400px;
+        max-width: 450px;
         margin-bottom: 10%;
+        padding-left: 17%;
     }
     .onoffdiv {
         display: flex;
