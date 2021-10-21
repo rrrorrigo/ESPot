@@ -1,10 +1,7 @@
-const hum = document.querySelector(".hum");
-const irri = document.querySelector(".irri");
-
-function onoff() {
-    
 window.addEventListener('DOMContentLoaded', (e) => {
     let onoff = document.getElementById("onoff");
+    const hum = document.querySelector(".hum");
+    const irri = document.querySelector(".irri");
     $('#onoff').click(function(){
         let stat = {
             Turned_ON: false
