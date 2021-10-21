@@ -27,7 +27,7 @@
     </div>
     <div class="onoffdiv">
       <div class="onoff">
-      <i class="onoff far fa-power-off fa-10x" id="onoff" onclick="onoff()"></i>
+      <i class="onoff far fa-power-off fa-10x" id="onoff"></i>
     </div>
       <div class="dropdown btn-group" id="plantList">
         <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="list">
@@ -45,7 +45,7 @@
     <div class="info2">
       <div class=infotext>
         <div class="infote">
-          <span class="hum">Humidity: {{ pot.Actual_humidity }}<br></span>
+          <span class="hum">Humidity: {{ pot.Actual_humidity }}</span>
           <span class="irri">Last irrigation: <br>{{ pot.Last_irrigation }}<br></span>
         </div>
         <div class="alertt">
