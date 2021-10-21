@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const irri = document.querySelector(".irri");
     $('#onoff').click(function(){
         let stat = {
-            Turned_ON: false
+            "Turned_ON": false
         };
         let onoff = document.getElementById("onoff");
         fetch('http://35.243.197.246:5001/api/pots')
@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     onoff.style.color = "rgb(70, 117, 70)";
                 } else {
                     stat = {
-                        Turned_ON: true
+                        "Turned_ON": true
                     }
                     onoff.style.color = "rgb(128, 141, 128)";
                 }
