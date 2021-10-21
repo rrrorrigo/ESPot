@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     $('#onoff').click(function(){
             $.get('http://35.243.197.246:5001/api/pots', function(data) {
                 console.log(typeof(data[0].Turned_ON));
-                if (data[0].Turned_ON) {
+                if (!data[0].Turned_ON) {
                     onoff.style.color = "rgb(70, 117, 70)";
                     const statFalse = {
                         "Turned_ON": false
