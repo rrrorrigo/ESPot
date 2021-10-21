@@ -1,11 +1,11 @@
 window.addEventListener('DOMContentLoaded', (e) => {
-    let onoff = document.getElementById("onoff");
     const hum = document.querySelector(".hum");
     const irri = document.querySelector(".irri");
     $('#onoff').click(function(){
         let stat = {
             Turned_ON: false
         };
+        let onoff = document.getElementById("onoff");
         fetch('http://35.243.197.246:5001/api/pots')
             .then(response => response.json())
             .then(data => {
@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     onoff.style.color = "rgb(128, 141, 128)";
                 }
             })
-        $.post("http://35.243.197.246:5001/send_data/10fe8791-7ab2-4302-8848-b0a6d280ae48", stat, function(data, status){})
+        $.post("http://35.243.197.246:5001/api/send_data/10fe8791-7ab2-4302-8848-b0a6d280ae48", stat, function(data, status){})
     })
     function updateAllEvents() { 
     const tank_text = document.querySelector(".alertext");
