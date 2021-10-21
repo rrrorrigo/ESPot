@@ -7,14 +7,14 @@ function onoff() {
             .then(response => response.json())
             .then(data => {
                 Turned_ON = data[0].Turned_ON;
+                if (Turned_ON) {
+                    onoff.style.color = "rgb(70, 117, 70)";
+                } else {
+                    url = "http://35.243.197.246:5001/send_data/10fe8791-7ab2-4302-8848-b0a6d280ae48"
+                    xhr.open("PUT", url);
+                    onoff.style.color = "rgb(128, 141, 128)";
+                }
             })
-        if (Turned_ON) {
-        onoff.style.color = "rgb(70, 117, 70)";
-        } else {
-            url = "http://35.243.197.246:5001/send_data/10fe8791-7ab2-4302-8848-b0a6d280ae48"
-            xhr.open("PUT", url);
-            onoff.style.color = "rgb(128, 141, 128)";
-        }
     };
 window.addEventListener('DOMContentLoaded', (e) => {
     function updateAllEvents() { 
