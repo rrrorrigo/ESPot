@@ -1,9 +1,9 @@
 function onoff() {
 let onoff = document.getElementById("onoff");
-if (compareColour("#B6CFB6", onoff.style.color)) {
-    onoff.style.color = "rgb(128, 141, 128)";
+if (compareColour("#808D80", onoff.style.color)) {
+    onoff.style.color = "rgb(50, 102, 50)";
 } else {
-    onoff.style.color = "rgb(182, 207, 182)";
+    onoff.style.color = "rgb(128, 141, 128)";
 }
 }
 
