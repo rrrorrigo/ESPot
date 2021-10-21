@@ -15,7 +15,11 @@
                 .then(data => {
                     hum.innerText = "Humidity: " + data[0].Actual_humidity
                     irri.innerText = "Time of last irrigation: " + data[0].Last_irrigation
-                    tank.innerText = "Is the tank empty: " + data[0].Is_empty
+                    if (data[0].Is_empty) {
+                        document.getElementById("kkck").src="../static/img/alert.png";
+                    } else {
+                        document.getElementById("kkck").src="../static/img/tankfull.png";
+                    }
                 })   
             }
             let display = setInterval(updateAllEvents, 2000);
@@ -24,7 +28,9 @@
     </HEAD>
     <BODY>
         <H1 class="hum">Humidity: {{ pot.Actual_humidity }}</H1>
-        <H1 class="tank">Is the tank empty: {{ pot.Is_empty }}</H1>
         <H1 class="irri">Time of last irrigation: {{ pot.Last_irrigation }}</H1>
+        <div class="icono">
+            <img id=kkck src="">
+          </div>
     </BODY>
 </HTML>
