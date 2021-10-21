@@ -15,9 +15,9 @@
                     hum.innerText = "Humidity: " + data[0].Actual_humidity
                     irri.innerText = "Time of last irrigation: " + data[0].Last_irrigation
                     if (data[0].Is_empty) {
-                        document.getElementByClass("kkck").src="../static/img/alertt.png";
+                        document.getElementByClass("tank").src="../static/img/alertt.png";
                     } else {
-                        document.getElementByClass("kkck").src="../static/img/tankfull.png";
+                        document.getElementByClass("tank").src="../static/img/tankfull.png";
                     }
                 })   
             }
@@ -28,6 +28,6 @@
     <BODY>
         <span class="hum">Humidity: {{ pot.Actual_humidity }}<br></span>
         <span class="irri">Time of last irrigation: {{ pot.Last_irrigation }}<br></span>
-        <span></span><img class="tank" src="../static/img/alertt.png"><br><span>
+        <span><img class="tank" src="../static/img/alertt.png"><br><span>
     </BODY>
 </HTML>
