@@ -4,7 +4,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
     $('#onoff').click(function(){
         let stat = {
             "Turned_ON": false,
-            "irrigated": false
+            "irrigated": false,
+            "Actual_humidity": hum,
+            "Last_irrigation": irri,
+            "Is_empty": empty
         };
         let onoff = document.getElementById("onoff");
         fetch('http://35.243.197.246:5001/api/pots')
@@ -16,7 +19,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 } else {
                     stat = {
                         "Turned_ON": true,
-                        "irrigated": false
+                        "irrigated": false,
+                        "Actual_humidity": hum,
+                        "Last_irrigation": irri,
+                        "Is_empty": empty
                     }
                     onoff.style.color = "rgb(128, 141, 128)";
                 }
@@ -34,7 +40,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     function updateAllEvents() { 
     const tank_text = document.querySelector(".alertext");
 
-    fetch('http://35.243.197.246:5001/api/pots')
+    const empty = fetch('http://35.243.197.246:5001/api/pots')
     .then(response => response.json())
     .then(data => {
         hum.innerText = "Humidity: " + data[0].Actual_humidity
@@ -46,6 +52,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             $(".alertt").attr("background", "url('/../static/img/tankfull.png') center center");
             tank_text.innerHTML = "<h5>The tank has enough water</h5>"
         }
+        return data[0].Is_empty;
     })   
     }
     let display = setInterval(updateAllEvents, 2000);
