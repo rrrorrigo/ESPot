@@ -6,8 +6,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         fetch('http://35.243.197.246:5001/api/pots')
             .then(response => response.json())
             .then(data => {
-                on = data[0].Turned_ON;
-                if (on) {
+                if (data[0].Turned_ON) {
                     onoff.style.color = "rgb(70, 117, 70)";
                     const statFalse = {
                         "Turned_ON": false
