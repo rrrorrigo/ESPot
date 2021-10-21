@@ -118,6 +118,6 @@ def send_data(id_pot):
     if "Actual_humidity" in data and data["Actual_humidity"]:
         setattr(pot, "Actual_humidity", int(float(data["Actual_humidity"])))
     if "Turned_ON" in data and data["Turned_ON"]:
-        setattr(pot, "Turned_ON", bool(data["Turned_ON"]))
+        setattr(pot, "Turned_ON", data["Turned_ON"])
     storage.save()
     return (jsonify({"culo": "Peñarol"}), 200)

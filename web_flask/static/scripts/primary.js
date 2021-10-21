@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             $.get('http://35.243.197.246:5001/api/pots', function(data) {
                 console.log(typeof(data[0].Turned_ON));
                 if (data[0].Turned_ON) {
-                    onoff.style.color = "rgb(128, 141, 128)";
+                    onoff.style.color = "rgb(70, 117, 70)";
                     const statFalse = {
                         "Turned_ON": false
                     };
@@ -21,7 +21,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         }
                     });
                 } else {
-                    onoff.style.color = "rgb(70, 117, 70)";
+                    onoff.style.color = "rgb(128, 141, 128)";
                     const statTrue = {
                         "Turned_ON": true
                     }
