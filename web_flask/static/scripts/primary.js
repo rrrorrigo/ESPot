@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         contentType: "application/json",
                         data: JSON.stringify(statFalse),
                         success: function(response) {
-                        //...
+                            console.log("stat updated to false")
                         }
                     });
                 } else {
@@ -31,7 +31,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         contentType: "application/json",
                         data: JSON.stringify(statTrue),
                         success: function(response) {
-                            //...
+                            console.log("stat updated to true")
                         }
                     }) 
                 }});
