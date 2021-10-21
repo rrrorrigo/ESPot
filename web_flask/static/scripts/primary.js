@@ -9,20 +9,20 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 Turned_ON = data[0].Turned_ON;
                 if (Turned_ON === true) {
                     onoff.style.color = "rgb(70, 117, 70)";
-                    const stat = {
+                    const statFalse = {
                         "Turned_ON": false
                     };
                     $.ajax({
                         url: 'http://35.243.197.246:5001/api/send_data/10fe8791-7ab2-4302-8848-b0a6d280ae48',
                         type: 'PUT',
                         contentType: "application/json",
-                        data: JSON.stringify(stat),
+                        data: JSON.stringify(statFalse),
                         success: function(response) {
                             //...
                         }
                     });
                 } else {
-                    const stat = {
+                    const statTrue = {
                         "Turned_ON": true
                     }
                     onoff.style.color = "rgb(128, 141, 128)";
@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         url: 'http://35.243.197.246:5001/api/send_data/10fe8791-7ab2-4302-8848-b0a6d280ae48',
                         type: 'PUT',
                         contentType: "application/json",
-                        data: JSON.stringify(stat),
+                        data: JSON.stringify(statTrue),
                         success: function(response) {
                             //...
                         }
