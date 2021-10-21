@@ -53,7 +53,7 @@ def get_pots():
             list_pots = []
             for pot in all_pots:
                 list_pots.append(pot.to_dict())
-            return jsonify(list_pots)
+            return jsonify(all_pots) #hardcoded
     else:
         data = request.get_json()
         dictionary = {}
