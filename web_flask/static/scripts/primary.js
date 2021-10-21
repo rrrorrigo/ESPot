@@ -19,3 +19,23 @@ function compareColour(col1, col2) {
     document.body.removeChild(e);
     return col1 === col2;
 }
+
+window.addEventListener('DOMContentLoaded', (e) => {
+    function updateAllEvents() { 
+        const hum = document.querySelector(".hum")
+        const irri = document.querySelector(".irri")
+        
+        fetch('http://35.243.197.246:5001/api/pots')
+        .then(response => response.json())
+        .then(data => {
+            hum.innerText = "Humidity: " + data[0].Actual_humidity
+            irri.innerText = "Time of last irrigation: " + data[0].Last_irrigation
+            if (data[0].Is_empty) {
+                $(".tank").attr( "src", "/../static/img/alertt.png" );
+            } else {
+                $(".tank").attr( "src", "/../static/img/tankfull.png" );
+            }
+        })   
+    }
+    let display = setInterval(updateAllEvents, 2000);
+});
