@@ -1,12 +1,3 @@
-function onoff() {
-let onoff = document.getElementById("onoff");
-if (compareColour("#808D80", onoff.style.color)) {
-    onoff.style.color = "rgb(70, 117, 70)";
-} else {
-    onoff.style.color = "rgb(128, 141, 128)";
-}
-}
-
 function compareColour(col1, col2) {
     var e = document.createElement('span')
     document.body.appendChild(e);
@@ -21,10 +12,25 @@ function compareColour(col1, col2) {
 }
 
 window.addEventListener('DOMContentLoaded', (e) => {
+    const hum = document.querySelector(".hum");
+    const irri = document.querySelector(".irri");
+    function onoff() {
+        let onoff = document.getElementById("onoff");
+        fetch('http://35.243.197.246:5001/api/pots')
+                .then(response => response.json())
+                .then(data => {
+                    Turned_ON = data[0].Turned_ON;
+                })
+            if (Turned_ON) {
+            onoff.style.color = "rgb(70, 117, 70)";
+            } else {
+                url = "http://35.243.197.246:5001/send_data/10fe8791-7ab2-4302-8848-b0a6d280ae48"
+                xhr.open("PUT", url);
+                onoff.style.color = "rgb(128, 141, 128)";
+            }
+        };
     function updateAllEvents() { 
-        const hum = document.querySelector(".hum")
-        const irri = document.querySelector(".irri")
-        const tank_text = document.querySelector(".alertext")
+        const tank_text = document.querySelector(".alertext");
         
         fetch('http://35.243.197.246:5001/api/pots')
         .then(response => response.json())

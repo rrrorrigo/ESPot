@@ -114,7 +114,11 @@ def send_data(id_pot):
     pot = storage.get(Pot, id_pot)
     if data["irrigated"] == "True":
         setattr(pot, "Last_irrigation", now)
-    setattr(pot, "Is_empty", bool(eval(data["Is_empty"])))
-    setattr(pot, "Actual_humidity", int(float(data["Actual_humidity"])))
+    if data["Is_empty"]:
+        setattr(pot, "Is_empty", bool(eval(data["Is_empty"])))
+    if data["Actual_humidity"]:
+        setattr(pot, "Actual_humidity", int(float(data["Actual_humidity"])))
+    if data["Turned_ON"]:
+        setattr(pot, "Turned_ON", bool(eval(data["Turned_ON"])))
     storage.save()
     return (jsonify({"culo": "Peñarol"}), 200)
