@@ -78,10 +78,15 @@ def selected_web(id_pot):
         if not data:
             abort(400, "Not a JSON")
         keyPot = Pot + '.' + id_pot
+        print("antes del attribute")
         plant = storage.getByAttribute(Plant, data)
+        print("despues del attribute")
         pot = storage.all()[keyPot]
+        print("despues del storage")
         setattr(pot, 'Plant_id', plant.id)
+        print("despues de setear")
         pot.save()
+        print("despues de guardar")
         return jsonify(storage.get(Pot, id_pot))
 
 
