@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         })
 
         function selectPlantName(name) {
-                data = {
+                const data = {
                         "Plant_name": "rosaaa"
                 }
                 $.ajax({
