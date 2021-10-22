@@ -36,7 +36,7 @@
         </button>
         <form class="dropdown-menu text" id="listPlants" action="" method="put">
           {% for plant in plants %}
-          <a class="dropdown-item" href="" id="p" name="{{ plant[0].Plant_name }}">{{ plant[0].Plant_name }}</a>
+          <a class="dropdown-item" href="" id="p" name="{{ plant.Plant_name }}">{{ plant.Plant_name }}</a>
           {% endfor %}
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="" id="selected"></a>
