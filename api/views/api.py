@@ -74,13 +74,11 @@ def selected_web(id_pot):
         dictionary['Plant'] = storage.get(Plant, Pot.Plant_id)
         return jsonify(dictionary)
     else:
-        data = request.get_json()
+        data = request.form['Plant_name']
         if not data:
             abort(400, "Not a JSON")
-        if id not in data:
-            abort(400, 'Missing id')
         keyPot = Pot + '.' + id_pot
-        plant = storage.getByAttribute(Plant, data['Plant_name'])
+        plant = storage.getByAttribute(Plant, data)
         setattr(storage.all()[keyPot], 'Plant_id', plant.id)
         storage.all()[keyPot].save()
         return jsonify(storage.get(Pot, id_pot))
