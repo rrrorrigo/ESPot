@@ -52,8 +52,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
     .then(data => {
         const hum = document.querySelector(".numberHum");
         const irri = document.querySelector(".numberIrri");
-        hum.text = data[0].Actual_humidity
-        irri.text = data[0].Last_irrigation
+        hum.innerHTML = "<span class='numberHum'>" + data[0].Actual_humidity + "</span>"
+        irri.innerHTML = "<span class='numberIrri'>" + data[0].Last_irrigation + "</span>"
         if (data[0].Is_empty) {
             $(".alerticon").css({"background": "url('/../static/img/alertt.png') bottom center", "background-repeat": "no-repeat"});
             tank_text.innerHTML = "<h5>Warning</h5><h6>The water level is low, please add water to the tank!</h6>"
