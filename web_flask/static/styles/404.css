@@ -7,6 +7,12 @@
     padding: 0;
     margin: 0;
   }
+
+  :root {
+    --dark: #b7d2c3;
+    --dark-x: #adc7b9; 
+    --light: #48665a;
+}
   
   .bg-dark { background-color: var(--dark) !important; }
 
