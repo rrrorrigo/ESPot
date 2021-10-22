@@ -8,6 +8,8 @@
     margin: 0;
   }
   
+  .bg-dark { background-color: var(--dark) !important; }
+
   #notfound {
     position: relative;
     height: 100vh;
