@@ -8,6 +8,7 @@ from models import *
 from models import storage
 from models.Pot import Pot
 from models.User import User
+from models.Plant import Plant
 from hashlib import md5
 from flask_cors import CORS
 app = Flask(__name__)
@@ -20,7 +21,8 @@ def my_plants(user_id=""):
     """plant of user"""
     usr = storage.get(User, user_id)
     pot = storage.get(Pot, "10fe8791-7ab2-4302-8848-b0a6d280ae48")
-    return render_template('/my_plants.html', pot=pot)
+    plants = storage.all(Plant)
+    return render_template('/my_plants.html', pot=pot, plants=plants)
 
 
 @app.route('/my_plants/test/<string:user_id>', strict_slashes=False)
