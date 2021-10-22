@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 };
                 alert(JSON.stringify(data));
                 $.ajax({
-                        url: 'http://35.243.197.246:5001/api/selected/10fe8791-7ab2-4302-8848-b0a6d280ae48 ',
+                        url: 'http://35.243.197.246:5001/api/selected/10fe8791-7ab2-4302-8848-b0a6d280ae48',
                         type: 'PUT',
                         contentType: "application/json",
                         data: JSON.stringify(data),
