@@ -246,3 +246,7 @@ border-radius: 15px;
 .right:hover {
 cursor: pointer;
 }
+
+.plantName {
+    flex-grow: 1;
+}
