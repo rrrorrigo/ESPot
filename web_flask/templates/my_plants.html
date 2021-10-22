@@ -32,14 +32,14 @@
     </div>
       <div class="dropdown btn-group" id="plantList">
         <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="list">
-          Choise your plant
+          Choose your plant
         </button>
         <form class="dropdown-menu text" id="listPlants" action="" method="put">
-          {% for plant in plants %}
-          <a class="dropdown-item" href="" id="p" name="{{ plant.Plant_name }}">{{ plant.Plant_name }}</a>
+          {% for plantita in plants %}
+          <a class="dropdown-item" id="p" name="{{ plantita.Plant_name }}">{{ plantita.Plant_name }}</a>
           {% endfor %}
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="" id="selected"></a>
+          <a class="dropdown-item" id="selected"></a>
         </form>
       </div>
     </div>
