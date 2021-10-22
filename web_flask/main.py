@@ -20,7 +20,8 @@ CORS(app)
 def my_plants(user_id=""):
     """plant of user"""
     usr = storage.get(User, user_id)
-    pot = storage.get(Pot, "10fe8791-7ab2-4302-8848-b0a6d280ae48")
+    all_pots = usr.Pots
+    pot = storage.get(Pot, all_pots[0].id)
     plants = storage.all(Plant).values()
     plants = sorted(plants, key=lambda k: k.Plant_name)
     return render_template('/my_plants.html', pot=pot, plants=plants)
