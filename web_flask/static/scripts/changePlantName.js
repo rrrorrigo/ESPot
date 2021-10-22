@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         function loadPlantName() {
         const plantName = document.querySelector('.plantName');
         const selectedPlant = document.querySelector('#selected');
-        fetch("http://35.243.197.246:5001/api/selected/10fe8791-7ab2-4302-8848-b0a6d280ae48")
+        fetch("http://35.243.197.246:5001/api/selected/823cd38c-5fae-4fda-8836-6511fa60da6e")
 		.then(response => response.json())
 		.then(data => {
 		    console.log(data);
@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 selectedPlant.innerHTML = "<a class='dropdown-item' href='#' id='selected'>" + data[1].Plant_name +"</a>"
         });}
 
-        $('#p').click(function () {
+        $('.p').click(function () {
                 const name = this.getAttribute('name-plant');
                 selectPlantName(name);
         });
@@ -21,14 +21,14 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 const data = {
                         "Plant_name": String(name)
                 };
-                alert(JSON.stringify(data));
                 $.ajax({
-                        url: 'http://35.243.197.246:5001/api/selected/10fe8791-7ab2-4302-8848-b0a6d280ae48',
+                        url: 'http://35.243.197.246:5001/api/selected/823cd38c-5fae-4fda-8836-6511fa60da6e',
                         type: 'PUT',
                         contentType: "application/json",
+                        dataType: "json",
                         data: JSON.stringify(data),
                         success: function(response) {
-                            console.log("selected")
+                                loadPlantName();
                         }
                     }).fail(function (msg) {
                             console.log(msg);

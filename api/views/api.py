@@ -74,20 +74,15 @@ def selected_web(id_pot):
         rlist.append(storage.get(Plant, pot.Plant_id).to_dict())
         return jsonify(rlist)
     else:
-        data = request.form['Plant_name']
+        data = request.get_json()
+        print(data)
         if not data:
             abort(400, "Not a JSON")
-        keyPot = Pot + '.' + id_pot
-        print("antes del attribute")
-        plant = storage.getByAttribute(Plant, data)
-        print("despues del attribute")
-        pot = storage.all()[keyPot]
-        print("despues del storage")
+        pot = storage.get(Pot, id_pot)
+        plant = storage.getByAttribute(Plant, data['Plant_name'])
         setattr(pot, 'Plant_id', plant.id)
-        print("despues de setear")
         pot.save()
-        print("despues de guardar")
-        return jsonify(storage.get(Pot, id_pot))
+        return jsonify(storage.get(Pot, id_pot).to_dict())
 
 
 @app_views.route('/get_humidity/<string:id_pot>', methods=['GET'], strict_slashes=False)
