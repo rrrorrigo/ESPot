@@ -78,6 +78,7 @@ def selected_web(id_pot):
         if not data:
             abort(400, "Not a JSON")
         keyPot = Pot + '.' + id_pot
+        print("antes del attribute")
         plant = storage.getByAttribute(Plant, data)
         print("despues del attribute")
         pot = storage.all()[keyPot]
