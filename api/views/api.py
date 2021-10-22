@@ -64,25 +64,28 @@ def get_pots():
         return jsonify(pot.to_dict())
 
 
-@app_views.route('/selected/<string:id_pot>', methods=['GET', 'PUT'], strict_slashes=False)
-def selected_web(id_pot):
+@app_views.route('/selected/<string:id_usr>', methods=['GET', 'PUT'], strict_slashes=False)
+def selected_web(id_usr):
     """Api that be updated by WebPage"""
     if request.method == 'GET':
-        pot = storage.get(Pot, id_pot)
+        usr = storage.get(User, id_usr)
+        pot = storage.get(Pot, usr.Pots[0].id)
         rlist = []
         rlist.append(pot.to_dict())
         rlist.append(storage.get(Plant, pot.Plant_id).to_dict())
         return jsonify(rlist)
     else:
+        print("antes del form")
         data = request.get_json()
         print(data)
         if not data:
             abort(400, "Not a JSON")
-        pot = storage.get(Pot, id_pot)
+        usr = storage.get(User, id_usr)
+        pot = storage.get(Pot, usr.Pots[0].id)
         plant = storage.getByAttribute(Plant, data['Plant_name'])
         setattr(pot, 'Plant_id', plant.id)
         pot.save()
-        return jsonify(storage.get(Pot, id_pot).to_dict())
+        return jsonify(storage.get(Pot, pot.id).to_dict())
 
 
 @app_views.route('/get_humidity/<string:id_pot>', methods=['GET'], strict_slashes=False)
