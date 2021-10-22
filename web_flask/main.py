@@ -3,7 +3,7 @@
 runs flask application
 """
 
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, abort
 from models import *
 from models import storage
 from models.Pot import Pot
@@ -20,6 +20,8 @@ CORS(app)
 def my_plants(user_id=""):
     """plant of user"""
     usr = storage.get(User, user_id)
+    if not usr:
+        abort(404)
     all_pots = usr.Pots
     if len(all_pots) == 0:
         return render_template('/add_plant.html')
@@ -67,6 +69,12 @@ def register():
 def teardown_db(exception):
     """closes the storage on teardown"""
     storage.close()
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    # note that we set the 404 status explicitly
+    return render_template('404.html'), 404
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='5000', threaded=True)
