@@ -54,7 +54,7 @@ def register():
         if storage.getByAttribute(User, name) or storage.getByAttribute(User, email):
             flash(u"User already exists", "error")
             return redirect(url_for('register'))
-        new_user = User(name, email, pwd)
+        new_user = User(username=name, email=email, password=pwd)
         new_user.save()
         return redirect(url_for('login'))
 
