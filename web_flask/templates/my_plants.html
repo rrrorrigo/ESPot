@@ -35,11 +35,11 @@
           Choise your plant
         </button>
         <form class="dropdown-menu text" id="listPlants" action="" method="put">
-          <a class="dropdown-item" href="" id="p" name="rosaaa">Amor mio</a>
-          <a class="dropdown-item" href="" id="p">Kiko</a>
-          <a class="dropdown-item" href="" id="p">Mii gue</a>
+          {% for plant in plants %}
+          <a class="dropdown-item" href="" id="p" name="{{ plant.Plant_name }}">{{ plant.Plant_name }}</a>
+          {% endfor %}
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="" id="selected">Amor separado xd</a>
+          <a class="dropdown-item" href="" id="selected"></a>
         </form>
       </div>
     </div>
