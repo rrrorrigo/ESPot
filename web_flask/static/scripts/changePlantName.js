@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
         function selectPlantName(name) {
                 const data = {
-                        "Plant_name": "rosaaa"
+                        "Plant_name": name
                 };
                 $.ajax({
                         url: 'http://35.243.197.246:5001/api/selected/10fe8791-7ab2-4302-8848-b0a6d280ae48 ',
