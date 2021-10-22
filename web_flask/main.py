@@ -22,7 +22,7 @@ def my_plants(user_id=""):
     usr = storage.get(User, user_id)
     pot = storage.get(Pot, "10fe8791-7ab2-4302-8848-b0a6d280ae48")
     plants = storage.all(Plant).values()
-    plants = sorted(plants, key=lambda k: k.name)
+    plants = sorted(plants, key=lambda k: k.Plant_name)
     return render_template('/my_plants.html', pot=pot, plants=plants)
 
 
