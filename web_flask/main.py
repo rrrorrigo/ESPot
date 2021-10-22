@@ -46,7 +46,7 @@ def register():
     if request.method == 'GET':
         return render_template('register.html')
     else:
-        name = request.form['name']
+        name = request.form['username']
         email = request.form['email']
         pwd = request.form['password']
         pwd = md5(pwd.encode()).hexdigest()
