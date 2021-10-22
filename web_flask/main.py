@@ -52,7 +52,7 @@ def register():
         pwd = md5(pwd.encode()).hexdigest()
         if storage.getByAttribute(User, name) or storage.getByAttribute(User, email):
             flash(u"User already exists", "error")
-            return redirect(url_for('login'))
+            return redirect(url_for('register'))
         new_user = User(name, email, pwd)
         new_user.save()
         return redirect(url_for('login'))
