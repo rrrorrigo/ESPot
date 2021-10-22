@@ -71,7 +71,7 @@ def selected_web(id_pot):
         pot = storage.get(Pot, id_pot)
         dictionary = {}
         dictionary['Pot'] = pot.to_dict()
-        dictionary['Plant'] = storage.get(Plant, Pot.Plant_id)
+        dictionary['Plant'] = storage.get(Plant, pot.Plant_id)
         return jsonify(dictionary)
     else:
         data = request.form['Plant_name']

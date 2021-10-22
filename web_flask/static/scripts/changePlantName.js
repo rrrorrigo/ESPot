@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 		.then(data => {
 		    console.log(data);
                 plantName.innerHTML = "<div class='plantName'>" + data.Plant.Plant_name + "</div>"
-                selectedPlant.innerHTML = "<a class='dropdown-item' href='#' id='selected'>" + data.Plant.Plant_name +"</a>"
+                selectedPlant.innerHTML = "<a class='dropdown-item' href='#' id='selected'>" + data.Plant_name +"</a>"
         });}
 
         $('#p').click(function () {
