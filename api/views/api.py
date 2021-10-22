@@ -77,7 +77,7 @@ def selected_web(id_pot):
         data = request.get_json()
         if not data:
             abort(400, "Not a JSON")
-        if not data['id']:
+        if id not in data:
             abort(400, 'Missing id')
         keyPot = Pot + '.' + id_pot
         plant = storage.getByAttribute(Plant, data['Plant_name'])
