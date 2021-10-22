@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 		.then(response => response.json())
 		.then(data => {
 		    console.log(data);
-                plantName.innerHTML = "<div class='plantName'>" + data[1].Plant_name + "</div>"
+                plantName.innerHTML = "<span class='numberHum'>" + data[1].Plant_name + "</span>"
                 selectedPlant.innerHTML = "<a class='dropdown-item' href='#' id='selected'>" + data[1].Plant_name +"</a>"
         });}
 
