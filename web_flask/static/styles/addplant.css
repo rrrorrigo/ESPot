@@ -1,0 +1,163 @@
+:root {
+    --color-dark: #b7d2c3;
+    --color-dark-x: #48665a;
+    --color-dark-xx: #adc7b9;
+    --color-light: #3f4e43;
+    --color-grey: #adc7b9;
+}
+
+
+body {
+    font-family: 'Spartan', sans-serif;
+    font-weight: 300;
+    color: var(--light);
+    overflow: hidden;
+}
+
+.text-light { color: var(--light) !important; }
+.bg-dark { background-color: var(--dark) !important; }
+.bg-dark-x { background-color: var(--dark-x); }
+
+.back {
+/* Rectangle 149 */
+position: fixed;
+width: 100%;
+height: 100%;
+left: 0px;
+top: 0px;
+
+background: #B6CFB6;
+background-size: cover;
+}
+
+.ESPot {
+/* ESPot */
+
+position: absolute;
+width: 287px;
+height: 45px;
+left: 1px;
+top: 15px;
+
+font-family: Maven Pro;
+font-style: normal;
+font-weight: normal;
+font-size: 35px;
+line-height: 47px;
+text-align: center;
+
+color: #576B60;
+}
+
+.back2 {
+/* Rectangle 152 */
+
+position: fixed;
+width: 100%;
+height: 100%;
+left: 0px;
+top: 95px;
+
+background: #99A59D;
+background-size: cover;
+
+}
+
+.logout {
+/* Log out */
+
+position: fixed;
+height: 100%;
+left: 1350px;
+top: 22px;
+
+font-family: Maven Pro;
+font-style: normal;
+font-weight: normal;
+font-size: 25px;
+line-height: 47px;
+
+
+color: #576B60;
+}
+
+.info {
+/* Rectangle 153 */
+
+position: fixed;
+width: 15%;
+height: 65%;
+left: 67px;
+top: 185px;
+
+background: #C4C4C4;
+border-radius: 29px;
+}
+
+.infotext {
+/* Last watering: Month: Hour: Humidity:  */
+
+position: absolute;
+height: 493px;
+left: 83px;
+top: 262px;
+
+font-family: Maven Pro;
+font-style: normal;
+font-weight: normal;
+font-size: 29px;
+line-height: 34px;
+text-align: center;
+
+color: #576B60;
+}
+
+.icono {
+position: absolute;
+width: 0px;
+height: 100%;
+left: 20px;
+top: 15px;
+
+border-radius: 42px;
+}
+
+.container .cocontainer {
+    position: absolute;
+    width: 708px;
+    height: 361px;
+    left: 25%;
+    top: 20%;
+    
+    background: #B6CFB6;
+    border-radius: 40px;
+    border-style: solid;
+    color: #333333;
+}
+
+.form-control {
+    background-color: var(--color-dark-xx);
+    border: 2px solid var(--color-dark-x);
+    border-radius: .3rem;
+    padding: 1rem 0.5rem;
+    min-height: 3.125rem;
+    line-height: initial;
+}
+.form-control:focus {
+    background-color: var(--color-grey);
+    outline: none;
+}
+
+.btn {
+    color: #333333;
+    background-color: var(--color-grey);
+}
+.btn:focus {
+    background-color: var(--color-grey);
+    outline: none;
+}
+.btn:hover {
+    background-color: #8ba590;
+    color: #c0d4c7;
+    outline: none;
+}
