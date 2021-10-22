@@ -249,4 +249,12 @@ cursor: pointer;
 
 .plantName {
     flex-grow: 1;
+    width: 100%;
+    height: 10%;
+    margin-top: -10%;
+    align-self: center;
+    font-family: emoji;
+    font-size: 30px;
+    font-weight: 900;
+    color: #41483f;
 }

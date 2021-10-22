@@ -208,15 +208,22 @@ background-repeat: no-repeat;
     flex-flow: column;
     height: 50%;
     align-self: center;
+    font-weight: 600;
 }
 .numberHum {
     font-family: italic;
     font-size: 23px;
+    font-weight: lighter;
 }
 
 .numberIrri{
     font-family: italic;
     font-size: 20px;
+    font-weight: lighter;
+}
+
+h5 {
+    font-weight: lighter;
 }
 
 h6 {
