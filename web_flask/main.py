@@ -52,7 +52,6 @@ def register():
         name = request.form['username']
         email = request.form['email']
         pwd = request.form['password']
-        pwd = md5(pwd.encode()).hexdigest()
         if storage.getByAttribute(User, name) or storage.getByAttribute(User, email):
             flash(u"User already exists", "error")
             return redirect(url_for('register'))
