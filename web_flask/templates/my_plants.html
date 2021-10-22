@@ -12,10 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../static/styles/style.css" />
     <link rel="stylesheet" href="../static/styles/responsive.css" />
-    <link rel="icon" type="image/png" href="../static/img/logo.png"/>
+    <link rel="icon" type="image/png" href="../static/img/image.png"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
-  <title>ESPot</title>
+    <script type="text/javascript" src="../static/scripts/changePlantName.js"></script>
+    <title>ESPot</title>
 </head>
 <body class="RESPONSIVE">
   <header>
@@ -33,16 +34,17 @@
         <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="list">
           Choise your plant
         </button>
-        <div class="dropdown-menu text" id="listPlants">
-          <a class="dropdown-item" href="#">Amor mio</a>
-          <a class="dropdown-item" href="#">Kiko</a>
-          <a class="dropdown-item" href="#">Mii gue</a>
+        <form class="dropdown-menu text" id="listPlants" action="" method="put">
+          <a class="dropdown-item" href="" id="p" name="amor mio">Amor mio</a>
+          <a class="dropdown-item" href="" id="p">Kiko</a>
+          <a class="dropdown-item" href="" id="p">Mii gue</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#" id="selected">Amor separado xd</a>
-        </div>
+          <a class="dropdown-item" href="" id="selected">Amor separado xd</a>
+        </form>
       </div>
     </div>
     <div class="info2">
+      <div class="plantName"></div>
       <div class=infotext>
         <div class="infote">
           <span class="hum">Humidity: <span class="numberHum">{{ pot.Actual_humidity }}%</span></span>

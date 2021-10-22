@@ -85,8 +85,12 @@ class DBStorage():
 
         all_cls = self.all(cls)
         for value in all_cls.values():
-            if (value.username == attr or value.email == attr):
-                return value
+            if cls == User:
+                if (value.username == attr or value.email == attr):
+                    return value
+            if cls == Plant:
+                if value.Plant_name == attr:
+                    return value
         return None
 
 

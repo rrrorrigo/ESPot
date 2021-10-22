@@ -64,15 +64,14 @@ def get_pots():
         return jsonify(pot.to_dict())
 
 
-@app_views.route('/selected/<string:id_pot>/<string:id_plant>', methods=['GET', 'POST'], strict_slashes=False)
-def selected_web(id_pot, id_plant):
+@app_views.route('/selected/<string:id_pot>', methods=['GET', 'PUT'], strict_slashes=False)
+def selected_web(id_pot):
     """Api that be updated by WebPage"""
     if request.method == 'GET':
         pot = storage.get(Pot, id_pot)
-        plant = storage.get(Plant, id_plant)
         dictionary = {}
         dictionary['Pot'] = pot.to_dict()
-        dictionary['Plant'] = plant.to_dict()
+        dictionary['Plant'] = storage.get(Plant, Pot.Plant_id)
         return jsonify(dictionary)
     else:
         data = request.get_json()
@@ -80,13 +79,9 @@ def selected_web(id_pot, id_plant):
             abort(400, "Not a JSON")
         if not data['id']:
             abort(400, 'Missing id')
-        keyPlant = Plant + '.' + data['Plant']['id']
-        keyPot = Pot + '.' + data['Pot']['id']
-        setattr(storage.all()[keyPlant], 'Plant_name', data['Plant']['Plant_name'])
-        setattr(storage.all()[keyPlant], 'Humidity_irrigation', data['Plant']['Humidity_irrigation'])
-        setattr(storage.all()[keyPot], 'Last_irrigation', data['Pot']['Last_irrigation'])
-        setattr(storage.all()[keyPot], 'Turned_ON', data['Pot']['Turned_ON'])
-        storage.all()[keyPlant].save()
+        keyPot = Pot + '.' + id_pot
+        plant = storage.getByAttribute(Plant, data['Plant_name'])
+        setattr(storage.all()[keyPot], 'Plant_id', plant.id)
         storage.all()[keyPot].save()
         return jsonify(storage.get(Pot, id_pot))
 
