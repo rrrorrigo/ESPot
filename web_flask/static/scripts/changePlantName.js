@@ -2,8 +2,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
         loadPlantName();
 
         function loadPlantName() {
-        const plantName = document.getElementsByClassName('plantName')
-        const selectedPlant = document.getElementById('selected')
+        const plantName = document.getElementsByClassName('plantName');
+        const selectedPlant = document.getElementById('selected');
         fetch("http://35.243.197.246:5001/api/selected/10fe8791-7ab2-4302-8848-b0a6d280ae48")
 		.then(response => response.json())
 		.then(data => {
@@ -15,12 +15,12 @@ window.addEventListener('DOMContentLoaded', (e) => {
         $('#p').click(function () {
                 const name = this.getAttribute('name');
                 selectPlantName(name);
-        })
+        });
 
         function selectPlantName(name) {
                 const data = {
                         "Plant_name": "rosaaa"
-                }
+                };
                 $.ajax({
                         url: 'http://35.243.197.246:5001/api/selected/10fe8791-7ab2-4302-8848-b0a6d280ae48 ',
                         type: 'PUT',
@@ -29,6 +29,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         success: function(response) {
                             console.log("selected")
                         }
+                    }).fail(function (msg) {
+                            console.log(msg);
                     });
         }
 });
