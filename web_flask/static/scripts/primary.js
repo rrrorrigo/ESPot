@@ -1,7 +1,5 @@
 window.addEventListener('DOMContentLoaded', (e) => {
     const onoff = document.getElementById("onoff");
-    const hum = document.querySelector(".numberHum");
-    const irri = document.querySelector(".numberIrri");
     updateAllEvents();
 
     $('#onoff').ready(function (){
@@ -52,6 +50,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
     fetch('http://35.243.197.246:5001/api/pots')
     .then(response => response.json())
     .then(data => {
+        const hum = document.querySelector(".numberHum");
+        const irri = document.querySelector(".numberIrri");
         hum.text = data[0].Actual_humidity
         irri.text = data[0].Last_irrigation
         if (data[0].Is_empty) {
