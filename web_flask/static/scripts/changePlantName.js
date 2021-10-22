@@ -8,8 +8,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
 		.then(response => response.json())
 		.then(data => {
 		    console.log(data);
-                plantName.innerHTML = "<div class='plantName'>" + data.Plant.Plant_name + "</div>"
-                selectedPlant.innerHTML = "<a class='dropdown-item' href='#' id='selected'>" + data.Plant_name +"</a>"
+                plantName.innerHTML = "<div class='plantName'>" + data[1].Plant_name + "</div>"
+                selectedPlant.innerHTML = "<a class='dropdown-item' href='#' id='selected'>" + data[1].Plant_name +"</a>"
         });}
 
         $('#p').click(function () {

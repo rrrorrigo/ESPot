@@ -69,10 +69,10 @@ def selected_web(id_pot):
     """Api that be updated by WebPage"""
     if request.method == 'GET':
         pot = storage.get(Pot, id_pot)
-        dictionary = {}
-        dictionary['Pot'] = pot.to_dict()
-        dictionary['Plant'] = storage.get(Plant, pot.Plant_id)
-        return jsonify(dictionary)
+        rlist = []
+        rlist.append(pot.to_dict())
+        rlist.append(storage.get(Plant, pot.Plant_id).to_dict())
+        return jsonify(rlist)
     else:
         data = request.form['Plant_name']
         if not data:
