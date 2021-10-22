@@ -52,7 +52,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     .then(data => {
         const hum = document.querySelector(".numberHum");
         const irri = document.querySelector(".numberIrri");
-        hum.innerHTML = "<span class='numberHum'>" + data[0].Actual_humidity + "</span>"
+        hum.innerHTML = "<span class='numberHum'>" + data[0].Actual_humidity + "%</span>"
         irri.innerHTML = "<span class='numberIrri'>" + data[0].Last_irrigation + "</span>"
         if (data[0].Is_empty) {
             $(".alerticon").css({"background": "url('/../static/img/alertt.png') bottom center", "background-repeat": "no-repeat"});
