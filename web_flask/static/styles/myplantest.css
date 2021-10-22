@@ -60,8 +60,7 @@ background-size: cover;
 
 }
 
-.info2 {
-/* Rectangle 150 */
+/* .info2 {
 
 position: fixed;
 width: 17%;
@@ -71,7 +70,7 @@ top: 170px;
 
 background: #808D80;
 border-radius: 38px;
-}
+} */
 
 .logout {
 /* Log out */
@@ -122,8 +121,8 @@ text-align: center;
 color: #576B60;
 }
 
-.onoff {
-/* on off boton  */
+/* .onoff {
+
 
 position: absolute;
 width: 10%;
@@ -133,7 +132,7 @@ top: 48%;
 
 background: url('../img/off.png');
 background-repeat: no-repeat;
-}
+} */
 
 .icono {
 position: absolute;
@@ -145,14 +144,14 @@ top: 15px;
 border-radius: 42px;
 }
 
-.plant {
+/* .plant {
 position: relative;
 width: 1%;
 height: 1%;
 left: 479px;
 top: 0px;
 left: 400px;
-}
+} */
 
 .container {
 position: fixed;
@@ -218,16 +217,16 @@ background-repeat: no-repeat;
     cursor: pointer;
 }
 
-.onoff {
+/* .onoff {
     font-size: 160px;
     left: 666px;
     top: 170px;
     color: #808D80;
-}
+} */
 
-.RESPONSIVE {
+/* .RESPONSIVE {
     height: 100%;
-}
+} */
 
 .form-control {
     border: 2px solid var(--color-dark-xx);

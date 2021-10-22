@@ -60,7 +60,7 @@ void loop() {
     tank = digitalRead(FloatSensor); // read tank state
     humidity = analogRead(SensorPin); // analog read of humidity
     percentage = (float)((humidity - MIN) * 100) / (MAX - MIN); // converts analog read to percentage
-    int min_limit = 20;
+    int min_limit = 25;
     int top = int(my_request["Humidity_irrigation"]);
     if  (percentage < min_limit && tank == HIGH) {
         // make calculations of how much seconds to turn on relay, regarding volume, mass etc.

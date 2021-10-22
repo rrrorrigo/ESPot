@@ -25,14 +25,6 @@ def my_plants(user_id=""):
     return render_template('/my_plants.html', pot=pot, plants=plants)
 
 
-@app.route('/my_plants/test/<string:user_id>', strict_slashes=False)
-def my_plants_test(user_id=""):
-    """plant of user"""
-    usr = storage.get(User, user_id)
-    pot = storage.get(Pot, "10fe8791-7ab2-4302-8848-b0a6d280ae48")
-    return render_template('/test_real_time_data.html', pot=pot)
-
-
 @app.route('/login', methods=['GET', 'POST'], strict_slashes=False)
 def login():
     if request.method == 'GET':
@@ -49,27 +41,22 @@ def login():
         return redirect(url_for('login'))
 
 
-""" 
-@app.route('/login', strict_slashes=False)
-def login():
-    
-    
-    return render_template('index.html', states=states, state_id=state_id)
-"""
-
 @app.route('/register', strict_slashes=False)
 def register():
-    
-    
-    return render_template('register.html')
+    if request.method == 'GET':
+        return render_template('register.html')
+    else:
+        name = request.form['name']
+        email = request.form['email']
+        pwd = request.form['password']
+        pwd = md5(pwd.encode()).hexdigest()
+        if storage.getByAttribute(User, name) or storage.getByAttribute(User, email):
+            flash(u"User already exists", "error")
+            return redirect(url_for('login'))
+        new_user = User(name, email, pwd)
+        new_user.save()
+        return redirect(url_for('login'))
 
-"""
-@app.route('/page', strict_slashes=False)
-def page():
-    
-    
-    return render_template('index.html', states=states, state_id=state_id)
- """
 
 @app.teardown_appcontext
 def teardown_db(exception):
