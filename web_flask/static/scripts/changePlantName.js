@@ -28,7 +28,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         dataType: "json",
                         data: JSON.stringify(data),
                         success: function(response) {
-                                loadPlantName();
+                                alert("Attention, your plant configuration is now changed")
                         }
                     }).fail(function (msg) {
                             console.log(msg);
