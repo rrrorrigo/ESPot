@@ -160,21 +160,21 @@ background-repeat: no-repeat;
 .alerticon {
     flex-grow: 1;
     width: 100%;
-    height: 50%;
+    height: 70%;
 }
 
 .alertext {
     flex-grow: 1;
     align-content: center;
     width: 100%;
-    height: 100%;
+    height: 30%;
     font-family: Maven Pro;
     font-style: normal;
     font-weight: normal;
     font-size: 10px;
     line-height: 22px;
     text-align: center;
-    
+    align-self: flex-end;
     color: #808D80;    
 }
 

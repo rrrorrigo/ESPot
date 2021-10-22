@@ -55,10 +55,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
         hum.text = data[0].Actual_humidity
         irri.text = data[0].Last_irrigation
         if (data[0].Is_empty) {
-            $(".alerticon").css({"background": "url('/../static/img/alertt.png') top center", "background-repeat": "no-repeat"});
+            $(".alerticon").css({"background": "url('/../static/img/alertt.png') bottom center", "background-repeat": "no-repeat"});
             tank_text.innerHTML = "<h5>Warning</h5><h6>The water level is low, please add water to the tank!</h6>"
         } else {
-            $(".alerticon").css({"background": "url('/../static/img/tankfull.png') top center", "background-repeat": "no-repeat"});
+            $(".alerticon").css({"background": "url('/../static/img/tankfull.png') bottom center", "background-repeat": "no-repeat"});
             tank_text.innerHTML = "<h5>The tank has enough water</h5>"
         }
     })   
