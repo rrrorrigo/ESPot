@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
         function loadPlantName() {
         const plantName = document.getElementsByClassName('plantName')
-        const selectedPlant = document.getElementsById('selected')
+        const selectedPlant = document.getElementById('selected')
         fetch("http://35.243.197.246:5001/api/selected/10fe8791-7ab2-4302-8848-b0a6d280ae48")
         .then(response => response.json())
         .then(data => {
