@@ -147,7 +147,9 @@ border-radius: 42px;
     background-color: var(--color-grey);
     outline: none;
 }
-
+.form-control:hover {
+    background-color: #a7b9aa;
+}
 .btn {
     color: #333333;
     background-color: var(--color-grey);
@@ -157,7 +159,7 @@ border-radius: 42px;
     outline: none;
 }
 .btn:hover {
-    background-color: #8ba590;
-    color: #c0d4c7;
+    background-color: #a7b9aa;
+    color: #455049;
     outline: none;
 }
