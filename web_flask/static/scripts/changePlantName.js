@@ -21,6 +21,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 const data = {
                         "Plant_name": String(name)
                 };
+                alert(data);
                 $.ajax({
                         url: 'http://35.243.197.246:5001/api/selected/10fe8791-7ab2-4302-8848-b0a6d280ae48 ',
                         type: 'PUT',
