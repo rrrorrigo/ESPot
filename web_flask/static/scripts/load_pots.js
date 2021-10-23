@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 		.then(response => response.json())
 		.then(data => {
             data.forEach(element => {
-                let user_id = element.user_id;
+                const user_id = element.user_id;
                 const article = `<div class="choose" style="cursor: pointer;" onclick="window.location='http://35.243.197.246:5000/${user_id}/${element.id}';">
                 <div class="title_box">
                 <h2>${element.name}</h2>
@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 <img src="../static/img/plant.png" class="plant_img"></div>
                 </div>`;
                 $('.main').append(article);
-            });
+            })
             const article = `<div class="choose" style="cursor: pointer;" onclick="window.location='http://35.243.197.246:5000/${user_id}/add_pot';">>
                 <div class="title_box">Register new plant</div>
                 <div class="botonzito">
