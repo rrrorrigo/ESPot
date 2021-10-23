@@ -44,7 +44,7 @@
 </div>
 
 <div align="center">
-  <img alt="PNG" src="https://github.com/rrrorrigo/ESPot/blob/main/readme/login.png" width="700" height="450"/>
+  <img alt="PNG" src="https://github.com/rrrorrigo/ESPot/blob/main/readme/login.png" width="400" height="400"/>
   <p>Now log-in into your new account</p>
 </div>
 
