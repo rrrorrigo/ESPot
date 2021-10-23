@@ -44,7 +44,7 @@
 </div>
 
 <div align="center">
-  <img alt="PNG" src="https://github.com/rrrorrigo/ESPot/blob/main/readme/login.png" width="700" height="450"/>
+  <img alt="PNG" src="https://github.com/rrrorrigo/ESPot/blob/main/readme/login.png" width="400" height="400"/>
   <p>Now log-in into your new account</p>
 </div>
 
@@ -60,8 +60,8 @@
 <!-- CONTACT -->
 ## Contact
 
-* [ **Francisco Calixto**](https://github.com/coding-kiko) - (2788@holbertonschool.com)
-* [ **Rodrigo Briones**](https://github.com/rrrorrigo) - (2788@holbertonschool.com
+* [ **Francisco Calixto**](https://github.com/coding-kiko) - (2789@holbertonschool.com)
+* [ **Rodrigo Briones**](https://github.com/rrrorrigo) - (2757@holbertonschool.com)
 * [ **Gabriel Ferreira**](https://github.com/elyoguictm) - (2788@holbertonschool.com)
 
 Project Link: [ESPot](https://github.com/rrrorrigo/ESPot)
