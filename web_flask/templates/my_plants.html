@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../static/styles/style.css" />
     <link rel="stylesheet" href="../static/styles/responsive.css" />
+    <link rel="stylesheet" href="../static/styles/text.css" />
     <link rel="icon" type="image/png" href="../static/img/image.png"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
@@ -20,7 +21,13 @@
 </head>
 <body class="RESPONSIVE">
   <header>
-    <h1><img src="../static/img/logo.png" class="logo" alt="logo"><span class="titulo">ESPot</span> <a href="/login" class="logout text-decoration-none">Log out</a></h1>
+    <h1>
+      <a class="titulo text-decoration-none" href="/">
+        <img src="../static/img/image.png" class="logo" alt="logo"/>
+        ESPot
+      </a>
+      <span class="currentUser">Admin</span> <a href="/login" class="logout text-decoration-none">Log out</a>
+    </h1>
   </header>
   <div class="main">
     <div class="plantdiv">
@@ -29,7 +36,8 @@
     <div class="onoffdiv">
       <div class="onoff">
       <i class="onoff far fa-power-off fa-10x" id="onoff"></i>
-    </div>
+      <span class="onofftext">&nbsp;</span>
+      </div>
       <div class="dropdown btn-group" id="plantList">
         <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="list">
           Choose your plant
@@ -45,7 +53,7 @@
     </div>
     <div class="info2">
       <div class=infotext>
-        <span class='plantName'></span>
+        <div class='plantName'></div>
         <div class="infote">
           <span class="hum">Humidity: <span class="numberHum">{{ pot.Actual_humidity }}%</span></span>
           <span class="irri">Last irrigation: <span class="numberIrri">{{ pot.Last_irrigation }}</span><br></span>
