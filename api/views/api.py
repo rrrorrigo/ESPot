@@ -52,7 +52,9 @@ def get_user_pots(user_id):
     pots_list = []
     for pot in storage.all(Pot).values():
         if pot.Username == usr.username:
+            print(storage.get(Plant, pot.Plant_id).Plant_name)
             pot.to_dict()["name"] = storage.get(Plant, pot.Plant_id).Plant_name
+            print(pot.to_dict())
             pots_list.append(pot.to_dict())
     return jsonify(pots_list)
 
