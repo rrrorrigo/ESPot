@@ -20,7 +20,7 @@
 
 <div align="center">
   <img alt="PNG" src="https://github.com/rrrorrigo/ESPot/blob/main/readme/ESP.png" width="300" height="250"/>
-  <img alt="PNG" src="https://charbase.com/images/glyph/65122" width="250" height="250"/>
+  <img alt="PNG" src="https://charbase.com/images/glyph/65122" width="200" height="200"/>
   <img alt="PNG" src="https://github.com/rrrorrigo/ESPot/blob/main/readme/potplant.png" width="300" height="250"/>
     <p align="center"> ESPot (ESP for the module ESP8266 and Pot for our pot) is a device that helps the user to maintain the watering of one or more plants, in a wireless way,    thinking to simplify the user experience so that it is used by all public  </p>
 </div>
@@ -44,7 +44,7 @@
 </div>
 
 <div align="center">
-  <img alt="PNG" src="https://github.com/rrrorrigo/ESPot/blob/main/readme/login.png" width="400" height="400"/>
+  <img alt="PNG" src="https://github.com/rrrorrigo/ESPot/blob/main/readme/login.png" width="700" height="450"/>
   <p>Now log-in into your new account</p>
 </div>
 
