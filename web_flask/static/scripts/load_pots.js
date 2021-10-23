@@ -13,8 +13,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 <img src="../static/img/plant.png" class="plant_img"></div>
                 </div>`;
                 $('.main').append(article);
-            })
-            const article = `<div class="choose" style="cursor: pointer;" onclick="window.location='http://35.243.197.246:5000/${user_id}/add_pot';">>
+            });
+            const article = `<div class="choose" style="cursor: pointer;" onclick="window.location='http://35.243.197.246:5000/${user_id}/add_pot';">
                 <div class="title_box">Register new plant</div>
                 <div class="botonzito">
                 <div class="botonfondo">+</div>
