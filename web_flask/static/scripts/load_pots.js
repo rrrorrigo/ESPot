@@ -1,10 +1,9 @@
 window.addEventListener('DOMContentLoaded', (e) => {
-    let user_id = "";
-    fetch("http://35.243.197.246:5001/api/user_pots/dce9b75c-d8ac-4971-9024-a52fb359f7eb")
+    let user_id = document.getElementById('user_id');
+    fetch(`http://35.243.197.246:5001/api/user_pots/${user_id}`)
 		.then(response => response.json())
 		.then(data => {
             data.forEach(element => {
-                user_id = element.user_id;
                 const article = `<div class="choose" style="cursor: pointer;" onclick="window.location='http://35.243.197.246:5000/${user_id}/my_plants/${element.id}';">
                 <div class="title_box">
                 <h2>${element.name}</h2>
