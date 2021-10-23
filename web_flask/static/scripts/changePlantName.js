@@ -1,10 +1,12 @@
 window.addEventListener('DOMContentLoaded', (e) => {
+        const pot_id = document.getElementById('id');
+        const user_id = document.getElementById('user_id');
         loadPlantName();
 
         function loadPlantName() {
         const plantName = document.querySelector('.plantName');
         const selectedPlant = document.querySelector('#selected');
-        fetch("http://35.243.197.246:5001/api/selected/dce9b75c-d8ac-4971-9024-a52fb359f7eb")
+        fetch("http://35.243.197.246:5001/api/selected/${user_id}/${pot_id}")
 		.then(response => response.json())
 		.then(data => {
 		    console.log(data);
@@ -22,7 +24,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         "Plant_name": String(name)
                 };
                 $.ajax({
-                        url: 'http://35.243.197.246:5001/api/selected/dce9b75c-d8ac-4971-9024-a52fb359f7eb',
+                        url: 'http://35.243.197.246:5001/api/selected/${user_id}/${pot_id}',
                         type: 'PUT',
                         contentType: "application/json",
                         dataType: "json",

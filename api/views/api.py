@@ -77,12 +77,12 @@ def get_pots():
         return jsonify(pot.to_dict())
 
 
-@app_views.route('/selected/<string:id_usr>', methods=['GET', 'PUT'], strict_slashes=False)
-def selected_web(id_usr):
+@app_views.route('/selected/<string:id_usr>/<string:pot_id>', methods=['GET', 'PUT'], strict_slashes=False)
+def selected_web(id_usr, pot_id):
     """Api that be updated by WebPage"""
     if request.method == 'GET':
         usr = storage.get(User, id_usr)
-        pot = storage.get(Pot, usr.Pots[0].id)
+        pot = storage.get(Pot, pot_id)
         rlist = []
         rlist.append(pot.to_dict())
         rlist.append(storage.get(Plant, pot.Plant_id).to_dict())
@@ -94,7 +94,7 @@ def selected_web(id_usr):
         if not data:
             abort(400, "Not a JSON")
         usr = storage.get(User, id_usr)
-        pot = storage.get(Pot, usr.Pots[0].id)
+        pot = storage.get(Pot, pot_id)
         plant = storage.getByAttribute(Plant, data['Plant_name'])
         setattr(pot, 'Plant_id', plant.id)
         pot.save()

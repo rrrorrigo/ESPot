@@ -1,5 +1,6 @@
 window.addEventListener('DOMContentLoaded', (e) => {
     const onoff = document.getElementById("onoff");
+    const pot_id = document.getElementById('id');
     updateAllEvents();
 
     $('#onoff').ready(function (){
@@ -19,7 +20,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         "Turned_ON": false
                     };
                     $.ajax({
-                        url: 'http://35.243.197.246:5001/api/send_data/10fe8791-7ab2-4302-8848-b0a6d280ae48',
+                        url: 'http://35.243.197.246:5001/api/send_data/${pot_id}',
                         type: 'PUT',
                         contentType: "application/json",
                         data: JSON.stringify(statFalse),
@@ -33,7 +34,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         "Turned_ON": true
                     }
                     $.ajax({
-                        url: 'http://35.243.197.246:5001/api/send_data/10fe8791-7ab2-4302-8848-b0a6d280ae48',
+                        url: 'http://35.243.197.246:5001/api/send_data/${pot_id}',
                         type: 'PUT',
                         contentType: "application/json",
                         data: JSON.stringify(statTrue),
