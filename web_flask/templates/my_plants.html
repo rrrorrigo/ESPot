@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
     <script type="text/javascript" src="http://35.243.197.246:5000/static/scripts/changePlantName.js"></script>
+    <script type="text/javascript" src="http://35.243.197.246:5000/static/scripts/changeButtonStatus.js"></script>
     <title>ESPot</title>
     <input type="hidden" name ="hidden_pot_id" value="{{ pot.id }}" id="id">
     <input type="hidden" name ="hidden_user_id" value="{{ user.id }}" id="user_id">
@@ -38,7 +39,7 @@
     <div class="onoffdiv">
       <div class="onoff">
       <i style="cursor: pointer;" class="onoff far fa-power-off fa-10x" id="onoff"></i>
-      <span class="onofftext">&nbsp;</span>
+      <span class="onofftext" id="onofftext">&nbsp;</span>
       </div>
       <div class="dropdown btn-group" id="plantList">
         <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="list">
