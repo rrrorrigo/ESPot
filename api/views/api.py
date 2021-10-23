@@ -54,6 +54,7 @@ def get_user_pots(user_id):
         if pot.Username == usr.username:
             cpy = pot.to_dict()
             cpy["name"] = storage.get(Plant, pot.Plant_id).Plant_name
+            cpy["user_id"] = user_id
             pots_list.append(cpy)
     return jsonify(pots_list)
 
