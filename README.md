@@ -60,8 +60,8 @@
 <!-- CONTACT -->
 ## Contact
 
-* [ **Francisco Calixto**](https://github.com/coding-kiko) - (2788@holbertonschool.com)
-* [ **Rodrigo Briones**](https://github.com/rrrorrigo) - (2788@holbertonschool.com
+* [ **Francisco Calixto**](https://github.com/coding-kiko) - (2789@holbertonschool.com)
+* [ **Rodrigo Briones**](https://github.com/rrrorrigo) - (2757@holbertonschool.com)
 * [ **Gabriel Ferreira**](https://github.com/elyoguictm) - (2788@holbertonschool.com)
 
 Project Link: [ESPot](https://github.com/rrrorrigo/ESPot)
