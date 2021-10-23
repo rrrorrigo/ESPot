@@ -89,7 +89,7 @@ background-size: cover;
         margin-top: 2%;
         margin-left: 1%;
         margin-bottom: auto;
-        width: 30px;
+        width: 30%;
         height: 75%;
         background: #C8E6C9;
         border-radius: 40px;
@@ -103,11 +103,12 @@ background-size: cover;
         order: 1;
         flex-grow: 1;
         height: auto;
-        width: 10px;
+        width: 30%;
         margin-bottom: 7%;
     }
     header {
-        height: auto;
+        height: 130px;
+        width: 100%;
         background: #B6CFB6;
         background-size: cover;
         margin-top: -30px;
@@ -126,11 +127,6 @@ background-size: cover;
         align-items: center;
         margin:auto;
         flex-wrap: wrap;
-    }
-    h1 {
-        width: inherit;
-        height: inherit;
-        bottom: 20px;
     }
 
 
@@ -152,6 +148,7 @@ background-size: cover;
         height: 100%;
         flex-grow: 1;
         align-content: center;
+        width: 30%;
     }
 
     .onoff {
@@ -160,7 +157,7 @@ background-size: cover;
         align-self: center;
         padding-top: 15%;
         padding-left: 40px;
-        height: 150px;
+        height: auto;
         width: 300px;
         filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
         color: #808D80;
@@ -208,7 +205,8 @@ background-size: cover;
 }
 
 .logo {
-    height: 130px;
+    height: 70px;
+    margin-bottom: 10px;
 }
 
 .logout {
@@ -249,14 +247,18 @@ cursor: pointer;
 
 .plantName {
     flex-grow: 1;
-    height: 10%;
+    width: 100%;
+    height: 20%;
     margin-top: -10%;
     margin-bottom: 10%;
     align-self: center;
     font-family: emoji;
     font-size: 30px;
     font-weight: 900;
-    color: #41483f;
+    color: #808D80;
+    border-bottom: #808D80;
+    border-bottom-style: solid;
+    text-align: center;
 }
 
 
