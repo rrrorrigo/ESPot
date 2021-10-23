@@ -65,6 +65,11 @@ def register():
         return redirect(url_for('login'))
 
 
+@app.route('/', strict_slashes=False)
+def home():
+    return render_template('landing.html')
+
+
 @app.teardown_appcontext
 def teardown_db(exception):
     """closes the storage on teardown"""
