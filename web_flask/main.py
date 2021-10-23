@@ -3,6 +3,7 @@
 runs flask application
 """
 
+from re import S
 from flask import Flask, render_template, request, redirect, url_for, flash, abort
 from models import *
 from models import storage
@@ -16,8 +17,8 @@ app.config['SECRET_KEY'] = md5("peñarol".encode()).hexdigest()
 CORS(app)
 
 
-@app.route('/my_plants/<string:user_id>', strict_slashes=False)
-def my_plants(user_id=""):
+@app.route('/<string:user_id>/my_plants/<string:pot_id>', strict_slashes=False)
+def pot(user_id, pot_id):
     """plant of user"""
     usr = storage.get(User, user_id)
     if not usr:
@@ -30,6 +31,11 @@ def my_plants(user_id=""):
     plants = sorted(plants, key=lambda k: k.Plant_name)
     return render_template('/my_plants.html', pot=pot, plants=plants)
 
+
+@app.route('/<string:user_id>/my_plants', strict_slashes=False)
+def my_plants(user_id):
+    user = storage.get(User, user_id)
+    return render_template('choose_plant.html', user=user)
 
 @app.route('/login', methods=['GET', 'POST'], strict_slashes=False)
 def login():
@@ -80,3 +86,6 @@ def teardown_db(exception):
 def page_not_found(e):
     # note that we set the 404 status explicitly
     return render_template('404.html'), 404
+
+if __name__ == '__main__':
+        app.run(host='0.0.0.0', port='5000', threaded=True)
