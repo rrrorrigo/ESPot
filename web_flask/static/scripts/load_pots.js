@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 		.then(data => {
             data.forEach(element => {
                 user_id = element.user_id;
-                const article = `<div class="choose" style="cursor: pointer;" onclick="window.location='http://35.243.197.246:5000/${user_id}/${element.id}';">
+                const article = `<div class="choose" style="cursor: pointer;" onclick="window.location='http://35.243.197.246:5000/${user_id}/my_plants/${element.id}';">
                 <div class="title_box">
                 <h2>${element.name}</h2>
                 <h1>${element.Actual_humidity}%</h1>
