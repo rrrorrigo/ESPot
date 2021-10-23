@@ -17,8 +17,8 @@ app.config['SECRET_KEY'] = md5("peñarol".encode()).hexdigest()
 CORS(app)
 
 
-@app.route('/my_plants/<string:user_id>', strict_slashes=False)
-def my_plants(user_id):
+@app.route('/<string:user_id>/my_plants/<string:pot_id>', strict_slashes=False)
+def pot(user_id, pot_id):
     """plant of user"""
     usr = storage.get(User, user_id)
     if not usr:
@@ -32,11 +32,14 @@ def my_plants(user_id):
     return render_template('/my_plants.html', pot=pot, plants=plants)
 
 
-""" @app.route('/<string:user_id>/my_plants', strict_slashes=False)
+@app.route('/<string:user_id>/my_plants', strict_slashes=False)
 def my_plants(user_id):
     user = storage.get(User, user_id)
+    if not user:
+        abort(404)
     return render_template('choose_plant.html', user=user)
- """
+
+
 @app.route('/login', methods=['GET', 'POST'], strict_slashes=False)
 def login():
     if request.method == 'GET':
@@ -71,6 +74,14 @@ def register():
         return redirect(url_for('login'))
 
 
+@app.route('/<string:user_id>/add_pot', strict_slashes=False)
+def add_pot(user_id):
+    user = storage.get(User, user_id)
+    if not user:
+        abort(404)
+    return render_template('add_plant.html', user=user)
+
+
 @app.route('/', strict_slashes=False)
 def home():
     return render_template('landing.html')
@@ -89,3 +100,4 @@ def page_not_found(e):
 
 if __name__ == '__main__':
         app.run(host='0.0.0.0', port='5000', threaded=True)
+        
