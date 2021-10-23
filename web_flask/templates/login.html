@@ -77,7 +77,7 @@
                   </form>
                   <p class="font-weight-bold text-center text-muted" id="loginGoogle">Or log in with your Google account </p>
                   <div class="d-flex justify-content-around">
-                    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+                    <div class="btn btn-outline-dark flex-grow-1 mr-2" data-onsuccess="onSignIn" data-theme="dark"><i class="fab fa-google lead mr-2 align"></i>Google</div>
                     <script>
                       function onSignIn(googleUser) {
                         // Useful data for your client-side scripts:
@@ -94,7 +94,6 @@
                         console.log("ID Token: " + id_token);
                       }
                     </script>
-                    <a href="https://www.google.com" type="button" class="btn btn-outline-dark flex-grow-1 mr-2"><i class="fab fa-google lead mr-2 align"></i>Google</a>
                   </div>
                   <div class="text-center w-100">
                       <p class="d-inline-block mb-0">Not registered yet?</p> <a href="/register" class="text-light font-weight-bold text-decoration-none">Sign up now</a>
