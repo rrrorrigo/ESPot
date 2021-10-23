@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', (e) => {
-    let user_id = document.getElementsByTagName('hidden_user_id').value;
+    let user_id = document.getElementsById('user_id').value;
     fetch(`http://35.243.197.246:5001/api/user_pots/${user_id}`)
 		.then(response => response.json())
 		.then(data => {
