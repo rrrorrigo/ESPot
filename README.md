@@ -2,7 +2,7 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
+  <a href="https://github.com/rrrorrigo/ESPot">
     <img align="right" alt="GIF" src="https://i.pinimg.com/originals/f5/7d/14/f57d14118807406d6fff9243a9650de9.gif" width="150" height="150" />
     <img src="/web_flask/static/img/image.png" alt="Logo" width="80" height="80">
     <img align="left" alt="GIF" src="https://i.pinimg.com/originals/f5/7d/14/f57d14118807406d6fff9243a9650de9.gif" width="150" height="150" />
