@@ -47,7 +47,7 @@ def get_plants():
 
 
 @app_views.route('/user_pots/<user_id>', methods=['GET'], strict_slashes=False)
-def get_user_pots(user_id=""):
+def get_user_pots(user_id):
     usr = storage.get(User, user_id)
     all_pots = storage.all(Pot).values()
     list_pots = []
