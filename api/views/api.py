@@ -46,7 +46,7 @@ def get_plants():
         return jsonify(plant.to_dict())
 
 
-@app_views.route('/user_pots/<user_id>', methods=['GET'], strict_slashes=False)
+@app_views.route('/user_pots/<string:user_id>', methods=['GET'], strict_slashes=False)
 def get_user_pots(user_id):
     usr = storage.get(User, user_id)
     all_pots = storage.all(Pot).values()
