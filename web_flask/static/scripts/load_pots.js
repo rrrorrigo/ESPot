@@ -16,9 +16,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             });
             const article = `<div class="choose" style="cursor: pointer;" onclick="window.location='http://35.243.197.246:5000/${user_id}/add_pot';">
                 <div class="title_box">Register new plant</div>
-                <div class="botonzito">
-                <div class="botonfondo">+</div>
-                </div>
+                
                 </div>`;
                 $('.main').append(article);
         });
