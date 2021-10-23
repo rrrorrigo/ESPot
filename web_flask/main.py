@@ -17,7 +17,7 @@ app.config['SECRET_KEY'] = md5("peñarol".encode()).hexdigest()
 CORS(app)
 
 
-@app.route('/<string:user_id>/my_plants/<string:pot_id>', strict_slashes=False)
+@app.route('/my_plants/<string:user_id>', strict_slashes=False)
 def pot(user_id, pot_id):
     """plant of user"""
     usr = storage.get(User, user_id)
@@ -32,11 +32,11 @@ def pot(user_id, pot_id):
     return render_template('/my_plants.html', pot=pot, plants=plants)
 
 
-@app.route('/<string:user_id>/my_plants', strict_slashes=False)
+""" @app.route('/<string:user_id>/my_plants', strict_slashes=False)
 def my_plants(user_id):
     user = storage.get(User, user_id)
     return render_template('choose_plant.html', user=user)
-
+ """
 @app.route('/login', methods=['GET', 'POST'], strict_slashes=False)
 def login():
     if request.method == 'GET':
