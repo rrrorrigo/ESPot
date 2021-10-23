@@ -59,13 +59,12 @@ def get_user_pots(user_id):
     return jsonify(pots_list)
 
 
-@app_views.route('/pots', methods=['GET', 'POST'], strict_slashes=False)
-def get_pots():
+@app_views.route('/pots/<string:pot_id>', methods=['GET', 'POST'], strict_slashes=False)
+def get_pots(pot_id):
     if request.method == 'GET':
-            all_pots = storage.all(Pot).values()
+            pot = storage.get(Pot, pot_id)
             list_pots = []
-            for pot in all_pots:
-                list_pots.append(pot.to_dict())
+            list_pots.append(pot.to_dict())
             return jsonify(list_pots)
     else:
         data = request.get_json()

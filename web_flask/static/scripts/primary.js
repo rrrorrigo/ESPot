@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     updateAllEvents();
 
     $('#onoff').ready(function (){
-        $.get('http://35.243.197.246:5001/api/pots', function(data) {
+        $.get(`http://35.243.197.246:5001/api/pots/${pot_id}`, function(data) {
                 if (data[0].Turned_ON) {
                     onoff.style.color = "rgb(70, 117, 70)";
                 } else {
@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     });
 
     $('#onoff').click(function (){
-            $.get('http://35.243.197.246:5001/api/pots', function(data) {
+            $.get(`http://35.243.197.246:5001/api/pots/${pot_id}`, function(data) {
                 if (data[0].Turned_ON) {
                     onoff.style.color = "rgb(128, 141, 128)";
                     const statFalse = {
@@ -49,7 +49,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     function updateAllEvents() { 
     const tank_text = document.querySelector(".alertext");
 
-    fetch('http://35.243.197.246:5001/api/pots')
+    fetch(`http://35.243.197.246:5001/api/pots/${pot_id}`)
     .then(response => response.json())
     .then(data => {
         const hum = document.querySelector(".numberHum");
