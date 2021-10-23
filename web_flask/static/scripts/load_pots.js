@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 		.then(response => response.json())
 		.then(data => {
             data.forEach(element => {
-                const user_id = element.user_id;
+                var user_id = element.user_id;
                 const article = `<div class="choose" style="cursor: pointer;" onclick="window.location='http://35.243.197.246:5000/${user_id}/${element.id}';">
                 <div class="title_box">
                 <h2>${element.name}</h2>
