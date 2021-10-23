@@ -49,8 +49,11 @@ def get_plants():
 @app_views.route('/user_pots/<string:user_id>', methods=['GET'], strict_slashes=False)
 def get_user_pots(user_id):
     usr = storage.get(User, user_id)
-    print(usr.Pots[0])
-    return jsonify(usr.Pots[0])
+    pots_list = []
+    for pot in storage.all(Pot).values():
+        if pot.Username == usr.Username:
+            pots_list.append(pot)
+    return jsonify(pots_list)
 
 
 @app_views.route('/pots', methods=['GET', 'POST'], strict_slashes=False)
