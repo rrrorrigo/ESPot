@@ -67,9 +67,11 @@ body {
 
 #Title {
     margin-top: 10px;
+    width: 100%;
 }
 
 #logo {
     height: 60px;
     width:auto;
+    margin-left: 10%;
 }
