@@ -51,7 +51,7 @@ def get_user_pots(user_id):
     usr = storage.get(User, user_id)
     pots_list = []
     for pot in storage.all(Pot).values():
-        if pot.Username == usr.Username:
+        if pot.username == usr.Username:
             pots_list.append(pot)
     return jsonify(pots_list)
 
