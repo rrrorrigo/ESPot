@@ -18,7 +18,7 @@ CORS(app)
 
 
 @app.route('/my_plants/<string:user_id>', strict_slashes=False)
-def my_plants(user_id, pot_id):
+def my_plants(user_id):
     """plant of user"""
     usr = storage.get(User, user_id)
     if not usr:
