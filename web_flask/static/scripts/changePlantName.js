@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', (e) => {
-        const pot_id = document.getElementById('id');
-        const user_id = document.getElementById('user_id');
+        const pot_id = document.getElementById('id').value;
+        const user_id = document.getElementById('user_id').value;
         loadPlantName();
 
         function loadPlantName() {
