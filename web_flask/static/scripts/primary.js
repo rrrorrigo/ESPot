@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', (e) => {
     const onoff = document.getElementById("onoff");
-    const pot_id = document.getElementById('id');
-    const user_id = document.getElementById('user_id');
+    const pot_id = document.getElementById('id').value;
+    const user_id = document.getElementById('user_id').value;
     updateAllEvents();
 
     $('#onoff').ready(function (){
