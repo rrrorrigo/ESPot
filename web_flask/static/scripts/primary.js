@@ -22,6 +22,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     $('.botonfondo').click(function (){
         $(".config").toggle();
+        $('#submit').click(function () {
+            const form = $(".config").serializeArray();
+            alert(form);
+        });
     });
 
     $('#onoff').click(function (){
