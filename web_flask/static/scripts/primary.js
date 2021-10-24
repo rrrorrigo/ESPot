@@ -19,12 +19,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 }});
     });
     
-    $(document).ready(function() {
-        $('.botonfondo').click(function (){
-            $(".config").toggle();
-        });
-    });
-
+    
     $('#onoff').click(function (){
             $.get(`http://35.243.197.246:5001/api/pots/${pot_id}`, function(data) {
                 if (data[0].Turned_ON) {
@@ -56,12 +51,12 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         }
                     }) 
                 }});
-        });
+            });
             
-    function updateAllEvents() { 
-    const tank_text = document.querySelector(".alertext");
+            function updateAllEvents() { 
+                const tank_text = document.querySelector(".alertext");
 
-    fetch(`http://35.243.197.246:5001/api/pots/${pot_id}`)
+                fetch(`http://35.243.197.246:5001/api/pots/${pot_id}`)
     .then(response => response.json())
     .then(data => {
         const hum = document.querySelector(".numberHum");
@@ -76,6 +71,12 @@ window.addEventListener('DOMContentLoaded', (e) => {
             tank_text.innerHTML = "<h5>The tank has enough water</h5>"
         }
     })   
-    }
-    let display = setInterval(updateAllEvents, 4000);
+}
+let display = setInterval(updateAllEvents, 4000);
+});
+
+$(document).ready(function() {
+    $('.botonfondo').click(function (){
+        $(".config").toggle();
+    });
 });
