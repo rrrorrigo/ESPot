@@ -1,13 +1,14 @@
 window.addEventListener('DOMContentLoaded', (e) => {
     let user_id = document.getElementById('user_id').value;
+    let img = "";
     fetch(`http://35.243.197.246:5001/api/user_pots/${user_id}`)
 		.then(response => response.json())
 		.then(data => {
             data.forEach(element => {
                 if (element.name == 'Rosa') {
-                    const img = '../static/img/rose.png'
+                    img = '../static/img/rose.png'
                 } else {
-                    const img = '../static/img/plant.png'
+                    img = '../static/img/plant.png'
                 }
                 const article = `<div class="choose" style="cursor: pointer;" onclick="window.location='http://myespot.tech/${user_id}/my_plants/${element.id}';">
                 <div class="title_box">
