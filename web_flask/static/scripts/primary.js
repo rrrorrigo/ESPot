@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const onoff = document.getElementById("onoff");
     const pot_id = document.getElementById('id').value;
     const plant = document.getElementById('plant').value;
-    const images = {"Rosa":"../static/img/rose.png", "Kalanchoe":"../static/img/kalanchoe.png","Snake plant":"../static/img/snake_plant.png"};
+    const images = {"Rosa":"http://35.243.197.246:5000/static/img/rose.png", "Kalanchoe":"http://35.243.197.246:5000/static/img/kalanchoe.png","Snake plant":"http://35.243.197.246:5000/static/img/snake_plant.png"};
     updateAllEvents();
     if (plant in images) {
         document.getElementsByClassName("plant").src=images[plant];
