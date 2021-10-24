@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 </div>
                 <div>
                 <img src="${img_path}" class="plant_img"></div>
-                <h6>"${element.id}"</h6>
+                <h6>${element.id}</h6>
                 </div>`;
                 $('.main').append(article);
             });

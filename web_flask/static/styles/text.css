@@ -32,3 +32,18 @@ h1 {
         font-size: 50px;
         padding-left: 32%;
 }
+
+.choose {
+        display: flex;
+        flex-flow: column;
+}
+
+.plantImage {
+        flex-grow: 1;
+        width: 100%;
+        height: 100%;
+}
+
+.title_box {
+        flex-grow: 0.5;
+}
