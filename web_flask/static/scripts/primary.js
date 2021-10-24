@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const onoff = document.getElementById("onoff");
     const pot_id = document.getElementById('id').value;
     const plant = document.getElementById('plant').value;
-    console.log(plant);
+    console.log(typeof(plant));
     const images = {"Rosa":"../static/img/rose.png", "Kalanchoe":"../static/img/kalanchoe.png","Snake plant":"../static/img/snake_plant.png"};
     updateAllEvents();
     if (plant in images) {
