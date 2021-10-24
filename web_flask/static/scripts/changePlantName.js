@@ -36,12 +36,12 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         success: function(response) {
                                 alert("Attention, your plant configuration is now changed");
                                 loadPlantName();
+                                if (data["Plant_name"] in images) {
+                                        document.getElementById("dyn_plant_img").src=images[data["Plant_name"]];
+                                }
                         }
                     }).fail(function (msg) {
                             console.log(msg);
                     });
-                if (data["Plant_name"] in images) {
-                        document.getElementById("dyn_plant_img").src=images[data["Plant_name"]];
-                }
         }
 });
