@@ -249,21 +249,23 @@
     width: 60px;
     height: 100px;
     margin-left: -10%;
-    background: url('../img/menu_icon.png');
+    background: url('../img/arrow.png');
+    background-position-y: center;
+    background-position-x: center;
     background-repeat: no-repeat;
     }
 
     .right {
     /* Rectangle 151 */
-    position: absolute;
+    position: fixed;
     flex-grow: 1;
     order: 3;
     height: 100px;
     width: 60px;
-    left: 85%;
-    top: 66%;
+    left: 95%;
+    top: 50%;
 
-    background: #C4C4C4;
+    background: #808d80;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     }
@@ -334,14 +336,17 @@
 }
 
 .botonzito {
-    position: absolute;
+    position: fixed;
     font-family: Maven Pro;
-
+    width: 100px;
+    height: 100px;
+    left: 90%;
+    top: 20.7%;
     font-size: 40px;
     line-height: 45px;
     text-align: center;
-
-    color: #000000;
+    margin-right: 10px;
+    color: #bce6c9;
 }
 
 .botonzito:hover {
@@ -349,13 +354,12 @@
 }
 
 .botonfondo {
-    position: fixed;
     width: 50px;
     height: 50px;
     left: 1328px;
     top: 129px;
 
-    background: #C4C4C4;
+    background: #808d80;
     border-radius: 50px;
 }
 
