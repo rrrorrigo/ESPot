@@ -27,7 +27,15 @@ window.addEventListener('DOMContentLoaded', (e) => {
             const new_plant = {};
             new_plant[form[0].name] = form[0].value;
             new_plant[form[1].name] = form[1].value;
-            console.log(new_plant);
+            $.ajax({
+                url: `http://35.243.197.246:5001/api/plants`,
+                type: 'POST',
+                contentType: "application/json",
+                data: JSON.stringify(new_plant),
+                success: function(response) {
+                    console.log("plant added via api")
+                }
+            });     
         });
     });
 
