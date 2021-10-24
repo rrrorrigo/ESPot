@@ -75,3 +75,9 @@ body {
     width:auto;
     margin-left: 10%;
 }
+
+.img-3 {
+    background-image: url('../img/house.jpg');
+    background-size: cover;
+    background-position: center;
+}
