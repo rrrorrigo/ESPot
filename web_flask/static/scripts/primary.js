@@ -34,6 +34,11 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 data: JSON.stringify(new_plant),
                 success: function(response) {
                     console.log("plant added via api")
+                },
+                error: function(response) {
+                    if (response == 500) {
+                        alert("There is already a plant with that name");
+                    };
                 }
             });     
         });
