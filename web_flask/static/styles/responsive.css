@@ -370,5 +370,9 @@
 }
 
 .form {
+    border: 1px solid;
+    border-radius: 25px;
+    border-color: #808D80;
+    box-shadow: inset 0 0 10px #000000;
     display:none;
 }
