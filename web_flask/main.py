@@ -29,7 +29,8 @@ def pot(user_id, pot_id):
     pot = storage.get(Pot, pot_id)
     plants = storage.all(Plant).values()
     plants = sorted(plants, key=lambda k: k.Plant_name)
-    return render_template('/my_plants.html', pot=pot, plants=plants, user=usr)
+    plant = storage.get(Plant, pot.Plant_id)
+    return render_template('/my_plants.html', pot=pot, plants=plants, user=usr, plant=plant)
 
 
 @app.route('/<string:user_id>/my_plants', strict_slashes=False)

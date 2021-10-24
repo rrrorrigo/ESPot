@@ -1,9 +1,13 @@
 window.addEventListener('DOMContentLoaded', (e) => {
     const onoff = document.getElementById("onoff");
     const pot_id = document.getElementById('id').value;
-    const user_id = document.getElementById('user_id').value;
+    const plant = document.getElementById('plant').value;
+    const images = {"Rosa":"../static/img/rose.png", "Kalanchoe":"../static/img/kalanchoe.png","Snake plant":"../static/img/snake_plant.png"};
     updateAllEvents();
-
+    if (plant in images) {
+        const path = images['plant']
+        document.getElementsByClassName("plants").src=path;
+    }
     $('#onoff').ready(function (){
         $.get(`http://35.243.197.246:5001/api/pots/${pot_id}`, function(data) {
                 if (data[0].Turned_ON) {

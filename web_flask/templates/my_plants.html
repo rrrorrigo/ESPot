@@ -20,6 +20,7 @@
     <title>ESPot</title>
     <input type="hidden" name ="hidden_pot_id" value="{{ pot.id }}" id="id">
     <input type="hidden" name ="hidden_user_id" value="{{ user.id }}" id="user_id">
+    <input type="hidden" name ="hidden_plant_name" value="{{ plant.Plant_name }}" id="plant">
 </head>
 <body class="RESPONSIVE">
   <header>
@@ -42,7 +43,7 @@
       </div>
       <div class="dropdown btn-group" id="plantList">
         <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="list">
-          Choose your plant
+          Plant configuration
         </button>
         <form class="dropdown-menu text" id="listPlants" action="" method="put">
           {% for plantita in plants %}
