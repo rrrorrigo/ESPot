@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 		.then(data => {
             data.forEach(element => {
                 if (element.name in images) {
-                    img_path = obj[element.name]
+                    img_path = images[element.name]
                 } else {
                     img_path = "../static/img/plant.png"
                 }
