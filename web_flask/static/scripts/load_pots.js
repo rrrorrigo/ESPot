@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 <div class="title_box">
                 <h2>${element.name}</h2>
                 </div>
-                <div>
+                <div class="plantImage">
                 <img src="${img_path}" class="plant_img"></div>
                 <h6>${element.id}</h6>
                 </div>`;
@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             });
             const article = `<div class="choose" style="cursor: pointer;" onclick="window.location='http://myespot.tech/${user_id}/add_pot';">
                 <div class="title_box">Register new plant</div>
-                <div>
+                <div class="registerImage">
                 <img src="../static/img/empty_pot.png" class="plant_img"></div>
                 </div>`;
                 $('.main').append(article);
