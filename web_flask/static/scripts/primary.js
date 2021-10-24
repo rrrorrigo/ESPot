@@ -2,12 +2,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const onoff = document.getElementById("onoff");
     const pot_id = document.getElementById('id').value;
     const plant = document.getElementById('plant').value;
-    console.log(typeof(plant));
     const images = {"Rosa":"../static/img/rose.png", "Kalanchoe":"../static/img/kalanchoe.png","Snake plant":"../static/img/snake_plant.png"};
     updateAllEvents();
     if (plant in images) {
-        const path = images[plant];
-        document.getElementsByClassName("plants").src=path;
+        document.getElementsByClassName("plant").src=images[plant];
     }
     $('#onoff').ready(function (){
         $.get(`http://35.243.197.246:5001/api/pots/${pot_id}`, function(data) {
