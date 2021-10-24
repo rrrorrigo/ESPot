@@ -23,7 +23,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
     $('.botonfondo').click(function (){
         $(".config").toggle();
         $('#submit').click(function () {
-            const form = $(".config").serializeArray();
+            const form = $(".config").serializeArray().reduce(function (obj, item) {
+                obj[item.name] = item.value;
+                return obj;
+            });
             alert(form);
         });
     });
