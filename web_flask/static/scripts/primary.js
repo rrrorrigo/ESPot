@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const images = {"Rosa":"../static/img/rose.png", "Kalanchoe":"../static/img/kalanchoe.png","Snake plant":"../static/img/snake_plant.png"};
     updateAllEvents();
     if (plant in images) {
-        const path = images['plant']
+        const path = images[plant]
         document.getElementsByClassName("plants").src=path;
     }
     $('#onoff').ready(function (){
