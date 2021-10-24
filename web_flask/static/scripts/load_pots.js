@@ -14,10 +14,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 const article = `<div class="choose" style="cursor: pointer;" onclick="window.location='http://myespot.tech/${user_id}/my_plants/${element.id}';">
                 <div class="title_box">
                 <h2>${element.name}</h2>
-                <h1>${element.Actual_humidity}%</h1>
                 </div>
                 <div>
                 <img src="${img_path}" class="plant_img"></div>
+                <h6>"${element.id}"</h6>
                 </div>`;
                 $('.main').append(article);
             });
