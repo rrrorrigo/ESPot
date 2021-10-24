@@ -39,6 +39,7 @@ def get_plants():
     else:
         data = request.get_json()
         dictionary = {}
+        print(data)
         for k, v in data:
             dictionary[k] = v
         plant = Plant(**dictionary)
