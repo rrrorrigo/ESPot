@@ -2,7 +2,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const onoff = document.getElementById("onoff");
     const pot_id = document.getElementById('id').value;
     const plant = document.getElementById('plant').value;
-    const images = {"Rosa":"http://35.243.197.246:5000/static/img/rose.png", "Kalanchoe":"http://35.243.197.246:5000/static/img/kalanchoe.png","Snake plant":"http://35.243.197.246:5000/static/img/snake_plant.png"};
+    const images = {"Rosa":"http://35.243.197.246:5000/static/img/rose.png",
+                    "Kalanchoe":"http://35.243.197.246:5000/static/img/kalanchoe.png",
+                    "Snake plant":"http://35.243.197.246:5000/static/img/snake_plant.png",
+                    "Purple tulip":"http://35.243.197.246:5000/static/img/purple_tulip.png"};
     updateAllEvents();
     if (plant in images) {
         document.getElementById("dyn_plant_img").src=images[plant];
