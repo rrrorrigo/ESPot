@@ -106,32 +106,8 @@ border-radius: 15px;
 
 }
 
-.right {
-/* Rectangle 151 */
-position: absolute;
-width: 36px;
-height: 89px;
-left: 95%;
-top: 50%;
 
-background: #C4C4C4;
-border-radius: 15px;
-}
 
-.arrow {
-/* arrow-png-5543 1 */
-position: absolute;
-width: 15px;
-height: 15px;
-left: 11px;
-top: 39px;
-background: url('../img/arrow.png');
-background-repeat: no-repeat;
-}
-
-.right:hover {
-    cursor: pointer;
-}
 
 .form-control {
     border: 2px solid var(--color-dark-xx);
@@ -190,7 +166,7 @@ background-repeat: no-repeat;
     /* Last watering: Month: Hour: Humidity:  */
     display: flex;
     flex-flow: column;
-    max-width: 350px;
+    max-width: inherit;
     height: 100%;
     margin-top: 10%;
     font-family: Maven Pro;
@@ -200,6 +176,17 @@ background-repeat: no-repeat;
     line-height: 64px;
     
     color: #576B60;
+}
+
+@media all and (max-width: 800px) {
+    .infote{
+        flex-grow: 1;
+        display: flex;
+        flex-flow: column;
+        height: 50%;
+        align-self: center;
+        font-weight: 600;
+    }
 }
 
 .infote{
@@ -224,6 +211,7 @@ background-repeat: no-repeat;
 
 h5 {
     font-weight: lighter;
+
 }
 
 h6 {
