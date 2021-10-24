@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', (e) => {
         const pot_id = document.getElementById('id').value;
         const user_id = document.getElementById('user_id').value;
-        let images = {"Rosa":"http://35.243.197.246:5000/static/img/rose.png",
+        const images = {"Rosa":"http://35.243.197.246:5000/static/img/rose.png",
                     "Kalanchoe":"http://35.243.197.246:5000/static/img/kalanchoe.png",
                     "Snake plant":"http://35.243.197.246:5000/static/img/snake_plant.png",
                     "Pink tulip":"http://35.243.197.246:5000/static/img/pink_tulip.png"};
