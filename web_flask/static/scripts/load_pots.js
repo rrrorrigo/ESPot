@@ -23,7 +23,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
             });
             const article = `<div class="choose" style="cursor: pointer;" onclick="window.location='http://myespot.tech/${user_id}/add_pot';">
                 <div class="title_box">Register new plant</div>
-                
+                <div>
+                <img src="../static/img/empty_pot.png" class="plant_img"></div>
                 </div>`;
                 $('.main').append(article);
         });
