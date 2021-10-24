@@ -18,9 +18,11 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     onoff.style.color = "rgb(128, 141, 128)";
                 }});
     });
-
-    $('.botonfondo').click(function (){
-        $(".config").toggle();
+    
+    $(document).ready(function() {
+        $('.botonfondo').click(function (){
+            $(".config").toggle();
+        });
     });
 
     $('#onoff').click(function (){
