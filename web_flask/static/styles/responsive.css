@@ -368,3 +368,7 @@
     max-height: 100%;
     padding-top: 15%;
 }
+
+.form {
+    display:none;
+}
