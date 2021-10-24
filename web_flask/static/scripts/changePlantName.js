@@ -1,6 +1,10 @@
 window.addEventListener('DOMContentLoaded', (e) => {
         const pot_id = document.getElementById('id').value;
         const user_id = document.getElementById('user_id').value;
+        const images = {"Rosa":"http://35.243.197.246:5000/static/img/rose.png",
+                    "Kalanchoe":"http://35.243.197.246:5000/static/img/kalanchoe.png",
+                    "Snake plant":"http://35.243.197.246:5000/static/img/snake_plant.png",
+                    "Pink tulip":"http://35.243.197.246:5000/static/img/pink_tulip.png"};
         loadPlantName();
 
         function loadPlantName() {
@@ -36,5 +40,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     }).fail(function (msg) {
                             console.log(msg);
                     });
+                if (data["Plant_name"] in images) {
+                        document.getElementById("dyn_plant_img").src=images[data["Plant_name"]];
+                }
         }
 });
