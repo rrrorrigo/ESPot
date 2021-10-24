@@ -27,7 +27,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 obj[item.name] = item.value;
                 return obj;
             });
-            alert(form);
+            console.log(form);
         });
     });
 
