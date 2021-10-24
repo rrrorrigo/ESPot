@@ -19,8 +19,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 }});
     });
 
-    $('#botonfondo').click(function (){
-        $("#config").toggle();
+    $('.botonfondo').click(function (){
+        $(".config").toggle();
     });
 
     $('#onoff').click(function (){
