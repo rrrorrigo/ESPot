@@ -24,7 +24,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
         $(".config").toggle();
         $('#submit').click(function () {
             const form = $(".config").serializeArray()
-            console.log(form);
+            const new_plant = {};
+            new_plant[form[0].name] = form[0].value;
+            new_plant[form[1].name] = form[1].value;
+            console.log(new_plant);
         });
     });
 
