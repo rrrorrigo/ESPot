@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const images = {"Rosa":"http://35.243.197.246:5000/static/img/rose.png", "Kalanchoe":"http://35.243.197.246:5000/static/img/kalanchoe.png","Snake plant":"http://35.243.197.246:5000/static/img/snake_plant.png"};
     updateAllEvents();
     if (plant in images) {
-        document.getElementsByClassName("plant").src=images[plant];
+        document.getElementById("dyn_plant_img").src=images[plant];
     }
     $('#onoff').ready(function (){
         $.get(`http://35.243.197.246:5001/api/pots/${pot_id}`, function(data) {
