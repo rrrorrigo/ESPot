@@ -19,6 +19,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 }});
     });
 
+    $('#botonfondo').click(function (){
+        $("#config").toggle();
+    });
+
     $('#onoff').click(function (){
             $.get(`http://35.243.197.246:5001/api/pots/${pot_id}`, function(data) {
                 if (data[0].Turned_ON) {
