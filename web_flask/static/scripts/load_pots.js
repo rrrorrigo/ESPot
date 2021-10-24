@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 		.then(response => response.json())
 		.then(data => {
             data.forEach(element => {
-                const article = `<div class="choose" style="cursor: pointer;" onclick="window.location='http://35.243.197.246:5000/${user_id}/my_plants/${element.id}';">
+                const article = `<div class="choose" style="cursor: pointer;" onclick="window.location='http://myespot.tech/${user_id}/my_plants/${element.id}';">
                 <div class="title_box">
                 <h2>${element.name}</h2>
                 <h1>${element.Actual_humidity}%</h1>
@@ -14,11 +14,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 </div>`;
                 $('.main').append(article);
             });
-            const article = `<div class="choose" style="cursor: pointer;" onclick="window.location='http://35.243.197.246:5000/${user_id}/add_pot';">
+            const article = `<div class="choose" style="cursor: pointer;" onclick="window.location='http://myespot.tech/${user_id}/add_pot';">
                 <div class="title_box">Register new plant</div>
-                <div class="botonzito">
-                <div class="botonfondo">+</div>
-                </div>
+                
                 </div>`;
                 $('.main').append(article);
         });
