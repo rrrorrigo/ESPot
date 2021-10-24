@@ -169,7 +169,7 @@
         height: inherit;
         left: 0px;
         top: 100px;
-        background: #99A59D;
+        background: url("../img/background-gray2.jpg");
         background-size: cover;
         display: flex;
         flex-direction: row;
@@ -177,7 +177,6 @@
         align-items: center;
         margin:auto;
         flex-wrap: wrap;
-        box-shadow: inset 0 100000000000px 3px #d7ffd7, inset 0 -100000000000px 15px #000000, inset -100000000000px 0 1000px #daffde;
     }
 
 
