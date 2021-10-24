@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', (e) => {
     let user_id = document.getElementById('user_id').value;
     let img_path = "";
-    let images = {"Rosa":"../static/img/rose.png", "Kalanchoe":"../static/img/kalanchoe.png"}
+    let images = {"Rosa":"../static/img/rose.png", "Kalanchoe":"../static/img/kalanchoe.png","Snake plant":"../static/img/snake_plant.png"}
     fetch(`http://35.243.197.246:5001/api/user_pots/${user_id}`)
 		.then(response => response.json())
 		.then(data => {
