@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     let images = {"Rosa":"../static/img/rose.png",
                   "Kalanchoe":"../static/img/kalanchoe.png",
                   "Snake plant":"../static/img/snake_plant.png",
-                  "Purple tulip":"http://35.243.197.246:5000/static/img/purple_tulip.png"};
+                  "Pink tulip":"http://35.243.197.246:5000/static/img/pink_tulip.png"};
     fetch(`http://35.243.197.246:5001/api/user_pots/${user_id}`)
 		.then(response => response.json())
 		.then(data => {
