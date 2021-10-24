@@ -7,6 +7,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
             data.forEach(element => {
                 if (element.name == 'Rosa') {
                     img = '../static/img/rose.png'
+                } else if (element.name == 'Kalanchoe'){
+                    img = '../static/img/kalanchoe.png'
                 } else {
                     img = '../static/img/plant.png'
                 }
