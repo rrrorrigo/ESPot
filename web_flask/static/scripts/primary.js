@@ -32,12 +32,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 type: 'POST',
                 contentType: "application/json",
                 data: JSON.stringify(new_plant),
-                success: function(response, textStatus, xhr) {
-                    if (xhr.textStatus == 500) {
-                        alert("There is already a plant with that name");
-                    };
-                },
-                error: function(response) {
+                success: function(response) {
+                    console.log(response.status);
                 }
             });     
         });
