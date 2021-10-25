@@ -36,7 +36,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     console.log(response.status);
                 },
                 error: function(response) {
-                    console.log(response.status);
+                    if (response.status != 200) {
+                        alert(response.status);
+                    }
                 }
             });     
         });
