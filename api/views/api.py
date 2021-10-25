@@ -42,7 +42,11 @@ def get_plants():
 
         for k, v in data.items():
             dictionary[k] = v
-        plant = Plant(**dictionary)
+        check = storage.getByAttribute(Plant, dictionary["Plant_name"])
+        if check:
+            setattr(check, "Humidity_irrigation", dictionary["Humidity_irrigation"])
+        else:
+            plant = Plant(**dictionary)
         plant.save()
         return jsonify(plant.to_dict())
 

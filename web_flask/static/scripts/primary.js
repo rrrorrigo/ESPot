@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 },
                 error: function(response) {
                     if (response.status != 200) {
-                        alert("Error :/ (This plant name probably already exists)");
+                        alert(`Attention, ${form[0].value}'s configurations were modified`);
                     }
                 }
             });     
