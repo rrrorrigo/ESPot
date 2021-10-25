@@ -43,7 +43,7 @@
     .plantdiv {
         order: 1;
         flex-grow: 1;
-        width: 100%;
+        width:auto;
         height: 150px;
         margin-top: 10%;
     }
@@ -153,9 +153,8 @@
         order: 1;
         flex-grow: 1;
         height: auto;
-        max-width: 450px;
+        width: 30%;
         margin-bottom: 7%;
-        padding-left: 5%;
     }
     header {
         height: 130px;
@@ -188,9 +187,9 @@
                 width: 100%;
     }
     .plant {
-        max-height: 350px;
-        min-height: 250px;
+        width: 450px;
         margin-bottom: 2%;
+        padding-left: 17%;
     }
     .onoffdiv {
         display: flex;
@@ -199,18 +198,16 @@
         order: 3;
         height: 100%;
         flex-grow: 1;
-        margin-left: 20%;
         align-content: center;
-        width: 0%;
+        width: 30%;
     }
 
     .onoff {
         order: 2;
         flex-grow: 1000;
         align-self: center;
-        padding-top: 35%;
-        height: auto;
-        width: 300px;
+        padding-top: 25%;
+        width: auto;
         filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
         color: #808D80;
     }
@@ -230,18 +227,18 @@
 
     #list {
         align-self: center;
-        margin-left: 55%;
+        margin-left: 120%;
         border-top-right-radius: 0px;
         border-bottom-right-radius: 0px;
     }
 
-    #list:hover {
+    #list:hover .arrow:hover {
         color: #94b59e;
         transition: all 0.5s ease;
     }
 
     .logout {
-    order: 3;
+    float: right;
     margin-top: 40px;
     margin-right: 20px;
     color: #727a72;
@@ -259,10 +256,11 @@
     }
     .arrow {
     /* arrow-png-5543 1 */
-    width: 60px;
-    height: 100px;
+    width: 30px;
+    height: 100%;
     margin-left: -10%;
     background: url('../img/arrow.png');
+    background-size: contain;
     background-position-y: center;
     background-position-x: center;
     background-repeat: no-repeat;
@@ -273,14 +271,11 @@
     position: fixed;
     flex-grow: 1;
     order: 3;
-    height: 100px;
+    height: 83%;
     width: 60px;
-    left: 95%;
-    top: 50%;
-
-    background: #808d80;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
+    left: 96%;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
     }
 
     .right:hover {
