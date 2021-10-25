@@ -35,8 +35,11 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 statusCode: {
                     201: function() {
                         alert(`Attention: ${form[0].value} humidity configuration was modified`);
-                    }
+                    },
+                success: function() {
+                    location.reload();
                 }
+                },
             });     
         });
     });
