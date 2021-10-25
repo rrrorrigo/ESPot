@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 },
                 error: function(response) {
                     if (response.status != 200) {
-                        alert(response.status);
+                        alert("Error :/ (This plant name probably already exists)");
                     }
                 }
             });     
