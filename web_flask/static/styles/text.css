@@ -1,7 +1,8 @@
 @media all and (min-width: 800px) {
         .currentUser {
+                order: 2;
                 text-align: center;
-                padding-left: 30%;
+                margin-top: 36px;
                 font-weight: bold;
                 color: #48665a;
                 font-family: Maven Pro;
@@ -33,6 +34,8 @@ a.titulo {
 
 h1 {
         width: inherit;
+        display: flex;
+        justify-content:space-between;
 }
 
 .onofftext {

@@ -43,7 +43,7 @@
     .plantdiv {
         order: 1;
         flex-grow: 1;
-        width:auto;
+        width: 100%;
         height: 150px;
         margin-top: 10%;
     }
@@ -153,8 +153,9 @@
         order: 1;
         flex-grow: 1;
         height: auto;
-        width: 30%;
+        max-width: 450px;
         margin-bottom: 7%;
+        padding-left: 5%;
     }
     header {
         height: 130px;
@@ -187,9 +188,9 @@
                 width: 100%;
     }
     .plant {
-        width: 450px;
+        max-height: 350px;
+        min-height: 250px;
         margin-bottom: 2%;
-        padding-left: 17%;
     }
     .onoffdiv {
         display: flex;
@@ -198,15 +199,16 @@
         order: 3;
         height: 100%;
         flex-grow: 1;
+        margin-left: 20%;
         align-content: center;
-        width: 30%;
+        width: 0%;
     }
 
     .onoff {
         order: 2;
         flex-grow: 1000;
         align-self: center;
-        padding-top: 25%;
+        padding-top: 35%;
         height: auto;
         width: 300px;
         filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
@@ -228,7 +230,7 @@
 
     #list {
         align-self: center;
-        margin-left: 120%;
+        margin-left: 55%;
         border-top-right-radius: 0px;
         border-bottom-right-radius: 0px;
     }
@@ -239,7 +241,7 @@
     }
 
     .logout {
-    float: right;
+    order: 3;
     margin-top: 40px;
     margin-right: 20px;
     color: #727a72;
