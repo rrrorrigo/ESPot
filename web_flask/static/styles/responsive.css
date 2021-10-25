@@ -170,6 +170,7 @@
         left: 0px;
         top: 100px;
         background: url("../img/background-gray3.jpg");
+        background-position-y: 70%;
         background-size: cover;
         display: flex;
         flex-direction: row;

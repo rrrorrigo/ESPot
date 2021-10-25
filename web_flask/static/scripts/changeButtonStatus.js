@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         changeTextButton();
         });
     function changeTextButton() {
-    fetch('http://35.243.197.246:5001/api/pots').then(response => response.json())
+    fetch(`http://35.243.197.246:5001/api/pots/${pot_id}`).then(response => response.json())
     .then(data => {
         if (data[0].Turned_ON) {
             onoff.textContent = "ON";
@@ -18,8 +18,4 @@ window.addEventListener('DOMContentLoaded', (e) => {
             onoff.style.paddingLeft = "23%";
         }});
     };
-
-    function changeTextByButton() {
-        
-    }
 });
