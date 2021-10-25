@@ -36,9 +36,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     console.log(response.status);
                     if (response.status != 200) {
                         alert(`Attention, ${form[0].value}'s configurations were modified`);
+                        updateAllEvents();
                     }
-                },
-                updateAllEvents();
+                }
             });     
         });
     });
