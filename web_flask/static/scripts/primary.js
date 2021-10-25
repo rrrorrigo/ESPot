@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         alert(`Attention: ${form[0].value} humidity configuration was modified`);
                     }
                 },
-                success: function() {
+                success: function(response) {
                     location.reload();
                 }    
             });     
