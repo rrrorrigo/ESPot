@@ -32,13 +32,12 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 type: 'POST',
                 contentType: "application/json",
                 data: JSON.stringify(new_plant),
-                success: function(response) {
-                    console.log("plant added via api")
-                },
-                error: function(response) {
-                    if (response == 500) {
+                success: function(response, textStatus, xhr) {
+                    if (xhr.textStatus == 500) {
                         alert("There is already a plant with that name");
                     };
+                },
+                error: function(response) {
                 }
             });     
         });
