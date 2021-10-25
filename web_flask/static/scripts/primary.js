@@ -34,6 +34,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 data: JSON.stringify(new_plant),
                 success: function(response) {
                     console.log(response.status);
+                },
+                error: function(response) {
+                    console.log(response.status);
                 }
             });     
         });
