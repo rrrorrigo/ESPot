@@ -45,8 +45,9 @@ def get_plants():
         check = storage.getByAttribute(Plant, dictionary["Plant_name"])
         if check:
             setattr(check, "Humidity_irrigation", dictionary["Humidity_irrigation"])
-        else:
-            plant = Plant(**dictionary)
+            check.save()
+            return (jsonify(check.to_dict()), 201)
+        plant = Plant(**dictionary)
         plant.save()
         return jsonify(plant.to_dict())
 
