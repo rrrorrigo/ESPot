@@ -34,8 +34,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 data: JSON.stringify(new_plant),
                 success: function(response) {
                     console.log(response.status);
-                },
-                error: function(response) {
                     if (response.status != 200) {
                         alert(`Attention, ${form[0].value}'s configurations were modified`);
                     }
