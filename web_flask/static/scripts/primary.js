@@ -32,11 +32,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 type: 'POST',
                 contentType: "application/json",
                 data: JSON.stringify(new_plant),
-                success: function(response) {
-                    console.log(response.status);
-                    if (response.status != 200) {
-                        alert(`Attention, ${form[0].value}'s configurations were modified`);
-                        location.reload();
+                statusCode: {
+                    201: function() {
+                        alert(`Attention: ${form[0].value} humidity configuration was modified`);
                     }
                 }
             });     
