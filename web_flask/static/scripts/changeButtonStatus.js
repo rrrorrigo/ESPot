@@ -1,6 +1,8 @@
 window.addEventListener('DOMContentLoaded', (e) => {
-    changeTextButton();
+    const pot_id = document.getElementById('id').value;
     const onoff = document.getElementById("onofftext");
+    
+    changeTextButton();
 
     $('#onoff').click(function (){
         changeTextButton();
