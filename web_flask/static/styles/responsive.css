@@ -169,7 +169,7 @@
         height: inherit;
         left: 0px;
         top: 100px;
-        background: url("../img/background-gray2.jpg");
+        background: url("../img/background-gray3.jpg");
         background-size: cover;
         display: flex;
         flex-direction: row;
@@ -205,8 +205,7 @@
         order: 2;
         flex-grow: 1000;
         align-self: center;
-        padding-top: 15%;
-        padding-left: 40px;
+        padding-top: 25%;
         height: auto;
         width: 300px;
         filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
