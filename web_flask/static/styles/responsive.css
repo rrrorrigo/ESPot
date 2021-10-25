@@ -186,8 +186,8 @@
                 width: 100%;
     }
     .plant {
-        max-width: 450px;
-        margin-bottom: 10%;
+        width: 450px;
+        margin-bottom: 2%;
         padding-left: 17%;
     }
     .onoffdiv {
@@ -217,15 +217,26 @@
         order: 1;
         flex-grow: 1;
         align-self: center;
-        margin-top: 20px;
+        margin-bottom: 20px;
         display: flex;
         position: relative;
         border-bottom-right-radius: 0ch;
         border-bottom-left-radius: 0ch;
-        width: 160px;
-        height: 50px;
+        width: 150px;
+        height: 40px;
     }
 
+    #list {
+        align-self: center;
+        margin-left: 120%;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+
+    #list:hover {
+        color: #94b59e;
+        transition: all 0.5s ease;
+    }
 
     .logout {
     float: right;
@@ -236,11 +247,11 @@
 }
 
     #listPlants {
-        position: absolute;
         flex-grow: 1;
-        margin-top: 0px;
-        border-top-right-radius: 0ch;
-        border-top-left-radius: 0ch;
+        margin-left: 120%;
+        margin-top: -4px;
+        border-top-right-radius: 0.ch;
+        border-top-left-radius: 0.ch;
         width: 14px;
         background-color: #808D80;
     }
@@ -311,7 +322,7 @@
     align-self: center;
     font-size: 30px;
     font-weight: 900;
-    color: #808D80;
+    color: #48665a;
     border-bottom: #808D80;
     border-bottom-style: solid;
     text-align: center;
@@ -336,31 +347,28 @@
 }
 
 .botonzito {
-    position: fixed;
+    width: 40px;
     font-family: Maven Pro;
-    width: 100px;
-    height: 100px;
-    left: 90%;
-    top: 20.7%;
     font-size: 40px;
-    line-height: 45px;
+    line-height: 28px;
     text-align: center;
     margin-right: 10px;
     color: #bce6c9;
 }
 
-.botonfondo:hover {
+.botonfondo:hover, .botonzito:hover {
     cursor: pointer;
+    color: #94b59e;
+    transition: all 0.5s ease;
 }
 
 .botonfondo {
-    width: 50px;
-    height: 50px;
-    left: 1328px;
-    top: 129px;
-
+    width: 30px;
+    height: 34px;
+    margin-top: 3px;
     background: #808d80;
-    border-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
 
 .plant_img {
