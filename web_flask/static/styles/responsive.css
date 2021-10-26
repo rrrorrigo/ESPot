@@ -232,6 +232,7 @@
         border-bottom-left-radius: 0ch;
         width: 200px;
         height: 40px;
+
     }
 
     #list {
@@ -257,9 +258,11 @@
     text-shadow: 1px 2px #C8E6C9;
 }
 
+.dropdown-menu.show {display: block;visibility: visible;opacity:1;transform: translateY(0px);transition:.5s ease all;}
+.dropdown-menu {display: block;visibility: hidden;opacity:0;transform: translateY(50px);transition:.5s ease all;}
+
     #listPlants {
         flex-grow: 1;
-        margin-left: 120%;
         margin-top: -4px;
         border-top-right-radius: 0.ch;
         border-top-left-radius: 0.ch;
@@ -296,7 +299,8 @@
 }
 
 .dropdown-item {
-    color: #99A59D;
+    color: #d1d1d1;
+    transition: all 0.5s ease;
 }
 
 #list {
@@ -306,7 +310,8 @@
 
 .dropdown-item:hover, #selected {
     background-color: #727a72;
-    color: #a9a264;
+    color: #b2d9c4;
+    transition: all 0.5s ease;
 }
 
 .logo {
