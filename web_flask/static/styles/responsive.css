@@ -149,12 +149,14 @@
         max-width: 350px;
         box-shadow: inset 0 0 10px #000000;
     }
+
     .plantdiv {
         order: 1;
         flex-grow: 1;
         height: auto;
         margin-bottom: 7%;
     }
+
     header {
         height: 130px;
         width: 100%;
@@ -162,6 +164,7 @@
         background-size: cover;
         margin-top: -30px;
     }
+
     .main {
         position: absolute;
         width: inherit;
@@ -179,8 +182,6 @@
         flex-wrap: wrap;
         box-shadow: inset 0 0 10px #000000;
     }
-
-
     
     .RESPONSIVE {
                 height: 100%;
@@ -188,8 +189,8 @@
     }
     .plant {
         display: block;
-        width: 50%;
-        height: 50%;
+        width: 65%;
+        height: 60%;
         margin-left: auto;
         margin-right: auto;
 
@@ -311,8 +312,6 @@
 .logout:hover {
     color: #515751;
 }
-
-
 
 .plantName {
     flex-grow: 1;

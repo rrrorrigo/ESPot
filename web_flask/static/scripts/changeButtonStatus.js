@@ -13,11 +13,11 @@ window.addEventListener('DOMContentLoaded', (e) => {
         if (data[0].Turned_ON) {
             onoff.textContent = "ON";
             onoff.style.color = "rgb(70, 117, 70)";
-            onoff.style.paddingLeft = "27%";
+            onoff.style.paddingLeft = "10%";
         } else {
             onoff.innerHTML = "OFF";
             onoff.style.color = "rgb(128, 141, 128)";
-            onoff.style.paddingLeft = "23%";
+            onoff.style.paddingLeft = "10%";
         }});
     };
 });

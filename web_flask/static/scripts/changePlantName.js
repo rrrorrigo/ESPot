@@ -21,6 +21,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         $('.p').click(function () {
                 const name = this.getAttribute('name-plant');
                 selectPlantName(name);
+                changeTextButton();
         });
 
         function selectPlantName(name) {
