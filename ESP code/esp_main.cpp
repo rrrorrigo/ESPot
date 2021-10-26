@@ -74,6 +74,7 @@ void loop() {
         for (int milliseconds = 0; milliseconds < 1200000; milliseconds+= 2000) { //120000 millisecods are 20 min
           humidity = analogRead(SensorPin);
           percentage = (float)((humidity - MIN) * 100) / (MAX - MIN);
+          tank = digitalRead(FloatSensor);
           if (milliseconds == 0) {
             PUT_method(PUT_url, percentage, tank, "True");
           } else {
