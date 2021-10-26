@@ -81,3 +81,8 @@ body {
     background-size: cover;
     background-position: center;
 }
+
+.loginDiv {
+    align-self: center;
+    justify-content: center;
+}

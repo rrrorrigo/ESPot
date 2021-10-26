@@ -54,8 +54,8 @@ void loop() {
   get_response = GET_method(GET_url);
   my_request = JSON.parse(get_response);
 
-  JSONVar t = "True";
-  if (my_request["Turned_ON"] == t) { // if it is turned on
+  JSONVar t = "true";
+  if (my_request["Turned_ON"]) { // if it is turned on
     Serial.println("Entered ON loop");
     tank = digitalRead(FloatSensor); // read tank state
     humidity = analogRead(SensorPin); // analog read of humidity
