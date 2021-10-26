@@ -4,7 +4,7 @@
                 text-align: center;
                 margin-top: 36px;
                 font-weight: bold;
-                color: #48665a;
+                color: #19314e;
                 font-family: Maven Pro;
         }
 }
@@ -16,14 +16,14 @@
 
 a.titulo {
         display: inline-block;
-        color: #808D80;
+        color: #19314e;
         text-shadow: 1px 2px #C8E6C9;
         order: 1;
         margin-top: 20px;
         font-size: 35px;
 }
 .titulo:hover {
-        color: #48665a;
+        color: #191737;
 }
 
 .titlename{

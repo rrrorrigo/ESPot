@@ -171,7 +171,7 @@
         height: inherit;
         left: 0px;
         top: 100px;
-        background: url("../img/background-gray3.jpg");
+        background: url("../img/background-blanquito2.jpg");
         background-position-y: 70%;
         background-size: cover;
         display: flex;
@@ -212,8 +212,14 @@
         align-self: center;
         padding-top: 25%;
         width: auto;
-        filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+        filter: drop-shadow(1.5px 1.5px 0px rgb(0 0 0 / 0.4));
+        transition: all 0.3s ease-in-out;
         color: #808D80;
+    }
+
+    .onoff:hover {
+        filter: drop-shadow(3px 3px 0px rgb(0 0 0 / 0.4));
+        transition: all 0.3s ease-in-out;
     }
 
     #plantList {
@@ -246,7 +252,7 @@
     order: 3;
     margin-top: 40px;
     margin-right: 20px;
-    color: #727a72;
+    color: #19314e;
     text-shadow: 1px 2px #C8E6C9;
 }
 
@@ -310,7 +316,7 @@
 
 
 .logout:hover {
-    color: #515751;
+    color: #191737;
 }
 
 .plantName {
