@@ -54,7 +54,6 @@ void loop() {
   get_response = GET_method(GET_url);
   my_request = JSON.parse(get_response);
 
-  JSONVar t = "true";
   if (my_request["Turned_ON"]) { // if it is turned on
     Serial.println("Entered ON loop");
     tank = digitalRead(FloatSensor); // read tank state
