@@ -172,7 +172,7 @@
         height: inherit;
         left: 0px;
         top: 100px;
-        background: linear-gradient(#eef6f1, #95999052);
+        background: linear-gradient(#eef6f1, #eef6f18c);
         background-position-y: 70%;
         background-size: cover;
         display: flex;
@@ -214,7 +214,9 @@
         filter: drop-shadow(1.5px 1.5px 0px rgb(0 0 0 / 60%));
         transition: all 0.3s ease-in-out;
         color: #808D80;
+        margin-bottom: 20%;
     }
+
 
     #onoff:hover {
         filter: drop-shadow(3px 3px 0px rgb(0 0 0 / 0.4));
@@ -279,6 +281,7 @@
     background-position-x: center;
     background-repeat: no-repeat;
     transition: all 1s ease;
+
     }
 
     .right {
@@ -291,6 +294,7 @@
     left: 96%;
     border-top-left-radius: 100px;
     border-bottom-left-radius: 100px;
+    margin-bottom: 7%;
     }
 
     .right:hover {
