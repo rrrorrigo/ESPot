@@ -17,16 +17,15 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 data.forEach(element => {
                     pots.push(`http://myespot.tech/${user_id}/my_plants/${element.id}`);
                 });
-                console.log(pots);
             });
-    $('.arrow').click(function (){
-        if (pots_pos == pots.length - 1) {
+    $('.arrow').click(function () {
+        let current = pots.indexOf(`http://myespot.tech/${user_id}/my_plants/${pot_id.id}`);
+        if (current == pots-lenght - 1) {
             pots_pos = 0;
         } else {
             pots_pos++;
         }
         window.location.replace(pots[pots_pos]);
-        console.log("window relocate")
     });
 
     $(".config").hide();
