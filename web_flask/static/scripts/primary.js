@@ -17,6 +17,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 data.forEach(element => {
                     pots.push(`http://myespot.tech/${user_id}/my_plants/${element.id}`);
                 });
+                console.log(pots);
             });
     $('#arrow').click(function (){
         if (pots_pos == pots.length - 1) {
@@ -25,6 +26,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             pots_pos++;
         }
         window.location.href = pots[pots_pos];
+        console.log("window relocate")
     });
 
     $(".config").hide();
