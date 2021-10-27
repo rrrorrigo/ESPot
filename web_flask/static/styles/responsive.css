@@ -172,7 +172,7 @@
         height: inherit;
         left: 0px;
         top: 100px;
-        background: url("../img/background-blanquito2.jpg");
+        background: linear-gradient(#eef6f1, #95999052);
         background-position-y: 70%;
         background-size: cover;
         display: flex;
@@ -203,14 +203,12 @@
         order: 3;
         height: 100%;
         flex-grow: 1;
-        align-content: center;
+        justify-content: center;
         width: 10%;
     }
 
    .onoff {
         order: 2;
-        margin-top: 25%;
-        margin-bottom: 25%;
         height: auto;
         width: auto;
         filter: drop-shadow(1.5px 1.5px 0px rgb(0 0 0 / 60%));
