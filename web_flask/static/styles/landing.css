@@ -99,6 +99,7 @@ ul{
 
 a{
   color: #707070;
+  text-decoration: none;
 }
 
 img{
@@ -118,6 +119,10 @@ img{
   font-size: var(--h1-font-size);
   color: var(--title-color);
   margin-bottom: var(--mb-3);
+}
+
+.names {
+  color: #2e9c72;
 }
 
 .section-subtitle{
