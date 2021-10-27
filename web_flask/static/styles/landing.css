@@ -122,7 +122,7 @@ img{
 }
 
 .names {
-  color: #2e9c72;
+  color: #048654;
 }
 
 .section-subtitle{
@@ -451,10 +451,10 @@ img{
 
   .menu__container{
     grid-template-columns: repeat(3, 210px);
-    column-gap: 4rem;
+    column-gap: 12rem;
   }
   .menu__content{
-    padding: 1.5rem;
+    padding: 1rem;
   }
   .menu__img{
     width: 130px;
