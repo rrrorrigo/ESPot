@@ -2,11 +2,31 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const onoff = document.getElementById("onoff");
     const pot_id = document.getElementById('id').value;
     const plant = document.getElementById('plant').value;
+    const user_id = document.getElementById('user_id').value;
     const images = {"Rosa":"http://35.243.197.246:5000/static/img/rose.png",
                     "Kalanchoe":"http://35.243.197.246:5000/static/img/kalanchoe.png",
                     "Snake plant":"http://35.243.197.246:5000/static/img/snake_plant.png",
                     "Pink tulip":"http://35.243.197.246:5000/static/img/pink_tulip.png"};
+    let pots = [];
+    let pots_pos = 0;
     updateAllEvents();
+
+    fetch(`http://35.243.197.246:5001/api/user_pots/${user_id}`)
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(element => {
+                    pots.push(`http://myespot.tech/${user_id}/my_plants/${element.id}`);
+                });
+            });
+    $('#arrow').click(function (){
+        if (pots_pos == pots.length - 1) {
+            pots_pos = 0;
+        } else {
+            pots_pos++;
+        }
+        window.location.href = pots[pots_pos];
+    });
+
     $(".config").hide();
     if (plant in images) {
         document.getElementById("dyn_plant_img").src=images[plant];
