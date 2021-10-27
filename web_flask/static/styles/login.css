@@ -68,12 +68,14 @@ body {
 #Title {
     margin-top: 10px;
     width: 100%;
+    height: 62px;
+    justify-content:  flex-start;
+    flex-wrap: nowrap;
 }
 
 #logo {
-    height: 60px;
-    width:auto;
-    margin-left: 10%;
+    height: 62px;
+    width: auto;
 }
 
 .img-3 {
