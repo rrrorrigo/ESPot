@@ -67,3 +67,12 @@ h1 {
         color: #808D80;
         font-family: Maven Pro;
 }
+
+.tituloLogin {
+        color: #19314e;
+        text-shadow: 1px 2px #C8E6C9;
+        margin-top: 20px;
+        font-size: 35px;
+        height: 20%;
+        width: auto;
+}
