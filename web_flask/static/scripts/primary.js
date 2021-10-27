@@ -25,7 +25,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         } else {
             pots_pos++;
         }
-        window.location.href = pots[pots_pos];
+        window.location.replace(pots[pots_pos]);
         console.log("window relocate")
     });
 
