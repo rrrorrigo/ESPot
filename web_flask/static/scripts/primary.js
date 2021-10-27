@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 });
                 console.log(pots);
             });
-    $('#arrow').click(function (){
+    $('.arrow').click(function (){
         if (pots_pos == pots.length - 1) {
             pots_pos = 0;
         } else {
