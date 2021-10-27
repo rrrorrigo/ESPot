@@ -21,7 +21,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
         $('.p').click(function () {
                 const name = this.getAttribute('name-plant');
                 selectPlantName(name);
-                changeTextButton();
         });
 
         function selectPlantName(name) {
@@ -40,6 +39,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                                 if (data["Plant_name"] in images) {
                                         document.getElementById("dyn_plant_img").src=images[data["Plant_name"]];
                                 }
+                                location.reload();
                         }
                     }).fail(function (msg) {
                             console.log(msg);
