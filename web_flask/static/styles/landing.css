@@ -121,6 +121,10 @@ img{
   margin-bottom: var(--mb-3);
 }
 
+.names {
+  color: #2e9c72;
+}
+
 .section-subtitle{
   display: block;
   color: var(--first-color);
