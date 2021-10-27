@@ -20,7 +20,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             });
     $('.arrow').click(function () {
         let current = pots.indexOf(`http://myespot.tech/${user_id}/my_plants/${pot_id}`);
-        if (current == pots-lenght - 1) {
+        if (current == pots.length - 1) {
             pots_pos = 0;
         } else {
             pots_pos++;
