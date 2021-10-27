@@ -400,6 +400,7 @@
     display:none;
     flex-flow: column;
     min-width: 160px;
+    justify-content: flex-start;
 }
 
 input {
@@ -440,6 +441,7 @@ p {
     color: #19314e;
     font-size: 20px;
     margin-top: 15px;
+    width: 100%;
     transition: all 0.3s ease;
 }
 

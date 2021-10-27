@@ -42,9 +42,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
     });
 
     $('.botonfondo').click(function (){
-        $(".config").toggle();
+        $(".configForm").toggle();
         $('#submit').click(function () {
-            const form = $(".config").serializeArray()
+            const form = $(".configForm").serializeArray()
             const new_plant = {};
             new_plant[form[0].name] = form[0].value;
             new_plant[form[1].name] = form[1].value;
