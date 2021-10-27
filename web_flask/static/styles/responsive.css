@@ -172,7 +172,7 @@
         height: inherit;
         left: 0px;
         top: 100px;
-        background: linear-gradient(#eef6f1, #eef6f18c);
+        background: linear-gradient(#eef6f1, #95999052);
         background-position-y: 70%;
         background-size: cover;
         display: flex;
@@ -214,9 +214,7 @@
         filter: drop-shadow(1.5px 1.5px 0px rgb(0 0 0 / 60%));
         transition: all 0.3s ease-in-out;
         color: #808D80;
-        margin-bottom: 20%;
     }
-
 
     #onoff:hover {
         filter: drop-shadow(3px 3px 0px rgb(0 0 0 / 0.4));
@@ -235,9 +233,23 @@
 
     }
 
-    #list:active {
-        
-    }
+    .dropdown .dropdown-menu {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+
+    max-height: 0;
+    display: block;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.dropdown.open .dropdown-menu { /* For Bootstrap 4, use .dropdown.show instead of .dropdown.open */
+    max-height: 300px;
+    opacity: 1;
+}
 
     #list {
         align-self: center;
@@ -281,7 +293,6 @@
     background-position-x: center;
     background-repeat: no-repeat;
     transition: all 1s ease;
-
     }
 
     .right {
@@ -294,7 +305,6 @@
     left: 96%;
     border-top-left-radius: 100px;
     border-bottom-left-radius: 100px;
-    margin-bottom: 7%;
     }
 
     .right:hover {
@@ -403,8 +413,11 @@
     display:none;
     flex-flow: column;
     min-width: 160px;
+    max-height: 200px;
     justify-content: flex-start;
+    transition: all 0.5s ease;
 }
+
 
 input {
     height: 25px;
