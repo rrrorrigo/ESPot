@@ -379,7 +379,7 @@
     width: 40px;
     font-family: Maven Pro;
     font-size: 40px;
-    line-height: 28px;
+    line-height: 34px;
     text-align: center;
     margin-right: 10px;
     color: #bce6c9;
@@ -393,8 +393,8 @@
 
 .botonfondo {
     width: 30px;
-    height: 34px;
-    margin-top: 3px;
+    height: 40px;
+    margin-left: -3px;
     background: #808d80;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
