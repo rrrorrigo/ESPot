@@ -4,7 +4,7 @@
   --header-height: 3rem;
 
   --first-color: #069C54;
-  --first-color-alt: #048654;
+
   --title-color: #393939;
   --text-color: #707070;
   --text-color-light: #A6A6A6;
@@ -99,6 +99,7 @@ ul{
 
 a{
   color: #707070;
+  text-decoration: none;
 }
 
 img{
@@ -118,6 +119,10 @@ img{
   font-size: var(--h1-font-size);
   color: var(--title-color);
   margin-bottom: var(--mb-3);
+}
+
+.names {
+  color: #048654;
 }
 
 .section-subtitle{
@@ -280,12 +285,19 @@ img{
 
 .about__description{
   margin-bottom: var(--mb-3);
+  color: #363a38;
+
 }
 
 .about__img{
   width: 280px;
   border-radius: .5rem;
   justify-self: center;
+}
+
+.text {
+  size: var(--normal-font-size);
+  color: var(--first-color);
 }
 
 .more__img{
@@ -446,13 +458,14 @@ img{
 
   .menu__container{
     grid-template-columns: repeat(3, 210px);
-    column-gap: 4rem;
+    column-gap: 12rem;
   }
   .menu__content{
-    padding: 1.5rem;
+    padding: 1rem;
   }
   .menu__img{
     width: 130px;
+    border-radius: 100px;
   }
 
   .app__store{
@@ -460,6 +473,10 @@ img{
   }
 }
 
+.imgss{
+  border-radius: 15px;
+  border-style: inset;
+}
 @media screen and (min-width: 960px){
   .bd-container{
     margin-left: auto;
