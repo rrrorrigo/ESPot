@@ -28,7 +28,7 @@ class BaseModel:
         return "<[ {} ] ( {} )>".format(self.id, self.__dict__)
 
     def save(self):
-        """Updates updated_at with current time when instance is changed"""
+        """Save the object when instance is changed"""
         models.storage.new(self)
         print(self.__dict__)
         models.storage.save()
