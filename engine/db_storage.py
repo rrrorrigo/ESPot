@@ -13,7 +13,7 @@ classes = {"User": User, "Pot": Pot, "Plant": Plant}
 
 
 class DBStorage():
-    """Class DBStorage inherit from Base"""
+    """Class DBStorage that manage our object and save it on mysql databse"""
     __engine = None
     __session = None
 
@@ -26,7 +26,7 @@ class DBStorage():
         self.__engine = create_engine('mysql+mysqldb://root:root@localhost/ESPot')
         
     def all(self, cls=None):
-        """query on the current database session"""
+        """query on the current database session and return all objects"""
         new_dict = {}
         for clss in classes:
             if cls is None or cls is classes[clss] or cls is clss:
