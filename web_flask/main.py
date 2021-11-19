@@ -19,7 +19,7 @@ CORS(app)
 
 @app.route('/<string:user_id>/my_plants/<string:pot_id>', strict_slashes=False)
 def pot(user_id, pot_id):
-    """plant of user"""
+    """render template that shows plant of its user"""
     usr = storage.get(User, user_id)
     if not usr:
         abort(404)
@@ -35,6 +35,7 @@ def pot(user_id, pot_id):
 
 @app.route('/<string:user_id>/my_plants', strict_slashes=False)
 def my_plants(user_id):
+    """Render template that User control its plants and pots"""
     user = storage.get(User, user_id)
     if not user:
         abort(404)
@@ -43,6 +44,7 @@ def my_plants(user_id):
 
 @app.route('/login', methods=['GET', 'POST'], strict_slashes=False)
 def login():
+    """Render template of Login page, and check if user loged exists"""
     if request.method == 'GET':
         return render_template('login.html')
     else:
@@ -50,17 +52,16 @@ def login():
         pwd = request.form['password']
         check = storage.getByAttribute(User, username)
         if check:
-            print("entro al chekc")
             if md5(pwd.encode()).hexdigest() == check.password:
                 user_id = storage.getByAttribute(User, username).id
                 return redirect(url_for("my_plants", user_id=user_id))
-            print("contrasena incorrecta")
         flash(u"Invalid login credentials", "error")
         return redirect(url_for('login'))
 
 
 @app.route('/register', methods=['GET', 'POST'], strict_slashes=False)
 def register():
+    """Render template of Register page, or insert new User on database"""
     if request.method == 'GET':
         return render_template('register.html')
     else:
@@ -77,6 +78,7 @@ def register():
 
 @app.route('/<string:user_id>/add_pot', strict_slashes=False)
 def add_pot(user_id):
+    """Render template of add new Pot by UserId"""
     user = storage.get(User, user_id)
     if not user:
         abort(404)
@@ -85,6 +87,7 @@ def add_pot(user_id):
 
 @app.route('/', strict_slashes=False)
 def home():
+    """Render template of home page"""
     return render_template('landing.html')
 
 
@@ -96,6 +99,7 @@ def teardown_db(exception):
 
 @app.errorhandler(404)
 def page_not_found(e):
+    """Render our 404 page"""
     # note that we set the 404 status explicitly
     return render_template('404.html'), 404
 
