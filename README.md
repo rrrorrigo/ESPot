@@ -65,7 +65,8 @@
 * [ **Gabriel Ferreira**](https://github.com/elyoguictm) - (2788@holbertonschool.com)
 
 Project Link: [ESPot](https://github.com/rrrorrigo/ESPot)
-Project Presentation: https://www.youtube.com/watch?v=kgPNJjicRKI/&t=7m36s
+
+Project Demo: https://www.youtube.com/watch?v=kgPNJjicRKI/&t=7m36s
 
 <div align="center">
   <img alt="GIF" src="https://64.media.tumblr.com/8ba6019250458f5bea0c9378c5d95d4f/tumblr_nxlvd7Osor1u3yu3no1_400.gifv" width="600" height="200" />
